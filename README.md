@@ -2,7 +2,6 @@
 
 #### Does s contain t ?
 
-`
 Given two string s and t, write a function to check if s contains all characters of t (in the same order as they are in string t).
 Return true or false.
 Do it recursively.
@@ -22,7 +21,6 @@ abcde
 aeb
 Sample Output 2 :
 false
-`
 
 
 ```cpp
@@ -52,7 +50,6 @@ bool checksequenece(char large[] , char*small) {
 
 #include<iostream>
 using namespace std;
-
 int main()
 {
 	char large[10000];
