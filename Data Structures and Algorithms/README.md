@@ -1,4 +1,4 @@
-# Best Competitive Programming Course for Beginners and Experienced Learners
+# Data Structures and Algorithms for Beginners and Experienced Learners
 
 ## TEST-1
 ### Does s contain t ?

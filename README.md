@@ -1,4 +1,4 @@
-# Best Data-Structures-and-Algorithms-in-Cpp-AND-Competitive-Programming Course for Beginners and Experienced Learners 
+# Data-Structures-and-Algorithms-in-Cpp-AND-Competitive-Programming for Beginners and Experienced Learners 
 
 ## TEST-1
 ### Does s contain t ?
