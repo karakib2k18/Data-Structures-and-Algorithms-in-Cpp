@@ -1,4 +1,4 @@
-# Basics-to-Advanced-Data-Structures-and-Algorithms-in-Cpp
+# Best Competitive Programming Course for Beginners and Experienced Learners
 
 ## TEST-1
 ### Does s contain t ?
