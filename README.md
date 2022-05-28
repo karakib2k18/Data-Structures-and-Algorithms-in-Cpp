@@ -1,7 +1,9 @@
 # Basics-to-Advanced-Data-Structures-and-Algorithms-in-Cpp
 
-#### Does s contain t ?
+## TEST-1
+### Does s contain t ?
 ```
+Does s contain t ?
 Given two string s and t, write a function to check if s contains all characters of t (in the same order as they are in string t).
 Return true or false.
 Do it recursively.
