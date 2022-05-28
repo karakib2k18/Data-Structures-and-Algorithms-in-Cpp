@@ -65,7 +65,7 @@ int main()
 }
 
 ```
-
+##
 ### Does s contain t 222?
 
 ```cpp
