@@ -80,6 +80,4 @@ int main()
 
 ANSWER: new
 
-
-
 ```
