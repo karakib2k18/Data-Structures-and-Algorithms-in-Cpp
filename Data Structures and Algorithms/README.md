@@ -74,12 +74,9 @@ int main()
 
 
 ## OOPS-1
-### Which of these statements is used to allocate memory for an object dynamically ?
+### Q-1. Which of these statements is used to allocate memory for an object dynamically ?
 
 ```cpp
-
-
-Which of these statements is used to allocate memory for an object dynamically ?
 
 ANSWER: new
 
