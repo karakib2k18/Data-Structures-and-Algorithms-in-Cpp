@@ -72,7 +72,9 @@ int main()
 
 ```
 
-
+###
+###
+###
 ## OOPS-1
 ### Q-1. Which of these statements is used to allocate memory for an object dynamically ?
 
