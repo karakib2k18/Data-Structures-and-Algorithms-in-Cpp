@@ -90,3 +90,54 @@ int main()
 ANSWER: new
 
 ```
+### Q-2. Which of the following is/are a valid statement(s) to create an object of class Bird in C++ ?
+
+```cpp
+
+ANSWER: 1) Bird *b = new Bird;
+        2) Bird b;
+
+```
+
+### Q-3. Figure out the correct statement ?
+
+/* 
+Figure out the correct statement
+class Car{
+    public : 
+    int price;
+};
+
+int main() {
+    Car c; 
+    //Figure out the correct statement to set the price of the car object referred to by c to “10000”
+}
+*/
+
+```cpp
+
+ANSWER: c.price = 10000; 
+
+```
+### Q-4.  ?
+
+/* 
+ALL QUESTION
+*/
+
+```cpp
+
+ANSWER: c.price = 10000; 
+
+```
+### Q-X.  ?
+
+/* 
+ALL QUESTION
+*/
+
+```cpp
+
+ANSWER: c.price = 10000; 
+
+```
