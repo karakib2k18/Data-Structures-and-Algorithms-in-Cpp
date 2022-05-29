@@ -71,3 +71,18 @@ int main()
 }
 
 ```
+
+
+## OOPS-1
+### Does s contain t ?
+
+```cpp
+
+
+Which of these statements is used to allocate memory for an object dynamically ?
+
+ANSWER: new
+
+
+
+```
