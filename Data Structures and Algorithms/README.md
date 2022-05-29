@@ -87,21 +87,22 @@ int main()
 
 ```cpp
 
-ANSWER: new
+==>ANSWER: new
 
 ```
 #### Q-2. Which of the following is/are a valid statement(s) to create an object of class Bird in C++ ?
 
 ```cpp
 
-ANSWER: 1) Bird *b = new Bird;
+==>ANSWER: 1) Bird *b = new Bird;
         2) Bird b;
 
 ```
 
 #### Q-3. Figure out the correct statement ?
 
-/* 
+```cpp
+
 Figure out the correct statement
 class Car{
     public : 
@@ -112,32 +113,70 @@ int main() {
     Car c; 
     //Figure out the correct statement to set the price of the car object referred to by c to “10000”
 }
-*/
+
+==>ANSWER: c.price = 10000; 
+
+```
+#### Q-4. What is the output -  ?
 
 ```cpp
 
-ANSWER: c.price = 10000; 
+#include <iostream>
+using namespace std;
+
+class Student {
+    int rollNumber;
+};
+
+int main() {
+    Student s;
+    cout << s.rollNumber;
+}
+
+==>ANSWER: Compilation Error | becuase question a public and private didn't write.
 
 ```
-#### Q-4.  ?
+#### Q-5.What will be the output of the following program ?  ?
+
+```cpp
+#include <iostream>
+using namespace std;
+
+class Shape{
+    public : 
+    int height;
+    int width;
+};
+
+int main() {
+    Shape *s = new Shape();
+    s -> height = 1;
+    cout << s -> height;
+}
+
+==>ANSWER: 1; 
+
+```
+
+
+#### Q-6. Which statement is not true in C++ language ?
+
+```cpp
+
+==>ANSWER: A private member of a class cannot be accessed by the functions of the same class. 
+
+```
+
+#### Q-7.  ?
+
+```cpp
 
 /* 
-ALL QUESTION
+
 */
 
-```cpp
 
-ANSWER: c.price = 10000; 
-
-```
-#### Q-X.  ?
-
-/* 
-ALL QUESTION
-*/
-
-```cpp
-
-ANSWER: c.price = 10000; 
+==>ANSWER: c.price = 10000; 
 
 ```
+
