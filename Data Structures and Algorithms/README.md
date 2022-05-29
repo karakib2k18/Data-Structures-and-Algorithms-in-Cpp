@@ -83,14 +83,14 @@ int main()
 
 ---
 
-### Q-1. Which of these statements is used to allocate memory for an object dynamically ?
+#### Q-1. Which of these statements is used to allocate memory for an object dynamically ?
 
 ```cpp
 
 ANSWER: new
 
 ```
-### Q-2. Which of the following is/are a valid statement(s) to create an object of class Bird in C++ ?
+#### Q-2. Which of the following is/are a valid statement(s) to create an object of class Bird in C++ ?
 
 ```cpp
 
@@ -99,7 +99,7 @@ ANSWER: 1) Bird *b = new Bird;
 
 ```
 
-### Q-3. Figure out the correct statement ?
+#### Q-3. Figure out the correct statement ?
 
 /* 
 Figure out the correct statement
@@ -119,7 +119,7 @@ int main() {
 ANSWER: c.price = 10000; 
 
 ```
-### Q-4.  ?
+#### Q-4.  ?
 
 /* 
 ALL QUESTION
@@ -130,7 +130,7 @@ ALL QUESTION
 ANSWER: c.price = 10000; 
 
 ```
-### Q-X.  ?
+#### Q-X.  ?
 
 /* 
 ALL QUESTION
