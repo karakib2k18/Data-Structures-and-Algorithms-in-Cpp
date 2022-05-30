@@ -767,8 +767,7 @@ int main() {
 ------------------------------------------------------------------------------------------------
 
 Complex Number Class
-Send Feedback
-A ComplexNumber class contains two data members : one is the real part (R) and the other is imaginary (I)(both integers).
+A ComplexNumber class contains two data members: one is the real part(R) and the other is imaginary (I)(both integers).
 Implement the Complex numbers class that contains following functions -
 1. constructor
 You need to create the appropriate constructor.
