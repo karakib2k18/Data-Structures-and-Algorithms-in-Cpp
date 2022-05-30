@@ -790,7 +790,8 @@ Note : There is space before and after '+' (plus sign) and no space between 'i' 
 Input Format :
 Line 1 : Two integers - real and imaginary part of 1st complex number
 Line 2 : Two integers - real and imaginary part of 2nd complex number
-Line 3 : An integer representing choice (1 or 2) (1 represents plus function will be called and 2 represents multiply function will be called)
+Line 3 : An integer representing choice (1 or 2) (1 represents plus function will be called and 2 represents multiply
+ function will be called)
 Output format :
 Check details of 'print' function given above.
 Sample Input 1 :
