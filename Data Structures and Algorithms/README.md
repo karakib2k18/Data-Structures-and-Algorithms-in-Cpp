@@ -447,7 +447,8 @@ int main() {
 
 Solution Description:=>
 
-####Height and width are initialised to 5 and 4 respectively but length is not initialised. Default value for an integer data member of a class is garbage value, hence length contains garbage value. Volume will thus be garbage value.
+####Height and width are initialised to 5 and 4 respectively but length is not initialised. Default value for an 
+integer data member of a class is garbage value, hence length contains garbage value.Volume will thus be garbage value.
 
 ```
 
@@ -482,7 +483,8 @@ int main() {
 
 Solution Description=>
 
-####Constructor is called when an object is created, here when we create a Student object, corresponding student object is created and rollNo is assigned to 12. So output is 12.
+####Constructor is called when an object is created, here when we create a Student object, corresponding student 
+object is created and rollNo is assigned to 12. So output is 12.
 
 ```
 
@@ -517,11 +519,13 @@ int main() {
 }
 
 ==> ANSWER: Compilation error | becuase Default constructor hole answer became [A 15], it was create a constructor,
-			so, it can only take rollNo input. and name can't take input. 
+			so, it can only take rollNo input. and name can not take input. 
 
 Solution Description=>
 
-There is Compilation error - “constructor Student() is undefined” because the default constructor is available only till the point we don’t create our own constructor. So Student class has only one constructor which require roll number as argument, hence we should pass integer as argument while creating any Student object.
+There is Compilation error - “constructor Student() is undefined” because the default constructor is available only 
+till the point we don’t create our own constructor. So Student class has only one constructor which require roll 
+number as argument, hence we should pass integer as argument while creating any Student object.
 
 ```
 
@@ -717,6 +721,31 @@ int main() {
 
 }
 
+
+```
+
+#### Q-10.  Find Incorrect Statement ?
+
+```cpp
+
+Which of the following statements are not true about destructor?
+1. It is invoked when object goes out of the scope
+2. Like constructor, it can also have parameters 
+3. It can be declared in private section
+4. It bears same name as that of the class and precedes tilde sign. 
+
+==> ANSWER: 2. Like constructor, it can also have parameters 
+
+```
+#### Q-11.  Copy Constructor
+
+```cpp
+
+Assume class DEMO. Which of the following statement(s) responsible to invoke copy constructor?
+1. DEMO D2(D1); //  Here D1 is an already created object of class  DEMO
+2. D2 = D1; // Here D1, D2 are already created objects of class DEMO
+
+==> ANSWER: 2. Like constructor, it can also have parameters 
 
 ```
 
