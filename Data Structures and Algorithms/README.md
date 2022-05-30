@@ -673,6 +673,8 @@ int main() {
 	f2.print();
 }
 
+ANSWER: 35/4
+        15/4
 
 ```
 
