@@ -83,7 +83,7 @@ int main()
 
 ---
 
-### Introduction to OOPS
+### ##Introduction to OOPS
 
 ```cpp
 
@@ -673,8 +673,8 @@ int main() {
 	f2.print();
 }
 
-ANSWER: 35/4
-        15/4
+==>ANSWER : 35/4
+         15/4
 
 ```
 
