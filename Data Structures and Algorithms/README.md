@@ -514,3 +514,175 @@ int main() {
 
 ```
 
+### Inbuilt Constructors and Destructor
+
+```cpp
+#include <iostream>
+using namespace std;
+
+class Student {
+
+	public :
+	int rollNumber;
+	
+	private :
+	int age;
+
+	public :
+
+	~Student() {
+		cout << "Destructor called ! " << endl;
+	}
+
+	// Default constructor
+	/*Student() {
+		cout << "Constreuctor called ! "<< endl;
+	}*/
+
+	// Parameterized constructor
+	Student(int rollNumber) {
+		cout << "Constructor 2 called !" << endl;
+	
+		this -> rollNumber = rollNumber;
+	}
+
+	Student(int a, int r) {
+		cout << "this : " << this << endl;
+		cout << "Constructor 3 called ! " << endl;
+		this -> age = a;
+		this -> rollNumber = r;
+	}
+
+	void display() {
+		cout << age << " " << rollNumber << endl;
+	}
+
+	int getAge() {
+		return age;
+	}
+
+	void setAge(int a, int password) {
+		if(password != 123) {
+			return;
+		}
+		if(a < 0) {
+			return;
+		}
+		age = a;
+	}
+
+};
+
+
+int main() {
+	
+	Student s1(10, 1001);
+	Student s2(20, 2001);
+	Student *s3 = new Student(30, 3001);
+
+	s2 = s1;
+	*s3 = s1;
+	s2 = *s3;
+	delete s3;
+
+
+    // FOr another example:
+	/*
+	Student s1(10, 1001);
+	cout << "S1 : ";
+	s1.display();
+
+	Student s2(s1);
+	cout << "S2 : ";
+	s2.display();
+
+	Student *s3 = new Student(20, 2001);
+	cout << "S3 : ";
+	s3 -> display();
+
+	Student s4(*s3);
+
+	Student *s5 = new Student(*s3);
+	Student *s6 = new Student(s1);
+	*/
+
+}
+
+
+```
+
+### Fraction Class
+
+```cpp
+
+#include <iostream>
+using namespace std;
+
+class Fraction {
+	private :
+
+		int numerator;
+		int denominator;
+
+	public :
+
+		Fraction(int numerator, int denominator) {
+			this -> numerator = numerator;
+			this -> denominator = denominator;
+		}
+
+		void print() {
+			cout << this -> numerator << " / " << denominator << endl;
+		}
+
+
+		void simplify() {
+			int gcd = 1;
+			int j = min(this -> numerator, this -> denominator);
+			for(int i = 1; i <= j; i++) {
+				if(this -> numerator % i == 0 && this -> denominator % i == 0) {
+					gcd = i;
+				}
+			}
+			this -> numerator = this -> numerator / gcd;
+			this -> denominator = this -> denominator / gcd;
+		}
+
+		void add(Fraction f2) {
+			int lcm = denominator * f2.denominator;
+			int x = lcm / denominator;
+			int y = lcm / f2.denominator;
+
+			int num = x * numerator + (y * f2.numerator);
+
+			numerator = num;
+			denominator = lcm;
+
+			simplify();	
+
+		}
+};
+
+int main() {
+	Fraction f1(10, 2);
+	Fraction f2(15, 4);
+
+	f1.add(f2);
+
+	f1.print();
+	f2.print();
+}
+
+
+```
+
+
+```
+
+### xxxxxxxxx
+
+```cpp
+
+
+```
+
