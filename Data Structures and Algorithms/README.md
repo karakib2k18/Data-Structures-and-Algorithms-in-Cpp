@@ -77,13 +77,13 @@ int main()
 
 ---
 
-# OOPS-1
+# ##OOPS-1
 
 ---
 
 ---
 
-### ##Introduction to OOPS
+### Introduction to OOPS
 
 ```cpp
 
