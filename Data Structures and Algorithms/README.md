@@ -417,6 +417,115 @@ int main() {
 
 ```
 
+#### Q-7.  What is the output ?
+
+What will be the Output ?
+
+```cpp
+
+#include <iostream>
+using namespace std;
+
+class Box{
+    public :
+    int width;
+    int height;
+    int length;
+    void volume(){
+        cout << length * width * height;
+    }
+};
+
+int main() {
+    Box b;
+    b.height = 5;
+    b.width = 4;
+    b.volume();
+}
+
+==> ANSWER: Garbage value.
+
+Solution Description:=>
+
+####Height and width are initialised to 5 and 4 respectively but length is not initialised. Default value for an integer data member of a class is garbage value, hence length contains garbage value. Volume will thus be garbage value.
+
+```
+
+
+#### Q-8.  What will be the output of the following code ?
+
+What will be the output of the following code ?
+
+```cpp
+#include <iostream>
+using namespace std;
+
+class Student{
+    public :
+    char *name;
+    int rollNo;
+    Student(int num){
+        rollNo = num;
+    }
+
+    void print(){
+        cout << rollNo;
+    }
+};
+
+int main() {
+    Student s(12);
+    s.print();
+}
+
+==> ANSWER: 12
+
+Solution Description=>
+
+####Constructor is called when an object is created, here when we create a Student object, corresponding student object is created and rollNo is assigned to 12. So output is 12.
+
+```
+
+#### Q-9.  What will be the output of the following code ?
+
+What will be the output of the following code ?
+
+```cpp
+
+#include <iostream>
+using namespace std;
+
+class Student{
+    public :
+    char name;
+    int rollNo;
+
+    Student(int num){
+        rollNo = num;
+    }
+
+    void print(){
+        cout << name << " "  <<  rollNo;
+    }
+};
+
+int main() {
+    Student *s = new Student();
+    s -> name = 'A';
+    s -> rollNo = 15;
+    s -> print();
+}
+
+==> ANSWER: Compilation error | becuase Default constructor hole answer became [A 15], it was create a constructor,
+			so, it can only take rollNo input. and name can't take input. 
+
+Solution Description=>
+
+There is Compilation error - “constructor Student() is undefined” because the default constructor is available only till the point we don’t create our own constructor. So Student class has only one constructor which require roll number as argument, hence we should pass integer as argument while creating any Student object.
+
+```
+
+
 ### Inbuilt Constructors and Destructor
 
 ```cpp
