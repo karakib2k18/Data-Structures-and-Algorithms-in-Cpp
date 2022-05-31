@@ -1,4 +1,4 @@
-# Competitive Programming for Beginners and Experienced Learners
+# Competitive Programming for Beginners to Experienced Learners
 
 ## TEST-1
 ### Does s contain t ?

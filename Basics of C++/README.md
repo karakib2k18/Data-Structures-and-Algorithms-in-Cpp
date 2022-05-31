@@ -1,4 +1,4 @@
-# C++ Course for Beginners and Experienced Learners
+# C++ Course for Beginners to Experienced Learners
 
 ## TEST-1
 ### Does s contain t ?

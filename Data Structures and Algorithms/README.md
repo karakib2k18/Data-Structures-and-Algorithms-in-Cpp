@@ -1,4 +1,4 @@
-# Data Structures and Algorithms for Beginners and Experienced Learners
+# Data Structures & Algorithms for Beginners to Experienced Learners
 
 ## TEST-1
 
