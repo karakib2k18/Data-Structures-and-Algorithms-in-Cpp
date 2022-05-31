@@ -327,8 +327,14 @@ Fraction operator+(Fraction const &f2) const {
 	return fNew;
 }
 ------------------------------------------------------------------------------------------------
-	Fraction f3 = f1.add(f2);
-	Fraction f4 = f1 + f2;
+
+bool operator==(Fraction const &f2) const {
+	return (numerator == f2.numerator && denominator == f2.denominator);
+}
+
+------------------------------------------------------------------------------------------------
+Fraction f3 = f1.add(f2);
+Fraction f4 = f1 + f2;
 ------------------------------------------------------------------------------------------------
 
 ```
