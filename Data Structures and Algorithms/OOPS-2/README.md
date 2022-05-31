@@ -326,8 +326,8 @@ Fraction operator+(Fraction const &f2) const {
 
 Fraction operator+(Fraction const &f2) const {  
 	-----------------------------------------------------
-	==>can use const becuase its not chnaging in (this->) own property, by using own property we can do some calculation
-	 and send it to other property. thats why we can use const here. 
+	==>can use const becuase its not chnaging in (this->) own property, by using own property we can do some 
+	calculation and send it to other property. thats why we can use const here. 
 	-----------------------------------------------------
 	Fraction fNew(X, Y); ==> create new object and pass data inside the object.then alue will set using constructor.
 	fNew.simplify(); ==> call simplify function for new fNew object.
