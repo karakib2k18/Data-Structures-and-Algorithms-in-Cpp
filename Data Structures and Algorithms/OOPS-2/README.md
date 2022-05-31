@@ -100,7 +100,11 @@ int main() {
 ### Constant Functions | Const Obj can call only const Functions, they can't call the normal functions.
 
 ```cpp
-==> what is const function? ANSWER: which function does not change any property of current object. And we can make getvalue and print functions const. becuase we don't need to change them. And normal & const property also can access const function. but we can't write const on setvalue or other calculation function where main variable's value of private class will be change. We should make every geting and printing function const becuase it's best way and we don't need to do any inside of geting and printing function;
+==> what is const function? ANSWER: which function does not change any property of current object. And we can make 
+getvalue and print functions const. becuase we don't need to change them. And normal & const property also can access
+const function. but we can't write const on setvalue or other calculation function where main variable's value of 
+private class will be change. We should make every geting and printing function const becuase it's best way and we 
+don't need to do any inside of geting and printing function;
 ```
 
 ```cpp
