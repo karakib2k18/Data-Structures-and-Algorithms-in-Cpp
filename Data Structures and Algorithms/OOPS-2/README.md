@@ -313,6 +313,8 @@ replace return type void to CLASS name. becuase we are creating a object inside 
 then it goes to the constructor as a new object value. then we can call the function for this object. we can write
 (operator+) for F1+F2;
 
+==> can use const in a function when its not chnaging in (this->) own property, by using own property can do some calculation and send it to other property using another function. thats why we can use const here. it won't affect in 
+our code; 
 
 ```
 
@@ -321,9 +323,12 @@ then it goes to the constructor as a new object value. then we can call the func
 Fraction operator+(Fraction const &f2) const {
 ---------------------------------------------------------------------------------------------
 
-Fraction operator+(Fraction const &f2) const {
-	Fraction fNew(X, Y); // create new object and pass data inside the object.then alue will set using constructor.
-	fNew.simplify(); // call simplify function for new fNew object.
+Fraction operator+(Fraction const &f2) const {  
+	-----------------------------------------------------
+	==> can use const becuase its not chnaging in (this->) own property, by using own property we can do some calculation and send it to other property. thats why we can use const here. 
+	-----------------------------------------------------
+	Fraction fNew(X, Y); ==> create new object and pass data inside the object.then alue will set using constructor.
+	fNew.simplify(); ==> call simplify function for new fNew object.
 	return fNew;
 }
 ------------------------------------------------------------------------------------------------
