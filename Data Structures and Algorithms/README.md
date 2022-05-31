@@ -1089,6 +1089,14 @@ int main() {
 
 ```
 
+### OPPS-1 END HERE
+
+```cpp
+
+OPPS-1 END HERE
+
+```
+
 ---
 
 ---
@@ -1161,6 +1169,7 @@ int &x;		// age reference variable
 // using Initialisation List we can pass value to the const variable or to the reference variable.
 // here age(age), didn't write this->age(age) because it automatically indicating the variable.
 //but here x(this -> age), if don't write (this->) then value will pass here but we want to indicate the age variable.
+// x is referencing to the age variable.
 Student(int r, int age) : rollNumber(r), age(age), x(this -> age) {  
 	//rollNumber = r;	
 }	
@@ -1191,3 +1200,11 @@ int main() {
 
 ```
 
+<!-- 
+### OPPS-2 END HERE
+
+```cpp
+
+OPPS-2 END HERE
+
+``` -->
