@@ -228,6 +228,7 @@ int main() {
 
 ```
 =>Static:  example> totalStudents isn't a property of Students class single object's property. SO we can make it static.
+			property is depending on CLASS not Objects.
 
 =>(::)=> this is called scop resolution operator.
 
