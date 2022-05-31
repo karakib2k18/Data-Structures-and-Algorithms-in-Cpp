@@ -235,7 +235,7 @@ property is depending on CLASS not Objects.
 ==> CLASS::Property , example: int Student :: totalStudents = 0;
 
 ==> when create a new object then constructor will call automatically, so we can put [totalStudents] in the constructor
-	then [totalStudents] value will increate according to the code logic inside of constructor.
+then [totalStudents] value will increate according to the code logic inside of constructor.
 
 ```
 
@@ -247,7 +247,7 @@ static int totalStudents;
 Student() {
 	totalStudents++;
 }
-static int getTotalStudent() { // This function depends on Class not Objects. SO we write static.
+static int getTotalStudent() {  This function depends on Class not Objects. SO we write static.
 	return totalStudents;
 }
 
@@ -265,7 +265,7 @@ cout << Student :: getTotalStudent() << endl;
 using namespace std;
 
 class Student {
-	static int totalStudents;		// total number of students present
+	static int totalStudents; // total number of students present
 
 	public :
 
