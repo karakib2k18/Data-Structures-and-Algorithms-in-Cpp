@@ -1157,10 +1157,8 @@ int main() {
 	int age;
 	const int rollNumber;
 	int &x;		// age reference variable
-
-	Student(int r, int age) : rollNumber(r), age(age), x(this -> age) {  // using Initialisation List we
-																		// can pass value to the const variable or 
-																		// to the reference variable.
+	// using Initialisation List we can pass value to the const variable or to the reference variable.
+	Student(int r, int age) : rollNumber(r), age(age), x(this -> age) {  
 		//rollNumber = r;	
 	}	
 
