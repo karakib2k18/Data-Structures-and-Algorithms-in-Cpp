@@ -247,7 +247,7 @@ static int totalStudents;
 Student() {
 	totalStudents++;
 }
-static int getTotalStudent() {  This function depends on Class not Objects. SO we write static.
+static int getTotalStudent() { ====> This function depends on Class not Objects. SO we write static.
 	return totalStudents;
 }
 
