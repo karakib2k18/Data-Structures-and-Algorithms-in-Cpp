@@ -228,7 +228,7 @@ int main() {
 
 ```
 =>Static:  example> totalStudents isn't a property of Students class single object's property. SO we can make it static.
-			property is depending on CLASS not Objects.
+property is depending on CLASS not Objects.
 
 =>(::)=> this is called scop resolution operator.
 
@@ -247,12 +247,16 @@ static int totalStudents;
 Student() {
 	totalStudents++;
 }
+static int getTotalStudent() { // This function depends on Class not Objects. SO we write static.
+	return totalStudents;
+}
 
 // code outside of the Class or Main function
 int Student :: totalStudents = 0;	// initialze static data members
 
 // main function is accessing the static value from class 
 cout << Student :: getTotalStudent() << endl;
+
 
 ```
 
