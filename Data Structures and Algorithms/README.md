@@ -4,9 +4,7 @@
 
 ### Does s contain t ?
 
-```cpp
-
-/*
+```
 Does s contain t ?
 Given two string s and t, write a function to check if s contains all characters of t (in the
 same order as they are in string t). Return true or false. Do it recursively.
@@ -33,8 +31,8 @@ aeb
 
 Sample Output 2 :
 false
-
-*/
+```
+```cpp
 
 // Counting from from 1st char
 bool checksequenece(char large[] , char*small) {
