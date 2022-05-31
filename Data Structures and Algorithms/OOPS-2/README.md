@@ -224,6 +224,66 @@ int main() {
 }
 
 ```
+### Static Members
+
+```
+=>Static:  example> totalStudents isn't a property of Students class single object's property. SO we can make it static.
+
+=>(::)=> this is called scop resolution operator.
+
+==> CLASS::Property , example: int Student :: totalStudents = 0;
+
+```
+![image](https://user-images.githubusercontent.com/57065763/171169437-c81eb8e2-f152-4eb6-a811-2c58149c0b40.png)
+
+
+```cpp
+
+
+```
+
+```cpp
+#include <iostream>
+using namespace std;
+
+class Student {
+	static int totalStudents;		// total number of students present
+
+	public :
+
+	int rollNumber;
+	int age;
+
+
+	Student() {
+		totalStudents++;
+	}
+
+	int getRollNumber() {
+		return rollNumber;
+	}
+
+	static int getTotalStudent() {
+		return totalStudents;
+	}
+};
+
+int Student :: totalStudents = 0;	// initialze static data members
+
+int main() {
+	Student s1;
+
+	Student s2;
+
+	Student s3, s4, s5;
+
+	// cout << Student :: totalStudents << endl;
+
+	cout << Student :: getTotalStudent() << endl;
+
+}
+
+```
 
 
 
