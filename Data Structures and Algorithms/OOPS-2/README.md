@@ -233,12 +233,25 @@ int main() {
 
 ==> CLASS::Property , example: int Student :: totalStudents = 0;
 
-```
-![image](https://user-images.githubusercontent.com/57065763/171169437-c81eb8e2-f152-4eb6-a811-2c58149c0b40.png)
+==> when create a new object then constructor will call automatically, so we can put [totalStudents] in the constructor
+	then [totalStudents] value will increate according to the code logic inside of constructor.
 
+```
 
 ```cpp
+ :: => this is called scop resolution operator.
 
+// code in the class
+static int totalStudents;	
+Student() {
+	totalStudents++;
+}
+
+// code outside of the Class or Main function
+int Student :: totalStudents = 0;	// initialze static data members
+
+// main function is accessing the static value from class 
+cout << Student :: getTotalStudent() << endl;
 
 ```
 
