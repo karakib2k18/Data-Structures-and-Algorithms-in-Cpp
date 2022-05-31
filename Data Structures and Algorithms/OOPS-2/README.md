@@ -255,7 +255,8 @@ static int getTotalStudent() { ====> This function depends on Class not Objects.
 int Student :: totalStudents = 0;	// initialze static data members
 
 // main function is accessing the static value from class 
-cout << Student :: getTotalStudent() << endl;
+cout << Student :: getTotalStudent() << endl; ==> using function
+cout << Student :: totalStudents << endl; ===> using Variable
 
 
 ```
