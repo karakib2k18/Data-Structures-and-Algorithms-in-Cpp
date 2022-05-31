@@ -313,8 +313,9 @@ replace return type void to CLASS name. becuase we are creating a object inside 
 then it goes to the constructor as a new object value. then we can call the function for this object. we can write
 (operator+) for F1+F2;
 
-==> can use const in a function when its not chnaging in (this->) own property, by using own property can do some calculation and send it to other property using another function. thats why we can use const here. it won't affect in 
-our code; 
+==> can use const in a function when its not chnaging in (this->) own property, by using own property can do some 
+calculation and send it to other property using another function. thats why we can use const here. it won't affect 
+in  our code; 
 
 ```
 
