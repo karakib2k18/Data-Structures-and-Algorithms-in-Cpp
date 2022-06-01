@@ -5,6 +5,10 @@
 ### Shallow and Deep Copy
 
 ```cpp
+==> In shallow copy, it does not copy the value of the specified object value. it just copy object addess.so its 
+bad practice. And It happen for inbuilt copy constructor. (ex:ClassName d1(d2))
+==> copy assignment operator (ex: d1=d2) also do shallow copy.
+==> shallow copy created by the system, but deep copy created by the progrmmer itself.
 	this -> age = age;
 	// Shallow copy
 	// this -> name = name;
