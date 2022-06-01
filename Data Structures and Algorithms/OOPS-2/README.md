@@ -467,7 +467,9 @@ refernce(&) both are same.
 
 ------------------------------------------------------------------------------------------------
 
-return *this; ==>>  *this mean we are return the content of F1(in the code) or return the value to the same OBJECT.
+return *this; 
+==>>  *this mean we are return the content of F1(in the code) or return the value to the same OBJECT. we do not
+want to return the value of address, for this reason we use pointer(*) to get the value from this address.
 
 ------------------------------------------------------------------------------------------------
 
@@ -484,6 +486,17 @@ Fraction& operator++() {
 Fraction f3 = ++(++f1); ==>f1 Pre-increment then again Pre-increment the f1 Pre-incremented value.THEN store in F3.
 f1.print();
 f3.print();
+
+------------------------------------------------------------------------------------------------
+EXAMPLE--------1:
+int i = 5;
+int j = i++;
+cout<< i << j <<endl; ==>ANSWER: i=6 & j=5, becuase we are firstly copying the value to the J then increment i;
+
+EXAMPLE---------2:
+int i = 5;
+int j = ++i;
+cout<< i << j <<endl; ==>ANSWER: i=6 & j=6,becuase we are firstly pre-increment i then copying the value to the J;
 
 ------------------------------------------------------------------------------------------------
 
