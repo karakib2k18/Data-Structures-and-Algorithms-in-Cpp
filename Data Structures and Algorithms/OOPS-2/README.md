@@ -5,8 +5,18 @@
 ### Shallow and Deep Copy
 
 ```cpp
+
+DynamicArray d2(d1);		// Copy constructor
+DynamicArray d3;
+d3 = d1; //  inbuilt copy assignment operator.
+
 ==> In shallow copy, it does not copy the value of the specified object value. it just copy object addess.so its 
-bad practice. And It happen for inbuilt copy constructor. (ex:ClassName d1(d2))
+bad practice.It also happen for inbuilt copy constructor.(ex:CN d1(d2)) && inbuilt copy assignment operator(d1=d2).
+SO always we have to create a deep copy.
+
+```
+
+```cpp
 ==> copy assignment operator (ex: d1=d2) also do shallow copy.
 ==> shallow copy created by the system, but deep copy created by the progrmmer itself.
 	this -> age = age;
@@ -63,14 +73,16 @@ int main() {
 ### Initialisation List | Passing value in the Const Data type.
 
 ```cpp
+
 int age;
 const int rollNumber;
 int &x;		// age reference variable
 
-// using Initialisation List we can pass value to the const variable or to the reference variable.
-// here age(age), didn't write this->age(age) because it automatically indicating the variable.
-//but here x(this -> age), if don't write (this->) then value will pass here but we want to indicate the age variable.
-// x is referencing to the age variable.
+==>  using Initialisation List we can pass value to the const variable or to the reference variable.
+==>  here age(age), did n0t write this->age(age) because it automatically indicating the variable.
+==>but here x(this -> age), if do not write (this->) then value will pass but we want to indicate the age variable.
+==>  x is referencing to the age variable.
+
 Student(int r, int age) : rollNumber(r), age(age), x(this -> age) {  
 	//rollNumber = r;	
 }	
@@ -603,31 +615,6 @@ int main() {
 
 	//++f1;
 	//f1.print();
-
-	/*
-	Fraction f3 = ++f1;
-	f1.print();
-	f3.print();
-	*/
-	/*
-	Fraction f3 = f1.add(f2);
-	Fraction f4 = f1 + f2;
-	f1.print();
-	f2.print();
-	f3.print();
-	f4.print();
-
-	Fraction f5 = f1 * f2;
-	f5.print();
-
-	if(f1 == f2) {
-		cout << "Equal" << endl;
-	}
-	else {
-		cout << "Not equal " << endl;
-		
-	}
-	*/
 }
 
 ```
@@ -829,6 +816,13 @@ else if(i == nextIndex) { ==>> If i is become qual to nextIndex size then we wil
 else {
 	return; ==> If i > nextIndex, then it will not return anything.
 }
+------------------------------------------------------------------------------------------------
+DynamicArray d2(d1);		// Copy constructor
+DynamicArray d3;
+d3 = d1; //  inbuilt copy assignment operator.
+==> In shallow copy, it does not copy the value of the specified object value. it just copy object addess.so its 
+bad practice.It also happen for inbuilt copy constructor.(ex:CN d1(d2)) && inbuilt copy assignment operator(d1=d2).
+SO always we have to create a deep copy.
 ------------------------------------------------------------------------------------------------
 
 ```
