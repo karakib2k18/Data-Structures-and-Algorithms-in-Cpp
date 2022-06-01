@@ -456,6 +456,7 @@ int main() {
 
 ```cpp
 ------------------------------------------------------------------------------------------------
+
 // Pre-increment
 Fraction&  
 ==>> Here we are using ClassName insted of void becuase we want to store data in the ClassName Object. AND
@@ -463,9 +464,13 @@ in Pre-increment it will always create a new copy for storing the data if we use
 increment more than once , for this reason we are using the refernce(&) key for passing the data/address. then
 every time of increment the value will be change.  If don not use refernce(&) then f1= 6/1 AND f3= 7/1. using 
 refernce(&) both are same.
+
 ------------------------------------------------------------------------------------------------
+
 return *this; ==>>  *this mean we are return the content of F1(in the code) or return the value to the same OBJECT.
+
 ------------------------------------------------------------------------------------------------
+
 // Pre-increment
 Fraction& operator++() {
 	numerator = numerator + denominator;
@@ -473,10 +478,13 @@ Fraction& operator++() {
 
 	return *this;
 }
+
 ------------------------------------------------------------------------------------------------
+
 Fraction f3 = ++(++f1); ==>f1 Pre-increment then again Pre-increment the f1 Pre-incremented value.THEN store in F3.
 f1.print();
 f3.print();
+
 ------------------------------------------------------------------------------------------------
 
 ```
