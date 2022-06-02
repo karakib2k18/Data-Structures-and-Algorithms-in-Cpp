@@ -772,9 +772,12 @@ int main() {
 }
 
 ```
-### Operator Overloading 3
+### Dynamic Array Class
 
 ```cpp
+------------------------------------------------------------------------------------------------
+int *data;
+data = new int[5];
 ------------------------------------------------------------------------------------------------
 // Deep copy
 this -> data = new int[d.capacity]; | ==>> here is Deep copy, created a new array of inpyt size.
