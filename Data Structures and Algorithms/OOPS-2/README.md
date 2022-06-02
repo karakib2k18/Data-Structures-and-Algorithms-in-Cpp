@@ -1226,6 +1226,37 @@ int main() {
 
 ```
 
+#### some basic:
+
+What will be the output of the following code ?
+
+```cpp
+class Student {
+       static int rollNumber;
+    public :
+
+    static int getRollNumber() {
+        return rollNumber;
+    }
+};
+
+int Student::rollNumber = 101;
+int main() {
+	// 1st way
+    Student s;
+    cout << s.getRollNumber() << endl;
+
+	//2nd way
+	cout << Student::getRollNumber() << endl;
+}
+
+
+
+==> Here we write,[ static int rollNumber] for static function, if we don't declare variable as a static then we can't
+access if from static function.
+
+```
+
 ### Code : Polynomial Class:
 
 ```
