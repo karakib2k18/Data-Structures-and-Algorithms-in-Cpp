@@ -6,6 +6,13 @@
 
 ### Introduction to OOPS
 
+[Lecture 7: OOPS-1.pdf](https://github.com/karakib2k18/Data-Structures-and-Algorithms-in-Cpp-AND-Competitive-Programming/files/8837499/Lecture.7.OOPS-1.pdf)
+
+
+```cpp
+this ->  ==> this holds the address of the current object.
+```
+
 ```cpp
 
 // Class for Product
@@ -77,8 +84,7 @@ int main() {
 ![image](https://user-images.githubusercontent.com/57065763/171987328-d46ab789-0b5e-4f75-be6a-bdba65e3955a.png)
 
 
-
-<!-- #### Q-1. Which of these statements is used to allocate memory for an object dynamically ?
+#### Q-1. Which of these statements is used to allocate memory for an object dynamically ?
 
 ```cpp
 
@@ -160,13 +166,40 @@ int main() {
 
 ==>ANSWER: A private member of a class cannot be accessed by the functions of the same class. 
 
-``` -->
+```
 
 ### Getters and Setters
 
 ```cpp
 
-// Student.cpp code
+void display() {
+	cout << age << " " << rollNumber << endl;
+}
+----------------------------------------------------------------------------------------------
+void setAge(int a, int password) {
+	if(password != 123) {
+		return;
+	}
+	if(a < 0) {
+		return;
+	}
+	age = a;
+}
+
+----------------------------------------------------------------------------------------------
+int getAge() {
+	return age;
+}
+----------------------------------------------------------------------------------------------
+s1.display();
+(*s6).display();
+s6 -> display();
+```
+```cpp
+
+#include <iostream>
+using namespace std;
+
 class Student {
 
 	public :
@@ -174,7 +207,6 @@ class Student {
 	
 	private :
 	int age;
-
 
 	public :
 
@@ -195,15 +227,7 @@ class Student {
 		}
 		age = a;
 	}
-
 };
-
-
-// StudentUse.cpp code
-#include <iostream>
-using namespace std;
-#include "Student.cpp"
-
 
 int main() {
 	// Create objects statically
@@ -221,9 +245,7 @@ int main() {
 	s1.display();
 	s2.display();
 
-
 	//s2.age = 30;
-
 
 	// Create objects dynamicaaly
 	Student *s6 = new Student;
@@ -351,7 +373,7 @@ int main() {
 ![image](https://user-images.githubusercontent.com/57065763/171987434-e877ed8a-f916-40de-806b-491ae9a57042.png)
 ![image](https://user-images.githubusercontent.com/57065763/171987448-cd39ce14-ec57-4a18-91b2-425a29f0d639.png)
 
-<!-- #### Q-7.  What is the output ?
+#### Q-7.  What is the output ?
 
 What will be the Output ?
 
@@ -461,10 +483,14 @@ There is Compilation error - “constructor Student() is undefined” because th
 till the point we don’t create our own constructor. So Student class has only one constructor which require roll 
 number as argument, hence we should pass integer as argument while creating any Student object.
 
-``` -->
+```
 
 
 ### Inbuilt Constructors and Destructor
+
+![image](https://user-images.githubusercontent.com/57065763/171994489-64118cb9-4625-41b6-b636-cb050f890581.png)
+![image](https://user-images.githubusercontent.com/57065763/171994643-cb79a655-eb4f-4dd4-b15a-9f3deeb69c5b.png)
+
 
 ```cpp
 #include <iostream>
