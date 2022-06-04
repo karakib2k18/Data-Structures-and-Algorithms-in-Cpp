@@ -69,13 +69,6 @@ int main() {
 
 ```
 
-![image](https://user-images.githubusercontent.com/57065763/171986855-f33f9915-de3d-4ca9-b39a-d70a3d7d3656.png)
-![image](https://user-images.githubusercontent.com/57065763/171986868-76ff3592-425a-4e59-a2aa-98b4cd1322cd.png)
-![image](https://user-images.githubusercontent.com/57065763/171986877-93fbae50-f8d7-4a3c-a913-61112af0e148.png)
-![image](https://user-images.githubusercontent.com/57065763/171986884-66e85b34-aea6-4a00-b233-18da751e71d1.png)
-![image](https://user-images.githubusercontent.com/57065763/171986892-94e416e8-e0eb-4cc8-8f64-fe9d3f626e11.png)
-![image](https://user-images.githubusercontent.com/57065763/171986899-eef9cf8e-e988-44c4-92a8-b4c1da214eb0.png)
-
 ![image](https://user-images.githubusercontent.com/57065763/171987232-a4112ebf-038e-4649-99e3-d09a55f9a741.png)
 ![image](https://user-images.githubusercontent.com/57065763/171987244-f8a043de-15bd-461e-9bb7-1f3ce2470311.png)
 ![image](https://user-images.githubusercontent.com/57065763/171987253-1d6d2688-9c1b-43b2-a40e-0c3ecebc8d21.png)
@@ -354,8 +347,11 @@ int main() {
 }
 
 ```
+![image](https://user-images.githubusercontent.com/57065763/171987362-d5bfc657-a1a3-4120-8ee2-c7eb17ff261b.png)
+![image](https://user-images.githubusercontent.com/57065763/171987434-e877ed8a-f916-40de-806b-491ae9a57042.png)
+![image](https://user-images.githubusercontent.com/57065763/171987448-cd39ce14-ec57-4a18-91b2-425a29f0d639.png)
 
-#### Q-7.  What is the output ?
+<!-- #### Q-7.  What is the output ?
 
 What will be the Output ?
 
@@ -465,7 +461,7 @@ There is Compilation error - “constructor Student() is undefined” because th
 till the point we don’t create our own constructor. So Student class has only one constructor which require roll 
 number as argument, hence we should pass integer as argument while creating any Student object.
 
-```
+``` -->
 
 
 ### Inbuilt Constructors and Destructor
@@ -661,6 +657,11 @@ int main() {
 
 
 ```
+
+![image](https://user-images.githubusercontent.com/57065763/171987472-a2674a0e-cba8-4f98-bdd5-285fda4d4753.png)
+![image](https://user-images.githubusercontent.com/57065763/171987484-171ae583-a65e-4c87-9971-903627ef49e4.png)
+![image](https://user-images.githubusercontent.com/57065763/171987492-f7787f0d-0a90-49ba-a23c-afc320bcfeea.png)
+![image](https://user-images.githubusercontent.com/57065763/171987498-3262b308-6cb9-4560-8e32-741702678239.png)
 
 #### Q-10.  Find Incorrect Statement ?
 
