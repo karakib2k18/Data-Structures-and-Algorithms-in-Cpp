@@ -710,6 +710,10 @@ int main() {
 
 ### Operator Overloading 3
 
+![image](https://user-images.githubusercontent.com/57065763/172013823-a8e247d5-e50a-4ec4-8aea-b685559e8aef.png)
+![image](https://user-images.githubusercontent.com/57065763/172013897-9431b405-8582-423e-8573-f88430fb0770.png)
+
+
 ```cpp
 ------------------------------------------------------------------------------------------------
 ==>>The postfix version of the increment operator takes a dummy int parameter in order to disambiguate:
