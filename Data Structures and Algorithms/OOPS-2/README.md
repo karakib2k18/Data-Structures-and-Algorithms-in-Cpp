@@ -4,6 +4,8 @@
 
 ### Shallow and Deep Copy
 
+[Lecture 7: OOPS-2.pdf](https://github.com/karakib2k18/Data-Structures-and-Algorithms-in-Cpp-AND-Competitive-Programming/files/8837505/Lecture.7.OOPS-2.pdf)
+
 ```cpp
  strcpy(name, "abc"); ==>> here name is the destination & "abc" is source. It is mean abc is copied into name.
  int Student::totalStudents = 20;

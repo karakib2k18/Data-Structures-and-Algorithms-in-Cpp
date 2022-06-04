@@ -2,12 +2,9 @@
 
 ---
 
----
-
 ### Introduction to OOPS
 
-[Lecture 7: OOPS-1.pdf](https://github.com/karakib2k18/Data-Structures-and-Algorithms-in-Cpp-AND-Competitive-Programming/files/8837499/Lecture.7.OOPS-1.pdf)
-
+[Lecture -6: OOPS-1.pdf](https://github.com/karakib2k18/Data-Structures-and-Algorithms-in-Cpp-AND-Competitive-Programming/files/8837504/Lecture.-6.OOPS-1.pdf)
 
 ```cpp
 this ->  ==> this holds the address of the current object.
