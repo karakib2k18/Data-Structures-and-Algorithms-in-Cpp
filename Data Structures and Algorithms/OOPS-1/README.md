@@ -77,7 +77,7 @@ int main() {
 ![image](https://user-images.githubusercontent.com/57065763/171986899-eef9cf8e-e988-44c4-92a8-b4c1da214eb0.png)
 
 
-#### Q-1. Which of these statements is used to allocate memory for an object dynamically ?
+<!-- #### Q-1. Which of these statements is used to allocate memory for an object dynamically ?
 
 ```cpp
 
@@ -159,7 +159,7 @@ int main() {
 
 ==>ANSWER: A private member of a class cannot be accessed by the functions of the same class. 
 
-```
+``` -->
 
 ### Getters and Setters
 
