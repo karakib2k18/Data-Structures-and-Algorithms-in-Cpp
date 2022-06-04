@@ -142,6 +142,7 @@ int main() {
 }
 
 ```
+![image](https://user-images.githubusercontent.com/57065763/171986499-4d830aff-98ab-4c82-ae36-af328576a9fb.png)
 
 
 #### Q-1. Which of these statements is used to allocate memory for an object dynamically ?
