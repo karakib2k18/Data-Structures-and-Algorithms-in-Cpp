@@ -76,6 +76,14 @@ int main() {
 ![image](https://user-images.githubusercontent.com/57065763/171986892-94e416e8-e0eb-4cc8-8f64-fe9d3f626e11.png)
 ![image](https://user-images.githubusercontent.com/57065763/171986899-eef9cf8e-e988-44c4-92a8-b4c1da214eb0.png)
 
+![image](https://user-images.githubusercontent.com/57065763/171987232-a4112ebf-038e-4649-99e3-d09a55f9a741.png)
+![image](https://user-images.githubusercontent.com/57065763/171987244-f8a043de-15bd-461e-9bb7-1f3ce2470311.png)
+![image](https://user-images.githubusercontent.com/57065763/171987253-1d6d2688-9c1b-43b2-a40e-0c3ecebc8d21.png)
+![image](https://user-images.githubusercontent.com/57065763/171987268-d25bce14-35ed-4b7b-b1d1-9c0ac788dfa3.png)
+![image](https://user-images.githubusercontent.com/57065763/171987275-df94757e-a03b-4bda-8b5f-d55d7bcc5298.png)
+![image](https://user-images.githubusercontent.com/57065763/171987328-d46ab789-0b5e-4f75-be6a-bdba65e3955a.png)
+
+
 
 <!-- #### Q-1. Which of these statements is used to allocate memory for an object dynamically ?
 
