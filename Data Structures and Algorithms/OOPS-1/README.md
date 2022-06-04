@@ -24,6 +24,8 @@ class Student {
 ```
 ### Creating Objects
 
+![image](https://user-images.githubusercontent.com/57065763/171986499-4d830aff-98ab-4c82-ae36-af328576a9fb.png)
+
 ```cpp
 
 #include <iostream>
@@ -66,8 +68,13 @@ int main() {
 }
 
 ```
-![image](https://user-images.githubusercontent.com/57065763/171986499-4d830aff-98ab-4c82-ae36-af328576a9fb.png)
 
+![image](https://user-images.githubusercontent.com/57065763/171986855-f33f9915-de3d-4ca9-b39a-d70a3d7d3656.png)
+![image](https://user-images.githubusercontent.com/57065763/171986868-76ff3592-425a-4e59-a2aa-98b4cd1322cd.png)
+![image](https://user-images.githubusercontent.com/57065763/171986877-93fbae50-f8d7-4a3c-a913-61112af0e148.png)
+![image](https://user-images.githubusercontent.com/57065763/171986884-66e85b34-aea6-4a00-b233-18da751e71d1.png)
+![image](https://user-images.githubusercontent.com/57065763/171986892-94e416e8-e0eb-4cc8-8f64-fe9d3f626e11.png)
+![image](https://user-images.githubusercontent.com/57065763/171986899-eef9cf8e-e988-44c4-92a8-b4c1da214eb0.png)
 
 
 #### Q-1. Which of these statements is used to allocate memory for an object dynamically ?
