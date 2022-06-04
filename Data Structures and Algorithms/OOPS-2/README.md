@@ -330,6 +330,8 @@ int main() {
 ```
 ### Static Members
 
+![image](https://user-images.githubusercontent.com/57065763/172006543-fd7f2a79-1178-4d5f-9df8-cb8a7bc0714f.png)
+
 ``` 
 =>Static:  example> totalStudents isn't a property of Students class single object's property. SO we can make it static.
 property is depending on CLASS not Objects.
