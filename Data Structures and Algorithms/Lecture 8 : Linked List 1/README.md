@@ -45,3 +45,140 @@ int main() {
 ```
 
 
+### Print the Linked List
+
+![image](https://user-images.githubusercontent.com/57065763/172054923-dfc9f741-cce3-48f2-91fe-7d4ff74b2945.png)
+![image](https://user-images.githubusercontent.com/57065763/172055699-4b6aa8e9-6279-4f2c-9f94-89bb1294bf11.png)
+![image](https://user-images.githubusercontent.com/57065763/172056937-6d52acb0-1a15-49e7-b572-8883f1ab76d6.png)
+![image](https://user-images.githubusercontent.com/57065763/172057155-5cbff13e-6f77-43b8-9377-fa3025fc91ac.png)
+
+
+```cpp
+==> Print using [Head] Pointer.
+--------------------------------------------------------------
+void print(Node *head) {
+  
+  while(head != NULL) {
+    cout << head -> data << " ";
+    head = head -> next;
+  }
+}
+```
+
+```cpp
+==> Print using [NULL] Pointer.
+--------------------------------------------------------------
+void print(Node *head) {
+  Node *temp = head;
+  temp = head;
+    while(temp != NULL) {
+    cout << temp -> data << " ";
+    temp = temp -> next;
+  }
+}
+
+```
+
+```cpp
+== Creating Linked List Dynamically.
+--------------------------------------------------------------
+
+// Dynamically
+Node *n1 = new Node(10);
+Node *head = n1;
+
+Node *n2 = new Node(20);
+n1 -> next = n2;
+print(head);
+
+```
+
+```cpp
+== Creating Linked List Statically.
+--------------------------------------------------------------
+// Statically
+Node n1(1);
+Node *head = &n1;
+
+Node n2(2);
+
+Node n3(3);
+Node n4(4);
+Node n5(5);
+
+n1.next = &n2;
+n2.next = &n3;
+n3.next = &n4;
+n4.next = &n5;
+
+print(head);
+print(head);
+
+```
+
+```cpp
+#include <iostream>
+using namespace std;
+
+class Node {
+  public :
+  int data;
+  Node *next;
+
+  Node(int data) {
+    this -> data = data;
+    next = NULL;
+  }
+};
+
+void print(Node *head) {
+  //Node *temp = head;
+  
+  while(head != NULL) {
+    cout << head -> data << " ";
+    head = head -> next;
+  }
+
+  /*
+  temp = head;
+    while(temp != NULL) {
+    cout << temp -> data << " ";
+    temp = temp -> next;
+  }*/
+}
+
+int main() {
+  // Statically
+  Node n1(1);
+  Node *head = &n1;
+
+  Node n2(2);
+
+  Node n3(3);
+  Node n4(4);
+  Node n5(5);
+
+  n1.next = &n2;
+  n2.next = &n3;
+  n3.next = &n4;
+  n4.next = &n5;
+
+  print(head);
+
+  print(head);
+  /*
+  n1.next = &n2;
+
+  cout << n1.data << " " << n2.data << endl;
+
+  // Dynamically
+  Node *n3 = new Node(10);
+  Node *head = n3;
+  
+  Node *n4 = new Node(20);
+  n3 -> next = n4;
+
+  */
+}
+
+```
