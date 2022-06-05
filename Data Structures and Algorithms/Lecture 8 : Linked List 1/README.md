@@ -80,7 +80,7 @@ void print(Node *head) {
 ```
 
 ```cpp
-== Creating Linked List Dynamically.
+==> Creating Linked List Dynamically. ==>> best practice. becuase it will not delete untill er make it delete.
 --------------------------------------------------------------
 
 // Dynamically
@@ -94,7 +94,8 @@ print(head);
 ```
 
 ```cpp
-== Creating Linked List Statically.
+==> Creating Linked List Statically. ==> it automatically delete when it complete the work in for or while loop. we can
+lost the data in Linked List if we use static memory allowcation.
 --------------------------------------------------------------
 // Statically
 Node n1(1);
@@ -179,6 +180,85 @@ int main() {
   n3 -> next = n4;
 
   */
+}
+
+```
+### Take Input - 1
+
+```cpp
+ONLY SUDO CODE BELLOW ==> Time Complexity O(n^2), because temp is going head to till (n-1) element of the following
+linked List. So (1_________n-1) = (n*(n-1))/2 = O(n^2) . Optimized code added in the Take Input-2.
+```
+```cpp
+==>> Sudo Code for Taking input in the Linked List.
+------------------------------------------------------------------------------------------------
+Node* takeInput() {
+	int data;
+	cin >> data;
+	Node *head = NULL;
+	while(data != -1) {
+		Node *newNode = new Node(data);
+		if(head == NULL) {
+			head = newNode;
+		}
+		else {
+			Node *temp = head;
+			while(temp -> next != NULL) {
+				temp = temp -> next;
+			}
+			temp -> next = newNode;
+		}
+
+		cin >> data;
+	}
+	return head;
+}
+
+int main() {
+
+	Node *head = takeInput();
+	print(head);
+}
+
+```
+
+### Take Input - 2 => O(N)
+
+```cpp
+	Node *tail = NULL;
+  tail = newNode;
+  tail = tail -> next;
+// OR
+// tail = newNode;
+```
+```cpp
+Node* takeInpu_Better() {
+	int data;
+	cin >> data;
+	Node *head = NULL;
+	Node *tail = NULL;
+	while(data != -1) {
+		Node *newNode = new Node(data);
+		if(head == NULL) {
+			head = newNode;
+			tail = newNode;
+		}
+		else {
+			tail -> next = newNode;
+			tail = tail -> next;
+			// OR
+			// tail = newNode;
+		}
+
+		cin >> data;
+	}
+	return head;
+}
+
+int main() {
+
+	Node *head = takeInpu_Better();
+	print(head);
 }
 
 ```
