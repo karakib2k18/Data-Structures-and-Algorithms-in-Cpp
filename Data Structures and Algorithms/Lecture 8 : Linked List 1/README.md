@@ -183,7 +183,7 @@ int main() {
 }
 
 ```
-### Take Input - 1
+### Take Input - 1 => O(n^2)
 
 ```cpp
 ONLY SUDO CODE BELLOW ==> Time Complexity O(n^2), because temp is going head to till (n-1) element of the following
@@ -213,6 +213,8 @@ Node* takeInput() {
 	}
 	return head;
 }
+
+----------------------------------------------------------------------------------------------------
 
 int main() {
 
@@ -254,11 +256,53 @@ Node* takeInpu_Better() {
 	}
 	return head;
 }
-
+----------------------------------------------------------------------------------------------------
 int main() {
 
 	Node *head = takeInpu_Better();
 	print(head);
 }
+
+```
+### Insert node at ith position
+
+```cpp
+//First way
+Node *a = temp -> next;
+temp -> next = newNode;
+newNode -> next = a;
+
+//2nd way
+newNode -> next = temp -> next ;
+temp -> next = newNode;
+```
+```cpp
+Node* insertNode(Node *head, int i, int data) {
+	Node *newNode = new Node(data);
+	int count = 0;
+	Node *temp = head;
+
+	if(i == 0) { ==>> when i=index is 0 or we can say new node is first node.
+		newNode -> next = head;
+		head = newNode;
+		return head; ==>> if we do not return this head, then the main head will store previous head addres not new head address.
+	}
+
+	while(temp != NULL && count < i - 1) { ==>>Here we start from head=temp then moving temp till previous index of (i).
+		temp = temp -> next;
+		count++;
+	}
+	if(temp != NULL) {
+		Node *a = temp -> next;
+		temp -> next = newNode;
+		newNode -> next = a;
+	}
+	return head;
+}
+----------------------------------------------------------------------------------------------------
+	int i, data;
+	cin >> i >> data;
+	head = insertNode(head, i, data);
+	print(head);
 
 ```
