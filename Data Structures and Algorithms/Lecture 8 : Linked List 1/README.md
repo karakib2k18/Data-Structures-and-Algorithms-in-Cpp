@@ -277,7 +277,7 @@ newNode -> next = temp -> next ;
 temp -> next = newNode;
 ```
 ```cpp
-Node* insertNode(Node *head, int i, int data) {
+Node* insertNode(Node *head, int i, int data) { ==> As we are return head node so reutrn type Node.
 	Node *newNode = new Node(data);
 	int count = 0;
 	Node *temp = head;
@@ -285,7 +285,7 @@ Node* insertNode(Node *head, int i, int data) {
 	if(i == 0) { ==>> when i=index is 0 or we can say new node is first node.
 		newNode -> next = head;
 		head = newNode;
-		return head; ==> if we do not return head, then main head will store previous head addres not new head address.
+		return head; ==> if we do not return head, then main head will store previous head addres not new head add
 	}
 
 	while(temp != NULL && count < i-1) { ==>Here we start from head=temp then moving temp till previous index of (i).
