@@ -2,7 +2,7 @@
 
 ---
 
-pdf link here
+[Lecture 8 : Linked List 1.pdf](https://github.com/karakib2k18/Data-Structures-and-Algorithms-in-Cpp-AND-Competitive-Programming/files/8843858/Lecture.8.Linked.List.1.pdf)
 
 ---
 
@@ -363,7 +363,6 @@ Node *deleteNode(Node *head, int pos)
 
 ### Insert node recursively
 
-![image](https://user-images.githubusercontent.com/57065763/172146738-3e2f5d49-2def-47ad-9ea6-e199194eb44b.png)
 ![image](https://user-images.githubusercontent.com/57065763/172146763-4aee9cde-8e81-44e0-8169-30e0b8ff0979.png)
 
 ```cpp
