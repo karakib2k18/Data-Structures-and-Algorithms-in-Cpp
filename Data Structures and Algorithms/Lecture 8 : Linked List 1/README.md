@@ -285,10 +285,10 @@ Node* insertNode(Node *head, int i, int data) { ==> As we are return head node s
 	if(i == 0) { ==>> when i=index is 0 or we can say new node is first node.
 		newNode -> next = head;
 		head = newNode;
-		return head; ==>if we donot return head,then main head will store prev head address not new head address.
+		return head; ==>if we donot return head,then main head will store prev head address not new head address
 	}
 
-	while(temp != NULL && count < i-1) { ==>Here we start from head=temp then moving temp till previous index of (i).
+	while(temp != NULL && count < i-1) { ==>Here we start from head=temp then moving temp till previous index (i).
 		temp = temp -> next;
 		count++;
 	}
