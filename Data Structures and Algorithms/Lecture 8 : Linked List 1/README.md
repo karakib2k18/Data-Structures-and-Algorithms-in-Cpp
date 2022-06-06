@@ -339,5 +339,36 @@ Node *deleteNode(Node *head, int pos)
     }
     return head;
 }
+----------------------------------------------------------------------------------------------------
+  Node *head = takeinput();
+  int pos;
+  cin >> pos;
+  head = deleteNode(head, pos);
+  print(head);
+
+```
+
+### Insert node recursively
+
+![image](https://user-images.githubusercontent.com/57065763/172144909-82d61218-d11e-4ffe-b579-78936dd1d564.png)
+![image](https://user-images.githubusercontent.com/57065763/172146236-884bd0f6-846e-48ec-94fe-5c9a978830b7.png)
+
+
+```cpp
+
+----------------------------------------------------------------------------------------------------
+
+
+```
+
+### Insert node recursively
+
+![image](https://user-images.githubusercontent.com/57065763/172146738-3e2f5d49-2def-47ad-9ea6-e199194eb44b.png)
+![image](https://user-images.githubusercontent.com/57065763/172146763-4aee9cde-8e81-44e0-8169-30e0b8ff0979.png)
+
+```cpp
+
+----------------------------------------------------------------------------------------------------
+
 
 ```
