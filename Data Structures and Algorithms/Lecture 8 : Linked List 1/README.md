@@ -265,7 +265,9 @@ int main() {
 
 ```
 ### Insert node at ith position
-
+![image](https://user-images.githubusercontent.com/57065763/172123040-2ade74ed-3e98-435f-9904-6e745dc2a451.png)
+![image](https://user-images.githubusercontent.com/57065763/172125534-5e2bd1fb-f4fb-449c-bd19-6b24babd21be.png)
+![image](https://user-images.githubusercontent.com/57065763/172131756-8fe477e4-412d-47b7-bf20-61cfd741424c.png)
 ```cpp
 //First way
 Node *a = temp -> next;
@@ -304,5 +306,38 @@ Node* insertNode(Node *head, int i, int data) { ==> As we are return head node s
 	cin >> i >> data;
 	head = insertNode(head, i, data);
 	print(head);
+
+```
+
+### Delete Node at ith position with QUESTION
+![image](https://user-images.githubusercontent.com/57065763/172142068-8146495e-17fd-47ac-a8fc-40b677726ae0.png)
+
+```cpp
+Node *deleteNode(Node *head, int pos)
+{
+    // Write your code here.
+    int i = 0;
+    Node *current = head;
+    if (head == NULL)
+        return head;
+    if (pos == 0)
+    {
+        head = current->next;
+        delete current;
+        return head;
+    }
+    while (i < pos - 1 && current->next != NULL)
+    {
+        current = current->next;
+        i++;
+    }
+    if (current->next != NULL)
+    {
+        Node *temp = current->next->next;
+        delete current->next;
+        current->next = temp;
+    }
+    return head;
+}
 
 ```
