@@ -383,6 +383,79 @@ LinkedIn: https://www.linkedin.com/in/karakib2k18/
 ```
     </td>
   </tr>
+ <td>
+    
+```cpp
+#include <iostream>
+using namespace std;
+
+class Node
+{
+public:
+  int data;
+  Node *next;
+
+  Node(int data){
+    this->data = data;
+    this->next=NULL;
+  }
+};
+
+Node* inputNode(){
+
+  int data;
+  cin>>data;
+  Node *head = NULL;
+  Node *tail = NULL;
+  while(data != -1){
+    Node *newNode = new Node(data);
+    if(head == NULL){
+      head = newNode;
+      tail = newNode;
+    }else{
+      tail->next = newNode;
+      tail = newNode;
+    }
+  cin>> data;
+  }
+  return head;
+}
+
+int length(Node *head){
+  int count = 0;
+  Node *temp = NULL;
+  temp = head;
+  while(temp !=NULL){
+    count +=1;
+    temp = temp->next;
+  }
+  return count;
+}
+
+signed main()
+{
+  ios::sync_with_stdio(false);
+  cin.tie(NULL);
+
+  int T;
+  cin >> T;
+  while(T--){
+
+    Node *head = inputNode();
+    cout<< length(head) <<endl;
+  }
+  return 0;
+}
+
+/*
+
+LinkedIn: https://www.linkedin.com/in/karakib2k18/
+
+*/
+
+```
+    </td>
+  </tr>
  </table>
 
 ### Length of LL
