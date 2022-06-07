@@ -234,9 +234,9 @@ int main() {
 ### Take Input - 2 => O(N)
 
 ```cpp
-	Node *tail = NULL;
-  tail = newNode;
-  tail = tail -> next;
+Node *tail = NULL;
+tail = newNode;
+tail = tail -> next;
 // OR
 // tail = newNode;
 ```
