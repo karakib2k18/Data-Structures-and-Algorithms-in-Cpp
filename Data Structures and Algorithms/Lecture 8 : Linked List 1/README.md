@@ -277,8 +277,8 @@ int main() {
      <td>CODE</td>
   </tr> 
   <tr> 
-    <td>    <img src="https://user-images.githubusercontent.com/57065763/172363183-777a5441-14d3-41f3-8b18-ee0ff8d50a1c.png" width=400 height=480>
-    <img src="https://user-images.githubusercontent.com/57065763/172363928-97a2ae26-d542-4847-ac8d-74408a97424e.png" width=400 height=480>
+    <td>    <img src="https://user-images.githubusercontent.com/57065763/172363183-777a5441-14d3-41f3-8b18-ee0ff8d50a1c.png">
+    <img src="https://user-images.githubusercontent.com/57065763/172363928-97a2ae26-d542-4847-ac8d-74408a97424e.png" >
     </td>
     <td>
     
