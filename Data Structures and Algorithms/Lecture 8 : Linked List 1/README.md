@@ -277,8 +277,7 @@ int main() {
      <td>CODE</td>
   </tr> 
   <tr> 
-    <td> 
-    Length of LL
+    <td> Length of LL
 
 For a given singly linked list of integers, find and return its length. Do it using an iterative method.
 Input format :
@@ -311,8 +310,7 @@ Sample Input 2 :
 Sample Output 2 :
 8
 0
-
-    <td>
+ <td>
     
 ```cpp
 #include <iostream>
