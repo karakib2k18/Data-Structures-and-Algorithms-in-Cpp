@@ -277,8 +277,7 @@ int main() {
      <td>CODE</td>
   </tr> 
   <tr>
-    <td><img src="![image](https://user-images.githubusercontent.com/57065763/172363183-777a5441-14d3-41f3-8b18-ee0ff8d50a1c.png)
-" width=400 height=480></td>
+    <td><img src="https://user-images.githubusercontent.com/57065763/172363183-777a5441-14d3-41f3-8b18-ee0ff8d50a1c.png" width=400 height=480></td>
     <td>
     
 ```cpp
