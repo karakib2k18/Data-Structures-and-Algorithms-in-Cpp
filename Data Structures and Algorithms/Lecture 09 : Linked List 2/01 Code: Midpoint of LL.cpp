@@ -1,21 +1,6 @@
-# ##Lecture 9 : Linked List 2
-
----
-
-[Lecture 8 : Linked List 1.pdf](https://github.com/karakib2k18/Data-Structures-and-Algorithms-in-Cpp-AND-Competitive-Programming/files/8843858/Lecture.8.Linked.List.1.pdf)
-
----
-
-### Midpoint of LL
-
-![image](https://user-images.githubusercontent.com/57065763/172657102-23fc6684-7219-436f-a7f2-12598c93f65b.png)
-![image](https://user-images.githubusercontent.com/57065763/172658080-7a198d73-437e-4f50-8a81-8034f1764fd2.png)
-
-
+/*****************************************************************
 ### Code: Midpoint of LL - QUESTION-1
 
-
-```
 For a given singly linked list of integers, find and return the node present at the middle of the list.
 Note :
 If the length of the singly linked list is even, then return the first middle node.
@@ -48,9 +33,9 @@ Sample Input 2 :
 1 2 3 4 -1
 Sample Output 2 :
 2
-```
 
-```cpp
+*****************************************************************/
+
 #include <iostream>
 using namespace std;
 
@@ -123,21 +108,3 @@ int main()
 	}
 	return 0;
 }
-
-```
-
-### Merge Two Sorted Linked Lists
-
-![image](https://user-images.githubusercontent.com/57065763/172669468-11980e76-f6d0-4dd9-b937-f756c37d449b.png)
-
-
-###  - QUESTION-
-
-
-```
-
-```
-
-```cpp
-
-```
