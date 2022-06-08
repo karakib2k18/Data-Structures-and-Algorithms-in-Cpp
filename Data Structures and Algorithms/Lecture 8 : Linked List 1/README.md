@@ -272,7 +272,7 @@ int main() {
 
 ```
 
-### Length of LL
+### Length of LL - QUESTION-1
 
 ```
 Length of LL
@@ -282,8 +282,10 @@ Input format :
 The first line contains an Integer 't' which denotes the number of test cases or queries to be run. Then the test cases follow.
 
 First and the only line of each test case or query contains elements of the singly linked list separated by a single space. 
- Remember/Consider :
+
+Remember/Consider :
 While specifying the list elements for input, -1 indicates the end of the singly linked list and hence, would never be a list element.
+
 Output format :
 For each test case, print the length of the linked list.
 
@@ -347,6 +349,7 @@ Node* inputNode(){
   return head;
 }
 
+////////////================================================================================>> Length of LL
 int length(Node *head){
   int count = 0;
   Node *temp = NULL;
@@ -379,6 +382,124 @@ LinkedIn: https://www.linkedin.com/in/karakib2k18/
 
 */
 
+```
+### Print ith node - QUESTION-2
+
+```
+Print ith node ===>>>>
+For a given a singly linked list of integers and a position 'i', print the node data at the 'i-th' position.
+ 
+Note :
+Assume that the Indexing for the singly linked list always starts from 0.
+
+If the given position 'i',  is greater than the length of the given singly linked list, then don't print anything.
+Input format :
+The first line contains an Integer 't' which denotes the number of test cases or queries to be run. Then the test cases follow.
+
+The first line of each test case or query contains the elements of the singly linked list separated by a single space.
+
+The second line contains the value of 'i'. It denotes the position in the given singly linked list.
+
+Remember/Consider :
+While specifying the list elements for input, -1 indicates the end of the singly linked list and hence, would never be a list element.
+Output format :
+For each test case, print the node data at the 'i-th' position of the linked list(if exists).
+
+Output for every test case will be printed in a seperate line.
+ 
+Constraints :
+1 <= t <= 10^2
+0 <= N <= 10^5
+i  >= 0
+Time Limit: 1sec
+
+Sample Input 1 :
+1
+3 4 5 2 6 1 9 -1
+3
+Sample Output 1 :
+2
+Sample Input 2 :
+2
+3 4 5 2 6 1 9 -1
+0
+9 8 4 0 7 8 -1
+3
+Sample Output 2 :
+3
+0
+
+```
+
+```cpp
+#include <iostream>
+using namespace std;
+
+class Node
+{
+public:
+	int data;
+	Node *next;
+	Node(int data)
+	{
+		this->data = data;
+		this->next = NULL;
+	}
+};
+
+
+Node *takeinput()
+{
+	int data;
+	cin >> data;
+	Node *head = NULL, *tail = NULL;
+	while (data != -1)
+	{
+		Node *newNode = new Node(data);
+		if (head == NULL)
+		{
+			head = newNode;
+			tail = newNode;
+		}
+		else
+		{
+			tail->next = newNode;
+			tail = newNode;
+		}
+		cin >> data;
+	}
+	return head;
+}
+
+////////////=============================================================>>>> Printing Node Node
+void printIthNode(Node *head, int i)
+{
+  Node *current = head;
+  int count = 0;
+  while(current != NULL){
+      if(count==i){
+          cout<< current->data <<endl;
+          break;
+      }
+      current = current->next;
+      count +=1;
+  }
+}
+
+int main()
+{
+	int t;
+	cin >> t;
+	while (t--)
+	{
+		Node *head = takeinput();
+		int pos;
+		cin >> pos;
+		printIthNode(head, pos);
+		cout << endl;
+	}
+	return 0;
+}
 ```
 
 ### Insert node at ith position
@@ -426,7 +547,7 @@ Node* insertNode(Node *head, int i, int data) { ==> As we are return head node s
 
 ```
 
-### Delete Node at ith position with QUESTION
+### Delete Node at ith position
 ![image](https://user-images.githubusercontent.com/57065763/172142068-8146495e-17fd-47ac-a8fc-40b677726ae0.png)
 
 ```cpp
@@ -465,26 +586,1232 @@ Node *deleteNode(Node *head, int pos)
 
 ```
 
-### Insert node recursively
+### Delete node - QUESTION-3
 
-![image](https://user-images.githubusercontent.com/57065763/172144909-82d61218-d11e-4ffe-b579-78936dd1d564.png)
-![image](https://user-images.githubusercontent.com/57065763/172146236-884bd0f6-846e-48ec-94fe-5c9a978830b7.png)
+```
+Delete node===>
 
+You have been given a linked list of integers. Your task is to write a function that deletes a node from a given position, 'POS'.
 
-```cpp
+Note :
+Assume that the Indexing for the linked list always starts from 0.
 
-----------------------------------------------------------------------------------------------------
+If the position is greater than or equal to the length of the linked list, you should return the same linked list without any change.
 
+Illustration :
+The following images depict how the deletion has been performed.
+
+Image-I :
+Alt txt
+
+Image-II :
+Alt txt
+
+Input format :
+The first line contains an Integer 'T' which denotes the number of test cases or queries to be run. Then the test cases follow.
+
+The first line of each test case or query contains the elements of the linked list separated by a single space. 
+
+The second line of each test case contains the integer value of 'POS'. It denotes the position in the linked list from where the node has to be deleted.
+
+ Remember/Consider :
+While specifying the list elements for input, -1 indicates the end of the singly linked list and hence, would never be a list element
+Output format :
+For each test case/query, print the resulting linked list of integers in a row, separated by a single space.
+
+Output for every test case will be printed in a separate line.
+
+Note:
+You are not required to print the output, it has already been taken care of. Just implement the function. 
+Constraints :
+1 <= T <= 10^2
+0 <= N <= 10^5
+POS >= 0
+
+Time Limit: 1sec
+Sample Input 1 :
+1 
+3 4 5 2 6 1 9 -1
+3
+Sample Output 1 :
+3 4 5 6 1 9
+Sample Input 2 :
+2
+3 4 5 2 6 1 9 -1
+0
+10 20 30 40 50 60 -1
+7
+Sample Output 2 :
+4 5 2 6 1 9
+10 20 30 40 50 60
 
 ```
 
-### Insert node recursively
-
-![image](https://user-images.githubusercontent.com/57065763/172146763-4aee9cde-8e81-44e0-8169-30e0b8ff0979.png)
-
 ```cpp
 
-----------------------------------------------------------------------------------------------------
+#include <iostream>
+using namespace std;
 
+class Node
+{
+public:
+	int data;
+	Node *next;
+	Node(int data)
+	{
+		this->data = data;
+		this->next = NULL;
+	}
+};
+
+
+
+Node *takeinput()
+{
+	int data;
+	cin >> data;
+	Node *head = NULL, *tail = NULL;
+	while (data != -1)
+	{
+		Node *newNode = new Node(data);
+		if (head == NULL)
+		{
+			head = newNode;
+			tail = newNode;
+		}
+		else
+		{
+			tail->next = newNode;
+			tail = newNode;
+		}
+		cin >> data;
+	}
+	return head;
+}
+
+////////////=============================================================>>>> Delete Node
+Node *deleteNode(Node *head, int pos)
+{
+    Node *current = head;
+    int newPos = 0;
+    if(current == NULL){
+        return head;
+    }
+    if(pos==0){
+        head = current->next;
+        delete current;
+        return head;
+    }
+    while(newPos<pos-1 && current->next != NULL){
+        current = current->next;
+        newPos++;
+    }
+    
+    if(current->next != NULL){
+        Node *temp = current->next->next;
+        delete current->next;
+        current->next =temp;
+    }
+    return head;
+}
+
+
+void print(Node *head)
+{
+	Node *temp = head;
+	while (temp != NULL)
+	{
+		cout << temp->data << " ";
+		temp = temp->next;
+	}
+	cout << endl;
+}
+
+int main()
+{
+	int t;
+	cin >> t;
+
+	while (t--)
+	{
+		Node *head = takeinput();
+		int pos;
+		cin >> pos;
+		head = deleteNode(head, pos);
+		print(head);
+	}
+
+	return 0;
+}
+```
+
+### Length of LL (recursive) - QUESTION-4
+
+```
+Length of LL (recursive)
+
+Given a linked list, find and return the length of the given linked list recursively.
+Input format :
+The first line contains an Integer 't' which denotes the number of test cases or queries to be run. Then the test cases follow.
+
+First and the only line of each test case or query contains elements of the singly linked list separated by a single space. 
+ Remember/Consider :
+While specifying the list elements for input, -1 indicates the end of the singly linked list and hence, would never be a list element.
+Output format :
+For each test case, print the length of the linked list.
+
+Output for every test case will be printed in a separate line.
+ Constraints :
+1 <= t <= 20
+0 <= N <= 10^4
+Time Limit: 1 sec
+Sample Input 1:
+1 
+3 4 5 2 6 1 9 -1
+Sample Output 1:
+7
+
+```
+```cpp
+#include <iostream>
+using namespace std;
+
+class Node {
+   public:
+    int data;
+    Node *next;
+    Node(int data) {
+        this->data = data;
+        this->next = NULL;
+    }
+};
+
+Node *takeinput() {
+    int data;
+    cin >> data;
+    Node *head = NULL, *tail = NULL;
+    while (data != -1) {
+        Node *newNode = new Node(data);
+        if (head == NULL) {
+            head = newNode;
+            tail = newNode;
+        } else {
+            tail->next = newNode;
+            tail = newNode;
+        }
+        cin >> data;
+    }
+    return head;
+}
+////=================================================================> Length of LL (recursive)
+int length(Node *head) {
+    if(head == NULL){
+        return 0;
+    }
+	return  1 + length(head->next);
+}
+
+void print(Node *head) {
+    Node *temp = head;
+
+    while (temp != NULL) {
+        cout << temp->data << " ";
+        temp = temp->next;
+    }
+
+    cout << endl;
+}
+
+int main() {
+    int t;
+    cin >> t;
+    
+    while (t--) {
+        Node *head = takeinput();
+        cout << length(head) << "\n";
+    }
+}
+
+```
+### Insert node (recursive) - QUESTION-5
+
+![image](https://user-images.githubusercontent.com/57065763/172146763-4aee9cde-8e81-44e0-8169-30e0b8ff0979.png)
+![image](https://user-images.githubusercontent.com/57065763/172144909-82d61218-d11e-4ffe-b579-78936dd1d564.png)
+![image](https://user-images.githubusercontent.com/57065763/172146236-884bd0f6-846e-48ec-94fe-5c9a978830b7.png)
+
+```
+Insert node (recursive)
+
+You have been given a linked list of integers. Your task is to write a function that inserts a node at a given position, 'pos'.
+Note:
+Assume that the Indexing for the linked list always starts from 0.
+
+If the given position 'pos' is greater than length of linked list, then you should return the same linked list without any change. And if position 'pos' is equal to length of input linked list, then insert the node at the last position.
+Input format:
+The first line contains an Integer 't' which denotes the number of test cases or queries to be run. Then the test cases follow.
+
+The first line of each test case or query contains the elements of the linked list separated by a single space. 
+
+The second line of each test case contains two space separated integers, that denote the value of 'pos' and the data to be inserted respectively. 
+ Remember/Consider :
+While specifying the list elements for input, -1 indicates the end of the singly linked list and hence, would never be a list element
+Output format:
+For each test case/query, print the resulting linked list of integers in a row, separated by a single space.
+
+Output for every test case will be printed in a separate line.
+You don't need to print explicitly, it has been taken care of.
+Constraints:
+1 <= t <= 20
+0 <= length of linked list <= 10^4
+0 <= pos, data to be inserted <= 2^31 - 1
+Time Limit: 1 second
+Sample Input 1:
+1
+3 4 5 2 6 1 9 -1
+3 100
+Sample Output 1:
+3 4 5 100 2 6 1 9
+Sample Input 2:
+1 
+3 4 5 2 6 1 9 -1
+0 20
+Sample Output 2:
+20 3 4 5 2 6 1 9
+
+```
+
+```cpp
+#include <iostream>
+using namespace std;
+
+
+class Node {
+   public:
+    int data;
+    Node *next;
+    Node(int data) {
+        this->data = data;
+        this->next = NULL;
+    }
+};
+
+Node *takeinput() {
+    int data;
+    cin >> data;
+    Node *head = NULL, *tail = NULL;
+    while (data != -1) {
+        Node *newNode = new Node(data);
+        if (head == NULL) {
+            head = newNode;
+            tail = newNode;
+        } else {
+            tail->next = newNode;
+            tail = newNode;
+        }
+        cin >> data;
+    }
+    return head;
+}
+
+void print(Node *head) {
+    Node *temp = head;
+
+    while (temp != NULL) {
+        cout << temp->data << " ";
+        temp = temp->next;
+    }
+    cout << "\n";
+}
+
+////////////////////////////================>> Recursive process
+Node *insertNode(Node *head, int i, int data)
+{
+    if (head == NULL)
+    {
+        if (i == 0)
+        {
+            Node *newNode = new Node(data);
+            return newNode;
+        }
+        return head;
+    }
+    if (i == 0)
+    {
+        Node *newNode = new Node(data);
+        newNode->next = head;
+        return newNode;
+    }
+    
+    // Amra next line a khane position komaite komaite 0 te gia then 0th element add kore disi.
+    // Then add korar porer LInked LIst ta [Node *afterRecursionLL] a store korsi.
+    // then sheta ke head->next er sathe add kore disi. bas kaj sesh
+    Node *afterRecursionLL = insertNode(head->next, i - 1, data); 
+    head->next = afterRecursionLL;
+    return head;
+}
+/*
+
+////////////////////////////================>> Iterative process
+Node* insertNode(Node *head, int i, int data) {
+    int currentPos = 0;
+    Node *temp = head;
+    Node *newNode = new Node(data); 
+    if(i==0){
+        newNode->next = head ;
+        head = newNode;
+        return head;
+    }
+
+    while(currentPos < i-1 && temp->next != NULL){
+        temp = temp->next;
+        currentPos++;
+    }
+
+    if(temp->next != NULL){
+        newNode->next = temp->next;
+        temp->next = newNode;
+    }
+    return head; 
+}
+*/
+
+int main() {
+    int t;
+    cin >> t;
+
+    while (t--) {
+        Node *head = takeinput();
+        int pos, data;
+        cin >> pos >> data;
+        head = insertNode(head, pos, data);
+        print(head);
+    }
+}
+```
+
+### Delete node (recursive) - QUESTION-6
+
+```
+Delete node (recursive)
+
+Given a singly linked list of integers and position 'i', delete the node present at the 'i-th' position in the linked list recursively.
+ Note :
+Assume that the Indexing for the linked list always starts from 0.
+
+No need to print the list, it has already been taken care. Only return the new head to the list.
+ input format :
+The first line contains an Integer 't' which denotes the number of test cases or queries to be run. Then the test cases follow.
+
+The first line of each test case or query contains the elements of the singly linked list separated by a single space.
+
+The second line of input contains a single integer depicting the value of 'i'.
+Remember/Consider :
+While specifying the list elements for input, -1 indicates the end of the singly linked list and hence, would never be a list element
+Output format :
+For each test case/query, print the elements of the updated singly linked list.
+
+Output for every test case will be printed in a seperate line.
+Constraints :
+1 <= t <= 10^2
+0 <= M <= 10^5
+Where M is the size of the singly linked list.
+0 <= i < M
+
+Time Limit:  1sec
+Sample Input 1 :
+1
+3 4 5 2 6 1 9 -1
+3
+Sample Output 1 :
+3 4 5 6 1 9
+Sample Input 2 :
+2
+30 -1
+0
+10 20 30 50 60 -1
+4
+Sample Output 2 :
+10 20 30 50 
+
+```
+
+```cpp
+#include <iostream>
+using namespace std;
+
+class Node
+{
+public:
+	int data;
+	Node *next;
+	Node(int data)
+	{
+		this->data = data;
+		this->next = NULL;
+	}
+};
+
+
+Node *takeinput()
+{
+	int data;
+	cin >> data;
+	Node *head = NULL, *tail = NULL;
+	while (data != -1)
+	{
+		Node *newNode = new Node(data);
+		if (head == NULL)
+		{
+			head = newNode;
+			tail = newNode;
+		}
+		else
+		{
+			tail->next = newNode;
+			tail = newNode;
+		}
+		cin >> data;
+	}
+	return head;
+}
+
+void print(Node *head)
+{
+	Node *temp = head;
+	while (temp != NULL)
+	{
+		cout << temp->data << " ";
+		temp = temp->next;
+	}
+	cout << endl;
+}
+
+////////////// ========================================>> Recursive Process
+
+/* Time Complexity : O(n) Space Complexity : O(n) where n is the size of singly linked list */ 
+
+Node *deleteNodeRec(Node *head, int pos)
+{
+    if(head==NULL){
+        return head;
+    }
+    if(pos==0){
+        Node *temp = head;
+        head = head->next;
+        delete temp;
+        return head;
+    }
+    
+    // Amra next line a khane position komaite komaite 0 te gia then 0th element delete kore disi.
+    // Then delete korar porer LInked LIst ta [Node *afterRecursionLL] a store korsi.
+    // then sheta ke head->next er sathe add kore disi. bas kaj sesh
+    Node *afterRecursionLL = deleteNodeRec(head->next, pos-1); 
+    head->next = afterRecursionLL;
+    return head;
+}
+
+
+/*****************************************************************
+
+////////////// ========================================>> Iterative Process
+
+Node *deleteNodeRec(Node *head, int pos)
+{
+    Node *current = head;
+    int newPos = 0;
+    if(current == NULL){
+        return head;
+    }
+    if(pos==0){
+        head = current->next;
+        delete current;
+        return head;
+    }
+    while(newPos<pos-1 && current->next != NULL){
+        current = current->next;
+        newPos++;
+    }
+    
+    if(current->next != NULL){
+        Node *temp = current->next->next;
+        delete current->next;
+        current->next =temp;
+    }
+    return head;
+}
+
+*****************************************************************/
+
+int main()
+{
+	int t;
+	cin >> t;
+
+	while (t--)
+	{
+		Node *head = takeinput();
+		int pos;
+		cin >> pos;
+		head = deleteNodeRec(head, pos);
+		print(head);
+	}
+
+	return 0;
+}
+```
+### Find a Node in Linked List - QUESTION-7
+
+```
+Find a Node in Linked List
+
+You have been given a singly linked list of integers. Write a function that returns the index/position of integer data denoted by 'N' (if it exists). Return -1 otherwise.
+Note :
+Assume that the Indexing for the singly linked list always starts from 0.
+Input format :
+The first line contains an Integer 'T' which denotes the number of test cases. 
+
+The first line of each test case or query contains the elements of the singly linked list separated by a single space. 
+
+The second line contains the integer value 'N'. It denotes the data to be searched in the given singly linked list.
+Remember/Consider :
+While specifying the list elements for input, -1 indicates the end of the singly linked list and hence -1 would never be a list element.
+Output format :
+For each test case, return the index/position of 'N' in the singly linked list. Return -1, otherwise.
+
+Output for every test case will be printed in a separate line.
+Note:
+You do not need to print anything; it has already been taken care of. Just implement the given function.
+ Constraints :
+1 <= T <= 10^2
+0 <= M <= 10^5
+
+Where 'M' is the size of the singly linked list.
+
+Time Limit: 1 sec
+Sample Input 1 :
+2
+3 4 5 2 6 1 9 -1
+5
+10 20 30 40 50 60 70 -1
+6
+Sample Output 1 :
+2
+-1
+ Explanation for Sample Output 1:
+In test case 1, 'N' = 5 appears at position 2 (0-based indexing) in the given linked list.
+
+In test case 2, we can see that 'N' = 6 is not present in the given linked list.
+Sample Input 2 :
+2
+1 -1
+2
+3 4 5 2 6 1 9 -1
+6
+Sample Output 2 :
+-1
+4
+ Explanation for Sample Output 2:
+In test case 1, we can see that 'N' = 2 is not present in the given linked list.
+
+In test case 2, 'N' = 6 appears at position 4 (0-based indexing) in the given linked list.
+
+```
+
+```cpp
+#include <iostream>
+using namespace std;
+
+class Node
+{
+public:
+	int data;
+	Node *next;
+	Node(int data)
+	{
+		this->data = data;
+		this->next = NULL;
+	}
+};
+
+
+
+Node *takeinput()
+{
+	int data;
+	cin >> data;
+	Node *head = NULL, *tail = NULL;
+	while (data != -1)
+	{
+		Node *newNode = new Node(data);
+		if (head == NULL)
+		{
+			head = newNode;
+			tail = newNode;
+		}
+		else
+		{
+			tail->next = newNode;
+			tail = newNode;
+		}
+		cin >> data;
+	}
+	return head;
+}
+
+////////////////================================>>>>>>>Find a Node in Linked List
+int findNode(Node *head, int n){
+    int countINdex = 0;
+    while(head != NULL){
+        if(head->data==n){
+            return countINdex;
+        }else{
+            head = head->next;
+            countINdex++;
+        }
+    }
+    return -1;    
+}
+
+int main()
+{
+	int t;
+	cin >> t;
+	while (t--)
+	{
+		Node *head = takeinput();
+		int val;
+		cin >> val;
+		cout << findNode(head, val) << endl;
+	}
+}
+```
+
+### AppendLastNToFirst - QUESTION-8
+
+```
+AppendLastNToFirst
+
+You have been given a singly linked list of integers along with an integer 'N'. Write a function to append the last 'N' nodes towards the front of the singly linked list and returns the new head to the list.
+Input format :
+The first line contains an Integer 't' which denotes the number of test cases or queries to be run. Then the test cases follow.
+
+The first line of each test case or query contains the elements of the singly linked list separated by a single space. 
+
+The second line contains the integer value 'N'. It denotes the number of nodes to be moved from last to the front of the singly linked list.
+Remember/Consider :
+While specifying the list elements for input, -1 indicates the end of the singly linked list and hence, would never be a list element.
+Output format :
+For each test case/query, print the resulting singly linked list of integers in a row, separated by a single space.
+
+Output for every test case will be printed in a seperate line.
+Constraints :
+1 <= t <= 10^2
+0 <= M <= 10^5
+0 <= N < M
+Time Limit: 1sec
+
+Where 'M' is the size of the singly linked list.
+Sample Input 1 :
+2
+1 2 3 4 5 -1
+3
+10 20 30 40 50 60 -1
+5
+Sample Output 1 :
+3 4 5 1 2
+20 30 40 50 60 10
+Sample Input 2 :
+1
+10 6 77 90 61 67 100 -1
+4
+Sample Output 2 :
+90 61 67 100 10 6 77 
+ Explanation to Sample Input 2 :
+We have been required to move the last 4 nodes to the front of the list. Here, "90->61->67->100" is the list which represents the last 4 nodes. When we move this list to the front then the remaining part of the initial list which is, "10->6->77" is attached after 100. Hence, the new list formed with an updated head pointing to 90.
+
+```
+
+```cpp
+#include <iostream>
+using namespace std;
+
+class Node
+{
+public:
+	int data;
+	Node *next;
+	Node(int data)
+	{
+		this->data = data;
+		this->next = NULL;
+	}
+};
+
+
+Node *takeinput()
+{
+	int data;
+	cin >> data;
+	Node *head = NULL, *tail = NULL;
+	while (data != -1)
+	{
+		Node *newnode = new Node(data);
+		if (head == NULL)
+		{
+			head = newnode;
+			tail = newnode;
+		}
+		else
+		{
+			tail->next = newnode;
+			tail = newnode;
+		}
+		cin >> data;
+	}
+	return head;
+}
+
+void print(Node *head)
+{
+	Node *temp = head;
+	while (temp != NULL)
+	{
+		cout << temp->data << " ";
+		temp = temp->next;
+	}
+	cout << endl;
+}
+
+
+// at first find the length then [length-ath] Node;
+// then jet pabo oitar hobe tail and head head e thakbe.
+// newNode create korbo at [ath] elements and NULL porjontoto jabo. 
+// NULL Khuje pele Null er jaygay head ke add kore dibo and tail porjontoo add kore dibo.
+// time=O(n) and space O(1)
+
+//////// VIDEO explain===============>>>>>>>>>>>.https://youtu.be/v6g1g4lNowM
+int nodeLength(Node *head){
+    if(head==NULL){
+        return 0;
+    }
+    return 1 + nodeLength(head->next);
+}
+
+
+Node *appendLastNToFirst(Node *head, int n)
+{
+    int length = nodeLength(head);
+    Node *newTail;
+    Node *newHead;
+    Node *tail = head;
+    int element = 1;
+    if(n<length && n!=0){
+        int skip = length - n;
+        while(tail->next !=NULL){
+            if(skip==element){
+                newTail = tail;
+            }
+            if(skip+1==element){
+                newHead = tail;
+            }
+            tail = tail->next;
+            element++;
+        }
+
+        newTail->next = NULL;
+        tail->next = head;
+        head = newHead;
+    }
+    return head;
+}
+
+int main()
+{
+	int t;
+	cin >> t;
+	while (t--)
+	{
+		Node *head = takeinput();
+		int n;
+		cin >> n;
+		head = appendLastNToFirst(head, n);
+		print(head);
+	}
+	return 0;
+}
+```
+
+
+
+
+### Eliminate duplicates from LL - QUESTION-9
+
+```
+Eliminate duplicates from LL
+
+You have been given a singly linked list of integers where the elements are sorted in ascending order. Write a function that removes the consecutive duplicate values such that the given list only contains unique elements and returns the head to the updated list.
+ Input format :
+The first line contains an Integer 't' which denotes the number of test cases or queries to be run. Then the test cases follow.
+
+The first and the only line of each test case or query contains the elements(in ascending order) of the singly linked list separated by a single space.
+ Remember/Consider :
+While specifying the list elements for input, -1 indicates the end of the singly linked list and hence, would never be a list element.
+ Output format :
+For each test case/query, print the resulting singly linked list of integers in a row, separated by a single space.
+
+Output for every test case will be printed in a seperate line.
+Constraints :
+1 <= t <= 10^2
+0 <= M <= 10^5
+Time Limit: 1sec
+
+Where 'M' is the size of the singly linked list.
+Sample Input 1 :
+1
+1 2 3 3 3 3 4 4 4 5 5 7 -1
+Sample Output 1 :
+1 2 3 4 5 7 
+Sample Input 2 :
+2
+10 20 30 40 50 -1
+10 10 10 10 -1
+Sample Output 2 :
+10 20 30 40 50
+10
+
+```
+
+```cpp
+#include <iostream>
+using namespace std;
+
+class Node
+{
+public:
+	int data;
+	Node *next;
+	Node(int data)
+	{
+		this->data = data;
+		this->next = NULL;
+	}
+};
+
+
+Node *takeinput()
+{
+	int data;
+	cin >> data;
+	Node *head = NULL, *tail = NULL;
+	while (data != -1)
+	{
+		Node *newnode = new Node(data);
+		if (head == NULL)
+		{
+			head = newnode;
+			tail = newnode;
+		}
+		else
+		{
+			tail->next = newnode;
+			tail = newnode;
+		}
+		cin >> data;
+	}
+	return head;
+}
+
+void print(Node *head)
+{
+	Node *temp = head;
+	while (temp != NULL)
+	{
+		cout << temp->data << " ";
+		temp = temp->next;
+	}
+	cout << endl;
+}
+
+////////////////////////////================>> Eliminate duplicates from LL
+
+Node *removeDuplicates(Node *head)
+{
+    if (head == NULL || head->next == NULL){
+    	return head;
+    }
+    
+    Node *current = head;
+
+    while(current->next != NULL){
+        if(current->data == (current->next->data)){
+            Node *temp = current->next->next;
+            delete current->next;
+            current->next = temp;
+        }else{
+            current= current->next;
+        }
+    }
+    return head;
+}
+
+int main()
+{
+	int t;
+	cin >> t;
+	while (t--)
+	{
+		Node *head = takeinput();
+		head = removeDuplicates(head);
+		print(head);
+	}
+	return 0;
+}
+```
+
+
+### Print Reverse LinkedList - QUESTION-10
+
+```
+Print Reverse LinkedList
+Send Feedback
+You have been given a singly linked list of integers. Write a function to print the list in a reverse order.
+To explain it further, you need to start printing the data from the tail and move towards the head of the list, printing the head data at the end.
+Note :
+You can’t change any of the pointers in the linked list, just print it in the reverse order.
+ Input format :
+The first line contains an Integer 't' which denotes the number of test cases or queries to be run. Then the test cases follow.
+
+The first and the only line of each test case or query contains the elements of the singly linked list separated by a single space.
+Remember/Constraints :
+While specifying the list elements for input, -1 indicates the end of the singly linked list and hence, would never be a list element.
+Output format :
+For each test case, print the singly linked list of integers in a reverse fashion, in a row, separated by a single space.
+
+Output for every test case will be printed in a seperate line.
+ Constraints :
+1 <= t <= 10^2
+0 <= M <= 10^3
+Time Limit: 1sec
+
+Where 'M' is the size of the singly linked list.
+Sample Input 1 :
+1
+1 2 3 4 5 -1
+Sample Output 1 :
+5 4 3 2 1
+Sample Input 2 :
+2
+1 2 3 -1
+10 20 30 40 50 -1
+Sample Output 2 :
+3 2 1
+50 40 30 20 10
+
+```
+
+```cpp
+#include <iostream>
+using namespace std;
+
+class Node
+{
+public:
+	int data;
+	Node *next;
+	Node(int data)
+	{
+		this->data = data;
+		this->next = NULL;
+	}
+};
+
+
+Node *takeinput()
+{
+	int data;
+	cin >> data;
+	Node *head = NULL, *tail = NULL;
+	while (data != -1)
+	{
+		Node *newnode = new Node(data);
+		if (head == NULL)
+		{
+			head = newnode;
+			tail = newnode;
+		}
+		else
+		{
+			tail->next = newnode;
+			tail = newnode;
+		}
+		cin >> data;
+	}
+	return head;
+}
+
+////////////======>>>>>>>>>https://youtu.be/bjtMCwy_LMA
+/// ![image](https://user-images.githubusercontent.com/57065763/172532546-98eb465d-165f-48ea-acaf-f1ae9b453426.png)
+//////// =====>>>>>>>>>> Iterative Process
+
+// void printReverse(Node *head)
+// {
+
+// }
+
+///////////// ==========>>>>>>>>>> Recursive Process
+
+void printReverse(Node *head)
+{
+    if(head == NULL){
+        return;
+    }
+    printReverse(head->next);
+    cout<< head->data <<" ";
+
+}
+
+int main()
+{
+	int t;
+	cin >> t;
+	while (t--)
+	{
+		Node *head = takeinput();
+		printReverse(head);
+		cout << endl;
+	}
+	return 0;
+}
+
+```
+
+
+### Palindrome LinkedList - QUESTION-11
+
+```
+Palindrome LinkedList
+
+You have been given a head to a singly linked list of integers. Write a function check to whether the list given is a 'Palindrome' or not.
+ Input format :
+The first line contains an Integer 't' which denotes the number of test cases or queries to be run. Then the test cases follow.
+
+First and the only line of each test case or query contains the the elements of the singly linked list separated by a single space.
+ Remember/Consider :
+While specifying the list elements for input, -1 indicates the end of the singly linked list and hence, would never be a list element.
+ Output format :
+For each test case, the only line of output that print 'true' if the list is Palindrome or 'false' otherwise.
+ Constraints :
+1 <= t <= 10^2
+0 <= M <= 10^5
+Time Limit: 1sec
+
+Where 'M' is the size of the singly linked list.
+Sample Input 1 :
+1
+9 2 3 3 2 9 -1
+Sample Output 1 :
+true
+Sample Input 2 :
+2
+0 2 3 2 5 -1
+-1
+Sample Output 2 :
+false
+true
+Explanation for the Sample Input 2 :
+For the first query, it is pretty intuitive that the the given list is not a palindrome, hence the output is 'false'.
+
+For the second query, the list is empty. An empty list is always a palindrome , hence the output is 'true'.
+
+```
+
+```cpp
+#include <iostream>
+using namespace std;
+
+class Node
+{
+public:
+	int data;
+	Node *next;
+	Node(int data)
+	{
+		this->data = data;
+		this->next = NULL;
+	}
+};
+
+
+Node *takeinput()
+{
+	int data;
+	cin >> data;
+	Node *head = NULL, *tail = NULL;
+	while (data != -1)
+	{
+		Node *newnode = new Node(data);
+		if (head == NULL)
+		{
+			head = newnode;
+			tail = newnode;
+		}
+		else
+		{
+			tail->next = newnode;
+			tail = newnode;
+		}
+		cin >> data;
+	}
+	return head;
+}
+
+///////////// ==========>>>>>>>>>>Palindrome LinkedList
+
+bool isPalindrome(Node *head)
+{
+   if(head == NULL || head->next== NULL){
+       return true;
+   }
+    
+    Node *cur = head;
+    Node *prev = NULL;
+    
+    while(cur->next != NULL){
+        prev = cur;
+        cur = cur->next;
+    }
+    
+    if(head->data == cur->data){
+        prev->next = NULL;
+        delete cur;
+        isPalindrome(head->next);
+    }else{
+        return false;
+    }
+
+//https://youtu.be/ee-DuKtRNGw
+// https://youtu.be/-DtNInqFUXs
+    
+}
+
+
+int main()
+{
+	int t;
+	cin >> t;
+
+	while (t--)
+	{
+		Node *head = takeinput();
+		bool ans = isPalindrome(head);
+
+		if (ans) cout << "true";
+		else cout << "false";
+
+		cout << endl;
+	}
+
+	return 0;
+}
 
 ```

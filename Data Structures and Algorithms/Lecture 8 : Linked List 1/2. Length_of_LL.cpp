@@ -71,6 +71,7 @@ Node* inputNode(){
   return head;
 }
 
+////////////====================>> Length of LL
 int length(Node *head){
   int count = 0;
   Node *temp = NULL;
