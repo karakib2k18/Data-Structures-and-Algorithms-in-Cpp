@@ -1,140 +1,5 @@
-# ##Lecture 9 : Linked List 2
+/*****************************************************************
 
----
-
-[Lecture 8 : Linked List 1.pdf](https://github.com/karakib2k18/Data-Structures-and-Algorithms-in-Cpp-AND-Competitive-Programming/files/8843858/Lecture.8.Linked.List.1.pdf)
-
----
-
-### Midpoint of LL
-
-![image](https://user-images.githubusercontent.com/57065763/172657102-23fc6684-7219-436f-a7f2-12598c93f65b.png)
-![image](https://user-images.githubusercontent.com/57065763/172658080-7a198d73-437e-4f50-8a81-8034f1764fd2.png)
-
-
-### Code: Midpoint of LL - QUESTION-1
-
-
-```
-For a given singly linked list of integers, find and return the node present at the middle of the list.
-Note :
-If the length of the singly linked list is even, then return the first middle node.
-
-Example: Consider, 10 -> 20 -> 30 -> 40 is the given list, then the nodes present at the middle with respective data values are, 20 and 30. We return the first node with data 20.
- Input format :
-The first line contains an Integer 't' which denotes the number of test cases or queries to be run. Then the test cases follow.
-
-The first and the only line of each test case or query contains the elements of the singly linked list separated by a single space. 
-Remember/Consider :
-While specifying the list elements for input, -1 indicates the end of the singly linked list and hence, would never be a list element
- Output Format :
-For each test case/query, print the data value of the node at the middle of the given list.
-
-Output for every test case will be printed in a seperate line.
-Constraints :
-1 <= t <= 10^2
-0 <= M <= 10^5 
-Where M is the size of the singly linked list.
-
-Time Limit: 1sec
-Sample Input 1 :
-1
-1 2 3 4 5 -1
-Sample Output 1 :
-3
-Sample Input 2 :
-2 
--1
-1 2 3 4 -1
-Sample Output 2 :
-2
-```
-
-```cpp
-#include <iostream>
-using namespace std;
-
-class Node
-{
-public:
-	int data;
-	Node *next;
-	Node(int data)
-	{
-		this->data = data;
-		this->next = NULL;
-	}
-};
-
-
-Node *takeinput()
-{
-	int data;
-	cin >> data;
-	Node *head = NULL, *tail = NULL;
-	while (data != -1)
-	{
-		Node *newnode = new Node(data);
-		if (head == NULL)
-		{
-			head = newnode;
-			tail = newnode;
-		}
-		else
-		{
-			tail->next = newnode;
-			tail = newnode;
-		}
-		cin >> data;
-	}
-	return head;
-}
-
-//////////////////===================>>>>>>>>>> Code: Midpoint of LL
-Node *midPoint(Node *head)
-{
-    if(head==NULL || head->next==NULL){
-        return head;
-    }
-    Node *slow = head;
-    Node *fast=head;
-    
-    while(fast->next != NULL && fast->next->next != NULL){
-        slow = slow->next;
-        fast = fast->next->next;
-    }
-    
-    return slow;
-}
-
-int main()
-{
-	int t;
-	cin >> t;
-	while (t--)
-	{
-		Node *head = takeinput();
-		Node *mid = midPoint(head);
-		if (mid != NULL)
-		{
-			cout << mid->data;
-		}
-		cout << endl;
-	}
-	return 0;
-}
-
-```
-
-### Merge Two Sorted Linked Lists
-
-![image](https://user-images.githubusercontent.com/57065763/172669468-11980e76-f6d0-4dd9-b937-f756c37d449b.png)
-
-
-### Code: Merge Two Sorted LL - QUESTION- 2
-
-
-```
 ### Code: Merge Two Sorted LL - QUESTION- 2
 
 You have been given two sorted(in ascending order) singly linked lists of integers.
@@ -177,9 +42,9 @@ Sample Input 2 :
 Sample Output 2 :
 2 3 5 6 8 9 12 
 10 10 20 30 40 40 50 60 60 60 80 90 100
-```
 
-```cpp
+****************************************************************/
+
 #include <iostream>
 using namespace std;
 
@@ -301,19 +166,3 @@ int main()
 	}
 	return 0;
 }
-```
-
-
-### x
-
-
-###  - QUESTION-
-
-
-```
-
-```
-
-```cpp
-
-```
