@@ -2,7 +2,8 @@
 
 ---
 
-[Lecture 8 : Linked List 1.pdf](https://github.com/karakib2k18/Data-Structures-and-Algorithms-in-Cpp-AND-Competitive-Programming/files/8843858/Lecture.8.Linked.List.1.pdf)
+[Lecture 9 : Linked List 2.pdf](https://github.com/karakib2k18/Data-Structures-and-Algorithms-in-Cpp-AND-Competitive-Programming/files/8872461/Lecture.9.Linked.List.2.pdf)
+
 
 ---
 
