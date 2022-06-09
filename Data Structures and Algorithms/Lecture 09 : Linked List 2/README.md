@@ -127,9 +127,6 @@ int main()
 
 ```
 
-```
-
-```
 
 ### Merge Two Sorted Linked Lists
 
@@ -308,9 +305,6 @@ int main()
 }
 ```
 
-```
-
-```
 
 ### Merge Sort in Linked List
 
