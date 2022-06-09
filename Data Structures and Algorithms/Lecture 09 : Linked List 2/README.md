@@ -717,7 +717,9 @@ Node* reverseLL(Node *head) {
 	return smallAns;
 }
 ```
+
 ### Reverse LL (Recursive) {boring Approach but effective for learning new things using Class+Objects} => O(N)
+
 ![image](https://user-images.githubusercontent.com/57065763/172878988-d19c03e1-f73a-4132-89f1-ddea8006a712.png)
 
 ```cpp
@@ -750,17 +752,159 @@ Node* reverseLL_Better(Node *head) {
 	return reverseLL_2(head).head;
 }
 ```
+### Reverse LL (Recursive) - O(n) =====>> Best and Easy approach
+
+![image](https://user-images.githubusercontent.com/57065763/172882740-7e3ec351-d659-4275-9fd1-93ceb24045aa.png)
+
+
+```cpp
+/////////==============>>>>>>>>>> This is O(N) ==>>>>> Best and better approach
+
+Node* reverseLL_3(Node *head) {
+	if(head == NULL || head -> next == NULL) {
+		return head;
+	}
+
+	Node *smallAns = reverseLL_3(head -> next);
+
+	Node *tail = head -> next;
+	tail -> next = head;
+	head -> next = NULL;
+	return smallAns;
+}
+```
+### Reverse LL (Iterative)
+
+![image](https://user-images.githubusercontent.com/57065763/172886651-dd825038-eca5-43f1-ab86-30c768a427e2.png)
+![image](https://user-images.githubusercontent.com/57065763/172892462-31bfe4f1-90c2-47ec-87be-b9c2ac836392.png)
+
 
 ### Code : Reverse LL (Iterative)- QUESTION-5
 
-
 ```
+Code: Reverse LL (Iterative)
+
+Given a singly linked list of integers, reverse it iteratively and return the head to the modified list.
+ Note :
+No need to print the list, it has already been taken care. Only return the new head to the list.
+Input format :
+The first line contains an Integer 't' which denotes the number of test cases or queries to be run. Then the test cases follow.
+
+The first and the only line of each test case or query contains the elements of the singly linked list separated by a single space.
+Remember/Consider :
+While specifying the list elements for input, -1 indicates the end of the singly linked list and hence, would never be a list element
+Output format :
+For each test case/query, print the elements of the updated singly linked list.
+
+Output for every test case will be printed in a separate line.
+ Constraints :
+1 <= t <= 10^2
+0 <= N <= 10^4
+Where N is the size of the singly linked list.
+
+Time Limit: 1 sec
+Sample Input 1 :
+1
+1 2 3 4 5 6 7 8 -1
+Sample Output 1 :
+8 7 6 5 4 3 2 1
+Sample Input 2 :
+2
+10 -1
+10 20 30 40 50 -1
+Sample Output 2 :
+10 
+50 40 30 20 10 
 
 ```
 
 ```cpp
+#include <iostream>
+using namespace std;
+
+class Node {
+   public:
+    int data;
+    Node *next;
+    Node(int data) {
+        this->data = data;
+        this->next = NULL;
+    }
+};
+
+Node *takeinput() {
+    int data;
+    cin >> data;
+    Node *head = NULL, *tail = NULL;
+    while (data != -1) {
+        Node *newnode = new Node(data);
+        if (head == NULL) {
+            head = newnode;
+            tail = newnode;
+        } else {
+            tail->next = newnode;
+            tail = newnode;
+        }
+        cin >> data;
+    }
+    return head;
+}
+
+void print(Node *head) {
+    Node *temp = head;
+
+    while (temp != NULL) {
+        cout << temp->data << " ";
+        temp = temp->next;
+    }
+
+    cout << "\n";
+}
+
+/////////////===============>>>>>>>>>>>>>> Code: Reverse LL (Iterative)
+Node* reverseLinkedList(Node* head) {
+    Node *currentNode = head;
+    Node *previousNode = NULL;
+    
+    while (currentNode != NULL) { 
+        Node *nextNode = currentNode->next; 
+        currentNode->next = previousNode; 
+        previousNode = currentNode; 
+        currentNode = nextNode; 
+    } 
+    
+    head = previousNode;
+    return head;
+}
+
+int main() {
+    int t;
+    cin >> t;
+
+    while (t--) {
+        Node *head = takeinput();
+        head = reverseLinkedList(head);
+        print(head);
+    }
+
+    return 0;
+}
 
 ```
+
+### Variations of LL
+
+![image](https://user-images.githubusercontent.com/57065763/172900453-9823092a-219a-4670-b211-f9a2521828a2.png)
+![image](https://user-images.githubusercontent.com/57065763/172900852-2f377af0-a172-4de9-af61-418387cdd1bc.png)
+![image](https://user-images.githubusercontent.com/57065763/172901242-0e987754-30a5-4178-a39a-3e780b474884.png)
+![image](https://user-images.githubusercontent.com/57065763/172901558-bb0d9f59-f99c-417c-b077-2316b2a909d8.png)
+
+
+![image](https://user-images.githubusercontent.com/57065763/172903772-263c07ac-060c-42ba-9481-ec85eacef037.png)
+![image](https://user-images.githubusercontent.com/57065763/172903652-a3db23f7-e93a-4512-a239-6203290ee302.png)
+![image](https://user-images.githubusercontent.com/57065763/172903613-65111eda-d161-4aae-9ee6-1f5587be9e78.png)
+
+![image](https://user-images.githubusercontent.com/57065763/172903566-fda17154-94e6-48f7-9579-ac9bcf4151eb.png)
 
 
 ### Code : Reverse LL (Iterative)- QUESTION-5
