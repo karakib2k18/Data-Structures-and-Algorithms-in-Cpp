@@ -127,6 +127,10 @@ int main()
 
 ```
 
+```
+
+```
+
 ### Merge Two Sorted Linked Lists
 
 ![image](https://user-images.githubusercontent.com/57065763/172669468-11980e76-f6d0-4dd9-b937-f756c37d449b.png)
@@ -304,6 +308,9 @@ int main()
 }
 ```
 
+```
+
+```
 
 ### Merge Sort in Linked List
 
