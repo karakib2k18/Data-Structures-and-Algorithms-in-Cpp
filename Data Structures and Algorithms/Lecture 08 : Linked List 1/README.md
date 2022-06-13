@@ -1815,3 +1815,12 @@ int main()
 }
 
 ```
+
+
+### Lecture 08 : Linked List 1
+
+```cpp
+
+Lecture 08 : Linked List 1
+
+```
