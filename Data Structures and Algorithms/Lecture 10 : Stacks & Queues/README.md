@@ -309,9 +309,17 @@ int main() {
 ![image](https://user-images.githubusercontent.com/57065763/173526814-b7b95045-7da6-4b7f-ac55-9dd9968a45de.png)
 
 
-
-
-
+### Stack Using Templates
+==>> code here only
+### Stack Using LL Introduction
+![image](https://user-images.githubusercontent.com/57065763/173547154-002b1b5b-d732-43c6-b404-fe73057b89df.png)
+![image](https://user-images.githubusercontent.com/57065763/173548250-33645248-459e-48fc-a0a1-06b3f5a018e1.png)
+![image](https://user-images.githubusercontent.com/57065763/173549820-a13563bd-aa1f-4c60-971f-c44776ff856e.png)
+![image](https://user-images.githubusercontent.com/57065763/173550554-a637670e-e9a2-4388-8ae0-aee2f31607ad.png)
+![image](https://user-images.githubusercontent.com/57065763/173551083-387a55c9-071b-47ae-816e-1076d9752594.png)
+![image](https://user-images.githubusercontent.com/57065763/173553864-161a5a80-7ccf-43de-9ff5-c84670267854.png)
+![image](https://user-images.githubusercontent.com/57065763/173553164-dbcdb822-8ca2-4af6-a1e8-df317b5a39ea.png)
+![image](https://user-images.githubusercontent.com/57065763/173553898-9015167f-dc52-4a2c-a058-5265ee155d25.png)
 
 
 ### Code: Midpoint of LL - QUESTION-1
