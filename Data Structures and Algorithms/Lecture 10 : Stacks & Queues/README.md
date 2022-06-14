@@ -300,6 +300,18 @@ int main() {
 ![image](https://user-images.githubusercontent.com/57065763/173502717-279b2966-cdab-4373-8b1f-3dd063b93d1d.png)
 
 
+### Templates
+
+![image](https://user-images.githubusercontent.com/57065763/173515982-6c27daca-71a0-4b30-8430-ded8450d110f.png)
+![image](https://user-images.githubusercontent.com/57065763/173524276-f7f915d1-17b5-45ee-a548-b42452f3a2ae.png)
+![image](https://user-images.githubusercontent.com/57065763/173526170-ba8b2862-39d2-4f83-8b29-959c673bf2c8.png)
+![image](https://user-images.githubusercontent.com/57065763/173526669-b0ba02ae-f632-43db-8087-e4acea223c80.png)
+![image](https://user-images.githubusercontent.com/57065763/173526814-b7b95045-7da6-4b7f-ac55-9dd9968a45de.png)
+
+
+
+
+
 
 
 ### Code: Midpoint of LL - QUESTION-1
