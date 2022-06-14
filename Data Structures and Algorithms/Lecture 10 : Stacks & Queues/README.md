@@ -292,7 +292,12 @@ int main() {
 
 ```
 
-
+# Some MCQ::
+![image](https://user-images.githubusercontent.com/57065763/173502589-82b6d545-3ef1-4a73-a44a-17ca4ced45c3.png)
+![image](https://user-images.githubusercontent.com/57065763/173502634-ab81644b-22f9-43de-a9b7-b501a4cd3ef4.png)
+![image](https://user-images.githubusercontent.com/57065763/173502660-134c30ea-0783-4946-822c-e42e68ce6549.png)
+![image](https://user-images.githubusercontent.com/57065763/173502682-915220f2-99c3-4e07-bda4-6b06c3ceda16.png)
+![image](https://user-images.githubusercontent.com/57065763/173502717-279b2966-cdab-4373-8b1f-3dd063b93d1d.png)
 
 
 
