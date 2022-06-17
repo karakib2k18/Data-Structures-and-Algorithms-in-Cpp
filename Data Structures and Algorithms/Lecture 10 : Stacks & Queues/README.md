@@ -915,6 +915,10 @@ int main()
 
 ### Queue using array - Introduction
 ![image](https://user-images.githubusercontent.com/57065763/174235268-b7e58849-97a4-4ec4-aa08-f55338cd3f55.png)
+![image](https://user-images.githubusercontent.com/57065763/174237439-34cff050-ac56-42ce-aac5-b0fd40401aec.png)
+![image](https://user-images.githubusercontent.com/57065763/174237777-449fbe39-c66d-4114-8b02-f9a313b340cb.png)
+![image](https://user-images.githubusercontent.com/57065763/174240201-8ba051fe-321a-4be3-8cb1-b670ae2c4fa4.png)
+
 
 ### Queue using array - Code
 
