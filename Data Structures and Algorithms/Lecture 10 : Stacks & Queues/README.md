@@ -1382,6 +1382,68 @@ int main() {
 
 ```
 
+### Reverse a Stack
+
+![image](https://user-images.githubusercontent.com/57065763/174354024-aa791028-53cd-49ff-aca6-24c6a7405646.png)
+
+```cpp
+#include <iostream>
+#include <stack>
+using namespace std;
+
+// https://youtu.be/fEauTlo6J-w
+void reverseStack(stack<int> &input, stack<int> &extra) { 
+    if (input.size() <= 1) {
+        return;               
+    } 
+    
+    int lastElement = input.top(); 
+    input.pop(); 
+    
+    reverseStack(input, extra); 
+    
+    while (!input.empty()) { 
+        int top = input.top(); 
+        input.pop(); 
+        extra.push(top); 
+    } 
+    
+    input.push(lastElement); 
+    
+    while (!extra.empty()) { 
+        int top = extra.top(); 
+        extra.pop(); 
+        input.push(top); 
+    } 
+}
+
+
+int main() {
+    stack<int> input, extra;
+    int size;
+    cin >> size;
+
+    for (int i = 0, val; i < size; i++) {
+        cin >> val;
+        input.push(val);
+    }
+
+    reverseStack(input, extra);
+
+    while (!input.empty()) {
+        cout << input.top() << " ";
+        input.pop();
+    }
+}
+```
+### Reverse Queue
+
+### Check redundant brackets
+
+### Stock Span
+
+### Minimum bracket Reversal
+
 
 
 ### Code: Midpoint of LL - QUESTION-1
