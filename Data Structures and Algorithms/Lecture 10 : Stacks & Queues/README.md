@@ -1,8 +1,18 @@
-# ##Lecture 9 : Linked List 2
+# ##Lecture 10 : Stacks & Queues
 
 ---
 
+//============>>>>>>>>>>ADT Notes
+[Lecture 10.1 : ADT Notes.pdf](https://github.com/karakib2k18/Data-Structures-and-Algorithms-in-Cpp-AND-Competitive-Programming/files/8926808/Lecture.10.1.ADT.Notes.pdf)
 
+//============>>>>>>>>>>Templates Notes
+[Lecture 10.2 : Templates Notes.pdf](https://github.com/karakib2k18/Data-Structures-and-Algorithms-in-Cpp-AND-Competitive-Programming/files/8926809/Lecture.10.2.Templates.Notes.pdf)
+
+//============>>>>>>>>>>Stacks Notes
+[Lecture 10.3 :  Stacks Notes.pdf](https://github.com/karakib2k18/Data-Structures-and-Algorithms-in-Cpp-AND-Competitive-Programming/files/8926812/Lecture.10.3.Stacks.Notes.pdf)
+
+//============>>>>>>>>>>Queues Notes
+[Lecture 10.4 :   Queues Notes.pdf](https://github.com/karakib2k18/Data-Structures-and-Algorithms-in-Cpp-AND-Competitive-Programming/files/8926813/Lecture.10.4.Queues.Notes.pdf)
 
 ---
 
@@ -922,9 +932,456 @@ int main()
 
 ### Queue using array - Code
 
+```cpp
+	data[nextIndex] = element;
+	nextIndex = (nextIndex + 1) % capacity ;
+```
+```cpp
+	T ans = data[firstIndex];
+	firstIndex = (firstIndex + 1) % capacity;
+```
+```cpp
+#include <iostream>
+using namespace std;
+
+template <typename T>
+class QueueUsingArray {
+	T *data;
+	int nextIndex;
+	int firstIndex;
+	int size;
+	int capacity;
+
+	public :
+	QueueUsingArray(int s) {
+		data = new T[s];
+		nextIndex = 0;
+		firstIndex = -1;
+		size = 0;
+		capacity = s;
+	}
+
+	int getSize() {
+		return size;
+	}
+
+	bool isEmpty() {
+		return size == 0;
+	}
+
+	// insert element
+	void enqueue(T element) {
+		if(size == capacity) {
+			cout << "Queue Full ! " << endl;
+			return;
+		}
+		data[nextIndex] = element;
+		nextIndex = (nextIndex + 1) % capacity ;
+		if(firstIndex == -1) {
+			firstIndex = 0;
+		}
+		size++;
+	}
+	
+	T front() {
+		if(isEmpty()) {
+			cout << "Queue is empty ! " << endl;
+			return 0;
+		}
+		return data[firstIndex];
+	}
+
+	T dequeue() {
+		if(isEmpty()) {
+			cout << "Queue is empty ! " << endl;
+			return 0;
+		}
+		T ans = data[firstIndex];
+		firstIndex = (firstIndex + 1) % capacity;
+		size--;
+		if(size == 0) {
+			firstIndex = -1;
+			nextIndex = 0;
+		}
+		return ans;
+	}
+};
+
+
+int main() {
+	QueueUsingArray<int> q(5);
+
+	q.enqueue(10);
+	q.enqueue(20);
+	q.enqueue(30);
+	q.enqueue(40);
+	q.enqueue(50);
+	q.enqueue(60);
+
+
+	cout << q.front() << endl;
+	cout << q.dequeue() << endl;
+	cout << q.dequeue() << endl;
+	cout << q.dequeue() << endl;
+
+	cout << q.getSize() << endl;
+	cout << q.isEmpty() << endl;
+}
+
+```
 ### Dynamic Queue
 
-### Stack Using LL Introduction
+```cpp
+if(size == capacity) {
+	T *newData = new T[2 * capacity];
+	int j = 0;
+	for(int i = firstIndex; i < capacity; i++) {
+		newData[j] = data[i];
+		j++;
+	}
+	for(int i = 0; i < firstIndex; i++) {
+		newData[j] = data[i];
+		j++;
+	}
+	delete [] data;
+	data = newData;
+	firstIndex = 0;
+	nextIndex = capacity;
+	capacity *= 2;
+	//cout << "Queue Full ! " << endl;
+	// return;
+}
+```
+
+```cpp
+#include <iostream>
+using namespace std;
+
+template <typename T>
+
+class QueueUsingArray {
+	T *data;
+	int nextIndex;
+	int firstIndex;
+	int size;
+	int capacity;
+
+	public :
+	QueueUsingArray(int s) {
+		data = new T[s];
+		nextIndex = 0;
+		firstIndex = -1;
+		size = 0;
+		capacity = s;
+	}
+
+	int getSize() {
+		return size;
+	}
+
+	bool isEmpty() {
+		return size == 0;
+	}
+
+	// insert element
+	void enqueue(T element) {
+		if(size == capacity) {
+			T *newData = new T[2 * capacity];
+			int j = 0;
+			for(int i = firstIndex; i < capacity; i++) {
+				newData[j] = data[i];
+				j++;
+			}
+			for(int i = 0; i < firstIndex; i++) {
+				newData[j] = data[i];
+				j++;
+			}
+			delete [] data;
+			data = newData;
+			firstIndex = 0;
+			nextIndex = capacity;
+			capacity *= 2;
+			//cout << "Queue Full ! " << endl;
+			// return;
+		}
+		data[nextIndex] = element;
+		nextIndex = (nextIndex + 1) % capacity ;
+		if(firstIndex == -1) {
+			firstIndex = 0;
+		}
+		size++;
+	}
+	
+	T front() {
+		if(isEmpty()) {
+			cout << "Queue is empty ! " << endl;
+			return 0;
+		}
+		return data[firstIndex];
+	}
+
+	T dequeue() {
+		if(isEmpty()) {
+			cout << "Queue is empty ! " << endl;
+			return 0;
+		}
+		T ans = data[firstIndex];
+		firstIndex = (firstIndex + 1) % capacity;
+		size--;
+		if(size == 0) {
+			firstIndex = -1;
+			nextIndex = 0;
+		}
+		return ans;
+	}
+};
+
+
+int main() {
+	QueueUsingArray<int> q(5);
+
+	q.enqueue(10);
+	q.enqueue(20);
+	q.enqueue(30);
+	q.enqueue(40);
+	q.enqueue(50);
+	q.enqueue(60);
+
+
+	cout << q.front() << endl;
+	cout << q.dequeue() << endl;
+	cout << q.dequeue() << endl;
+	cout << q.dequeue() << endl;
+
+	cout << q.getSize() << endl;
+	cout << q.isEmpty() << endl;
+}
+
+```
+# Some MCQ::
+![image](https://user-images.githubusercontent.com/57065763/174272003-2d96e1b5-d152-4f6a-9445-7bdc4ad424a1.png)
+![image](https://user-images.githubusercontent.com/57065763/174272044-afffe668-b701-416c-a515-a522b0aa9422.png)
+![image](https://user-images.githubusercontent.com/57065763/174272096-9d948054-7925-4f6c-bbef-b7f36dc5636e.png)
+![image](https://user-images.githubusercontent.com/57065763/174272125-ca3b0545-2b2a-4eec-bf00-fb957ae7efc3.png)
+![image](https://user-images.githubusercontent.com/57065763/174272164-4a311f82-ff3b-4104-8786-91897c590e76.png)
+
+### Queue Using LL Introduction
+![image](https://user-images.githubusercontent.com/57065763/174272527-d7cde9c2-5ea0-4e04-8c44-3858d8cfe9b7.png)
+![image](https://user-images.githubusercontent.com/57065763/174273110-01ec501b-d9a5-4b1d-b07f-477e3866da2c.png)
+
+###  Queue Using LL Introduction || Code : Queue Using LL || Queue using LL - Solution
+
+```cpp
+
+#include <iostream>
+using namespace std;
+
+class Node {
+   public:
+    int data;
+    Node *next;
+
+    Node(int data) {
+        this->data = data;
+        next = NULL;
+    }
+};
+
+/////////////============>>>>>>>>>>>>>>>>>> Code : Queue Using LL
+class Queue {
+    Node *head;
+    Node *tail;
+    int size;
+   public:
+    Queue() {
+        head=NULL;
+        tail = NULL;
+        size = 0;
+	}
+	
+	/*----------------- Public Functions of Stack -----------------*/
+
+	int getSize() {
+        return size;
+	}
+    bool isEmpty() {
+        return (size==0);
+	}
+
+    void enqueue(int data) {
+        Node *newNode = new Node(data);
+        if(head==NULL){
+            head = newNode;
+            tail = newNode;
+        }
+        tail->next=newNode;
+        tail = newNode;
+        size++;
+	}
+
+    int dequeue() {
+        if(isEmpty()){
+            return -1;
+        }
+        int tempData = head->data;
+        Node *temp = head;
+        head= head->next;
+        delete temp;
+        size--;
+        return tempData;
+    }
+
+    int front() {
+        if(isEmpty()){
+            return -1;
+        }
+        return head->data;
+    }
+};
+
+int main() {
+
+    Queue q;
+
+    int t;
+    cin >> t;
+    while (t--) {
+        int choice, input;
+        cin >> choice;
+        switch (choice) {
+            case 1:
+                cin >> input;
+                q.enqueue(input);
+                break;
+            case 2:
+                cout << q.dequeue() << "\n";
+                break;
+            case 3:
+                cout << q.front() << "\n";
+                break;
+            case 4:
+                cout << q.getSize() << "\n";
+                break;
+            default:
+                cout << ((q.isEmpty()) ? "true\n" : "false\n");
+                break;
+        }
+    }
+}
+
+```
+###  Inbuilt Queue
+![image](https://user-images.githubusercontent.com/57065763/174282213-04ac1f04-4315-4448-b10e-735b50bf2cb0.png)
+
+```cpp
+#include <iostream>
+using namespace std;
+#include <queue>
+
+
+template <typename T>
+
+class QueueUsingArray {
+	T *data;
+	int nextIndex;
+	int firstIndex;
+	int size;
+	int capacity;
+
+	public :
+	QueueUsingArray(int s) {
+		data = new T[s];
+		nextIndex = 0;
+		firstIndex = -1;
+		size = 0;
+		capacity = s;
+	}
+
+	int getSize() {
+		return size;
+	}
+
+	bool isEmpty() {
+		return size == 0;
+	}
+
+	// insert element
+	void enqueue(T element) {
+		if(size == capacity) {
+			T *newData = new T[2 * capacity];
+			int j = 0;
+			for(int i = firstIndex; i < capacity; i++) {
+				newData[j] = data[i];
+				j++;
+			}
+			for(int i = 0; i < firstIndex; i++) {
+				newData[j] = data[i];
+				j++;
+			}
+			delete [] data;
+			data = newData;
+			firstIndex = 0;
+			nextIndex = capacity;
+			capacity *= 2;
+			//cout << "Queue Full ! " << endl;
+			// return;
+		}
+		data[nextIndex] = element;
+		nextIndex = (nextIndex + 1) % capacity ;
+		if(firstIndex == -1) {
+			firstIndex = 0;
+		}
+		size++;
+	}
+	
+	T front() {
+		if(isEmpty()) {
+			cout << "Queue is empty ! " << endl;
+			return 0;
+		}
+		return data[firstIndex];
+	}
+
+	T dequeue() {
+		if(isEmpty()) {
+			cout << "Queue is empty ! " << endl;
+			return 0;
+		}
+		T ans = data[firstIndex];
+		firstIndex = (firstIndex + 1) % capacity;
+		size--;
+		if(size == 0) {
+			firstIndex = -1;
+			nextIndex = 0;
+		}
+		return ans;
+	}
+}
+
+int main() {
+	queue<int> q;
+	q.push(10);
+	q.push(20);
+	q.push(30);
+	q.push(40);
+	q.push(50);
+	q.push(60);
+
+	cout << q.front() << endl;
+	q.pop();
+	cout << q.front() << endl;
+	cout << q.size() << endl;
+	cout << q.empty() << endl;
+
+	while(!q.empty()) {
+		cout << q.front() << endl;
+		q.pop();
+	}
+	
+}
+
+```
+
 
 
 ### Code: Midpoint of LL - QUESTION-1
