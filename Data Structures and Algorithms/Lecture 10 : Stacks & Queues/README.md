@@ -1385,6 +1385,8 @@ int main() {
 ### Reverse a Stack
 
 ![image](https://user-images.githubusercontent.com/57065763/174354024-aa791028-53cd-49ff-aca6-24c6a7405646.png)
+![image](https://user-images.githubusercontent.com/57065763/174383415-1c6c7ca1-0a97-442c-b09d-8acf418a59ad.png)
+
 
 ```cpp
 #include <iostream>
