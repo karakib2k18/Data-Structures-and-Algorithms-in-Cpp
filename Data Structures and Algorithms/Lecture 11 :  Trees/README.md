@@ -92,6 +92,7 @@ int main(){
 ```
 
 ### Take input and print Recursive
+![image](https://user-images.githubusercontent.com/57065763/176167509-8b49f1e6-4489-4445-8b52-48d293fff838.png)
 
 ```cpp
 #include <iostream>
@@ -158,6 +159,8 @@ int main(){
 ```
 
 ### Take input level wise
+![image](https://user-images.githubusercontent.com/57065763/176171403-410d5544-335a-467f-8f70-49ca08b1ae1a.png)
+
 ```cpp
 #include <iostream>
 #include <queue>
@@ -252,11 +255,113 @@ int main() {
 
 ### Print Level Wise
 
-```cpp
-=================================================>>>>>>>>>>>>>>>>>>.QUESTION.root
+```
+Given a generic tree, print the input tree in level wise order.
+For printing a node with data N, you need to follow the exact format -
+N:x1,x2,x3,...,xn
+where, N is data of any node present in the generic tree. x1, x2, x3, ...., xn are the children of node N. Note that there is no space in between.
+You need to print all nodes in the level order form in different lines.
+Input format :
+The first line of input contains data of the nodes of the tree in level order form. The order is: data for root node, number of children to root node, data of each of child nodes and so on and so forth for each node. The data of the nodes of the tree is separated by space.
+Output Format :
+The first and only line of output contains the elements of the tree in level wise order, as described in the task.
+Constraints:
+Time Limit: 1 sec
+Sample Input 1:
+10 3 20 30 40 2 40 50 0 0 0 0 
+Sample Output 1:
+10:20,30,40
+20:40,50
+30:
+40:
+40:
+50:
+
 ```
 
-Count Nodes
+```cpp
+#include <iostream>
+#include <vector>
+#include <queue>
+using namespace std;
+
+template <typename T>
+class TreeNode {
+   public:
+    T data;
+    vector<TreeNode<T>*> children;
+
+    TreeNode(T data) { this->data = data; }
+
+    ~TreeNode() {
+        for (int i = 0; i < children.size(); i++) {
+            delete children[i];
+        }
+    }
+};
+
+/////////////////================>>>>>>>>>>>>>>>>>>>> Print Level Wise
+/************************************************************
+Time complexity: O(N) 
+Space complexity: O(M) 
+where N is the number of nodes in the tree and 
+M is the maximum number of nodes in a level
+************************************************************/
+
+void printLevelWise(TreeNode<int>* root) { 
+    queue<TreeNode<int>*> pendingNodes; 
+    pendingNodes.push(root); 
+    
+    while (!pendingNodes.empty()) { 
+        TreeNode<int>* front = pendingNodes.front(); 
+        pendingNodes.pop(); 
+        cout << front->data << ":"; 
+        for (int i = 0; i < front->children.size(); i++) { 
+            if (i < ((front->children.size()) - 1)) { 
+                cout << front->children[i]->data << ","; 
+            } else { 
+                cout << front->children[i]->data; 
+            } 
+            
+            pendingNodes.push(front->children[i]); 
+        } 
+        
+        cout << "\n"; 
+    } 
+}
+
+TreeNode<int>* takeInputLevelWise() {
+    int rootData;
+    cin >> rootData;
+    TreeNode<int>* root = new TreeNode<int>(rootData);
+
+    queue<TreeNode<int>*> pendingNodes;
+
+    pendingNodes.push(root);
+    while (pendingNodes.size() != 0) {
+        TreeNode<int>* front = pendingNodes.front();
+        pendingNodes.pop();
+        int numChild;
+        cin >> numChild;
+        for (int i = 0; i < numChild; i++) {
+            int childData;
+            cin >> childData;
+            TreeNode<int>* child = new TreeNode<int>(childData);
+            front->children.push_back(child);
+            pendingNodes.push(child);
+        }
+    }
+
+    return root;
+}
+
+int main() {
+    TreeNode<int>* root = takeInputLevelWise();
+    printLevelWise(root);
+}
+```
+
+### Count Nodes
 ![image](https://user-images.githubusercontent.com/57065763/174493322-4fe009f5-f16f-4f24-856e-330580009ea7.png)
 
 ```cpp
