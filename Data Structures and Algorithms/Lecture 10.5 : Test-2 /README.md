@@ -287,7 +287,6 @@ class Deque {
     } 
 };
 
-// Driver program to test above function
 int main()
 {
     Deque dq(10);
@@ -380,12 +379,13 @@ public:
 };
 
 ////////////=============>>>>>>>>>>>>>Delete Alternate Nodes
+
 /*
 Time complexity: O(N) 
 Space complexity: O(1) 
 where N is the size of the linked list
-
 */
+
 void deleteAlternateNodes(Node *head) { 
     Node *currentNode = head; 
     

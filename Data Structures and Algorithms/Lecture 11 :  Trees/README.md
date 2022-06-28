@@ -6,9 +6,7 @@
 
 ---
 
-# Lecture 11 : Trees
-
-Trees Introduction
+### Trees Introduction
 ![image](https://user-images.githubusercontent.com/57065763/174455605-526edb11-6927-4a0f-971e-23a289fe08c7.png)
 
 Vectors
