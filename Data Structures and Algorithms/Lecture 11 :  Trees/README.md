@@ -9,7 +9,7 @@
 ### Trees Introduction
 ![image](https://user-images.githubusercontent.com/57065763/174455605-526edb11-6927-4a0f-971e-23a289fe08c7.png)
 
-Vectors
+### Vectors
 ```cpp
 #include <iostream>
 #include <vector>
@@ -62,7 +62,7 @@ int main() {
 }
 ```
 
-TreeNode class
+### TreeNode class
 ```cpp
 
 #include <iostream>
@@ -91,7 +91,7 @@ int main(){
 
 ```
 
-Take input and print Recursive
+### Take input and print Recursive
 
 ```cpp
 #include <iostream>
@@ -157,7 +157,7 @@ int main(){
 }
 ```
 
-Take input level wise
+### Take input level wise
 ```cpp
 #include <iostream>
 #include <queue>
@@ -250,7 +250,7 @@ int main() {
 
 ```
 
-Print Level Wise
+### Print Level Wise
 
 ```cpp
 =================================================>>>>>>>>>>>>>>>>>>.QUESTION.root
@@ -269,21 +269,21 @@ int numNodes(TreeNode<int>*root){
 }
 ```
 
-Code : Find sum of nodes
+### Code : Find sum of nodes
 ```cpp
 =================================================>>>>>>>>>>>>>>>>>>.QUESTION.root
 ```
 
-Code : Max data node
+### Code : Max data node
 0/480
 
-Find Height
+### Find Height
 02:39
 
-Code : Find height
+### Code : Find height
 0/240
 
-Depth of node
+### Depth of node
 ```cpp
 void printAtLevelK(TreeNode<int>*root,intk){
   if(root == NULL){
@@ -299,13 +299,13 @@ void printAtLevelK(TreeNode<int>*root,intk){
 }
 ```
 
-Count leaf nodes
+### Count leaf nodes
 01:41
 
-Code : Count leaf nodes
+### Code : Count leaf nodes
 0/240
 
-Traversals-PreOrder
+### Traversals-PreOrder
 ```cpp
 void preorder(TreeNode<int>*root){
   if(root == NULL){
@@ -317,10 +317,10 @@ void preorder(TreeNode<int>*root){
   }
 }
 ```
-Code : PostOrder Traversal
+### Code : PostOrder Traversal
 0/240
 
-Destructor
+### Destructor
 ```cpp
 /// Delete TreeNode using postOrder
 void deleteTree(TreeNode<int>*root){
