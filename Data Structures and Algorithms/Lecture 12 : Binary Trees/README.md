@@ -12,35 +12,163 @@
 
 ![image](https://user-images.githubusercontent.com/57065763/176241721-ac34ea95-6412-4fed-871d-0143287934c1.png)
 
-```cpp
-
-```
-
-### Take Input and print recursive
-
-```
-
-```
 
 ```cpp
+#include <iostream>
+using namespace std;
+
+template <typename T>
+class BinaryTreeNode {
+	public:
+	T data;
+	BinaryTreeNode* left;
+	BinaryTreeNode* right;
+
+	BinaryTreeNode(T data) {
+		this->data = data;
+		left = NULL;
+		right = NULL;
+	}
+
+	~BinaryTreeNode() {
+		delete left;
+		delete right;
+	}
+}
+
+int main() {
+	BinaryTreeNode<int>* root = new BinaryTreeNode<int>(1);
+	BinaryTreeNode<int>* node1 = new BinaryTreeNode<int>(2);
+	BinaryTreeNode<int>* node2 = new BinaryTreeNode<int>(3);
+	root->left = node1;
+	root->right = node2;
+}
 
 ```
 
+### Take Input and print recursive [not good process]
 
-### Take input level wise
-
-```
-
-```
+![image](https://user-images.githubusercontent.com/57065763/176264415-5546b4d9-5fd1-431b-a3cb-1facb25c9230.png)
 
 ```cpp
+#include <iostream>
+using namespace std;
 
+template <typename T>
+class BinaryTreeNode {
+	public:
+	T data;
+	BinaryTreeNode* left;
+	BinaryTreeNode* right;
+
+	BinaryTreeNode(T data) {
+		this->data = data;
+		left = NULL;
+		right = NULL;
+	}
+
+	~BinaryTreeNode() {
+		delete left;
+		delete right;
+	}
+};
+
+void printTree(BinaryTreeNode<int>* root) {
+	if (root == NULL) {
+		return;
+	}
+	cout << root->data << ":";
+	if (root->left != NULL) {
+		cout << "L" << root->left->data;
+	}
+
+	if (root->right != NULL) {
+		cout << "R" << root->right->data;
+	}
+	cout << endl;
+	printTree(root->left);
+	printTree(root->right);
+}
+
+BinaryTreeNode<int>* takeInput() {
+	int rootData;
+	cout << "Enter data" << endl;
+	cin >> rootData;
+	if (rootData == -1) {
+		return NULL;
+	}
+
+	BinaryTreeNode<int>* root = new BinaryTreeNode<int>(rootData);
+	BinaryTreeNode<int>* leftChild = takeInput();
+	BinaryTreeNode<int>* rightChild = takeInput();
+	root->left = leftChild;
+	root->right = rightChild;
+	return root;
+}
+
+int main() {
+	/*BinaryTreeNode<int>* root = new BinaryTreeNode<int>(1);
+	BinaryTreeNode<int>* node1 = new BinaryTreeNode<int>(2);
+	BinaryTreeNode<int>* node2 = new BinaryTreeNode<int>(3);
+	root->left = node1;
+	root->right = node2;
+	*/
+	BinaryTreeNode<int>* root = takeInput();
+	printTree(root);
+	delete root;
+}
+```
+
+
+### Take input level wise [Best approach]
+
+![image](https://user-images.githubusercontent.com/57065763/176264733-a587070f-335d-4446-a167-313a399b136a.png)
+
+
+![image](https://user-images.githubusercontent.com/57065763/176266837-9e3bcafb-10ff-43e9-b324-d54013bf9824.png)
+
+```cpp
+BinaryTreeNode<int>* takeInputLevelWise() {
+	int rootData;
+	cout << "Enter root data" << endl;
+	cin >> rootData;
+	if (rootData == -1) {
+		return NULL;
+	}
+
+	BinaryTreeNode<int>* root = new BinaryTreeNode<int>(rootData);
+
+	queue<BinaryTreeNode<int>*> pendingNodes;
+	pendingNodes.push(root);
+	while (pendingNodes.size() != 0) {
+		BinaryTreeNode<int>* front = pendingNodes.front();
+		pendingNodes.pop();
+		cout << "Enter left child of " << front->data << endl;
+		int leftChildData;
+		cin >> leftChildData;
+		if (leftChildData != -1) {
+			BinaryTreeNode<int>* child = new BinaryTreeNode<int>(leftChildData);
+			front->left = child;
+			pendingNodes.push(child);
+		}
+		cout << "Enter right child of " << front->data << endl;
+		int rightChildData;
+		cin >> rightChildData;
+		if (rightChildData != -1) {
+			BinaryTreeNode<int>* child = new BinaryTreeNode<int>(rightChildData);
+			front->right = child;
+			pendingNodes.push(child);
+		}
+	}
+	return root;
+}
 ```
 
 
 ### Print Level Wise
 
 ![image](https://files.codingninjas.in/0000000000004189.png)
+
 ```
 For a given a Binary Tree of type integer, print the complete information of every node, when traversed in a level-order fashion.
 To print the information of a node with data D, you need to follow the exact format :
