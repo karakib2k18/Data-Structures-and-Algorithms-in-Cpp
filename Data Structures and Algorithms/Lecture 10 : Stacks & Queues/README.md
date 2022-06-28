@@ -1440,12 +1440,350 @@ int main() {
 ```
 ### Reverse Queue
 
+```
+You have been given a queue that can store integers as the data. You are required to write a function that reverses the populated queue itself without using any other data structures.
+Example:
+Alt txt
+
+Alt txt
+
+Input Format:
+The first list of input contains an integer 't' denoting the number of test cases/queries to be run.
+Then the test cases follow.
+
+The first line input for each test case/query contains an integer N, denoting the total number of elements in the queue.
+
+The second line of input contains N integers separated by a single space, representing the order in which the elements are enqueued into the queue.
+Output Format:
+For each test case/query, the only line of output prints the order in which the queue elements are dequeued, all of them separated by a single space.
+
+Output for every test case/query will be printed on a new line. 
+Note:
+You are not required to print the expected output explicitly, it has already been taken care of. Just make the changes in the input queue itself.
+Constraints:
+1 <= t <= 100
+1 <= N <= 10^4
+-2^31 <= data <= 2^31 - 1
+
+Time Limit: 1sec 
+Sample Input 1:
+1
+6
+1 2 3 4 5 10
+Note:
+Here, 1 is at the front and 10 is at the rear of the queue.
+Sample Output 1:
+10 5 4 3 2 1
+Sample Input 2:
+2
+5
+2 8 15 1 10
+3
+10 20 30
+Sample Output 2:
+10 1 15 8 2 
+30 20 10 
+```
+
+```cpp
+#include <iostream>
+using namespace std;
+
+/*****************
+Time complexity: O(N)
+Space complexity: O(N)
+where N is the size of the input queue
+****************/
+
+#include <queue> 
+
+void reverseQueue(queue<int> &input) { 
+    if (input.size() <= 1) { 
+        return; 
+    } 
+    
+    int front = input.front(); 
+    
+    input.pop();
+    
+// amra ai  khane ekta recurison chalai dibo jate kore code er front ta last a pochai jay. then last theke push korte thakbo.
+    reverseQueue(input);
+    
+    input.push(front); 
+}
+
+int main() {
+    int t;
+    cin >> t;
+
+    while (t--) {
+        queue<int> q;
+        int size;
+        cin >> size;
+
+        for (int i = 0, val; i < size; i++) {
+            cin >> val;
+            q.push(val);
+        }
+
+        reverseQueue(q);
+        while (!q.empty()) {
+            cout << q.front() << " ";
+            q.pop();
+        }
+
+        cout << "\n";
+    }
+}
+```
+
 ### Check redundant brackets
 
+```
+For a given expression in the form of a string, find if there exist any redundant brackets or not. It is given that the expression contains only rounded brackets or parenthesis and the input expression will always be balanced.
+A pair of the bracket is said to be redundant when a sub-expression is surrounded by unnecessary or needless brackets.
+Example:
+Expression: (a+b)+c
+Since there are no needless brackets, hence, the output must be 'false'.
+
+Expression: ((a+b))
+The expression can be reduced to (a+b). Hence the expression has redundant brackets and the output will be 'true'.
+Note:
+You will not get a partial score for this problem. You will get marks only if all the test cases are passed.
+Input Format :
+The first and the only line of input contains a string expression, without any spaces in between.
+Output Format :
+The first and the only line of output will print either 'true' or 'false'(without the quotes) denoting whether the input expression contains redundant brackets or not.
+Note:
+You are not required to print the expected result. It has already been taken care of.
+Constraints:
+0 <= N <= 10^6
+Where N is the length of the expression.
+
+Time Limit: 1 second
+Sample Input 1:
+a+(b)+c 
+Sample Output 1:
+true
+Explanation:
+The expression can be reduced to a+b+c. Hence, the brackets are redundant.
+Sample Input 2:
+(a+b)
+Sample Output 2:
+false
+```
+
+```cpp
+#include <iostream>
+#include <string>
+using namespace std;
+
+/*****************
+Time complexity: O(N)
+Space complexity: O(N)
+where N is the size of the input expression
+****************/
+#include <stack> 
+
+bool checkRedundantBrackets(string expression) { 
+    stack<char> stk; 
+    string operators = "+-*/"; 
+    for (int i = 0; i < expression.length(); ++i) { 
+        if (expression[i] == '(' || operators.find(expression[i]) != string::npos) { 
+            stk.push(expression[i]); 
+        } 
+        else if (expression[i] == ')') { 
+            bool hasOperator = false; 
+            while (!stk.empty() && stk.top() != '(') { 
+                stk.pop(); 
+                hasOperator = true; 
+            } 
+            
+            if (hasOperator==false) {  // if hasOpertor equal to flase hoy then this is redundant true; mane kono operator na thekle to redundant hobei.
+                return true; 
+            } 
+            
+            if (!stk.empty()) { 
+                stk.pop(); 
+            } 
+        } 
+    } 
+    return false; 
+}
+
+int main() {
+    string input;
+    cin >> input;
+    cout << ((checkRedundantBrackets(input)) ? "true" : "false");
+}
+```
+
 ### Stock Span
+```
+Afzal has been working with an organization called 'Money Traders' for the past few years. The organization is into the money trading business. His manager assigned him a task. For a given array/list of stock's prices for N days, find the stock's span for each day.
+The span of the stock's price today is defined as the maximum number of consecutive days(starting from today and going backwards) for which the price of the stock was less than today's price.
+For example, if the price of a stock over a period of 7 days are [100, 80, 60, 70, 60, 75, 85], then the stock spans will be [1, 1, 1, 2, 1, 4, 6].
+Explanation:
+On the sixth day when the price of the stock was 75, the span came out to be 4, because the last 4 prices(including the current price of 75) were less than the current or the sixth day's price.
+
+Similarly, we can deduce the remaining results.
+Afzal has to return an array/list of spans corresponding to each day's stock's price. Help him to achieve the task.
+Input Format:
+The first line of input contains an integer N, denoting the total number of days.
+
+The second line of input contains the stock prices of each day. A single space will separate them.
+Output Format:
+The only line of output will print the span for each day's stock price. A single space will separate them.
+Note:
+You are not required to print the expected output explicitly. It has already been taken care of. 
+Constraints:
+0 <= N <= 10^7
+1 <= X <= 10^9
+Where X denotes the stock's price for a day.
+
+Time Limit: 1 second
+Sample Input 1:
+4
+10 10 10 10
+Sample Output 1:
+1 1 1 1 
+Sample Input 2:
+8
+60 70 80 100 90 75 80 120
+Sample Output 2:
+1 2 3 4 1 1 2 8 
+```
+
+```cpp
+#include <iostream>
+using namespace std;
+
+// Time complexity: O(N) Space complexity: O(N) where N is the number of days
+#include <stack> 
+//https://youtu.be/XlD5VsOZsyA
+int *stockSpan(int *price, int n) { 
+    stack<int> stk; 
+    int *output = new int[n]; 
+    stk.push(0); 
+    output[0] = 1; 
+    
+    for (int i = 1; i < n; ++i) { 
+        while (!stk.empty() && price[stk.top()] < price[i]) { 
+            stk.pop(); 
+        }
+		// output[i] = (stk.empty()) ? (i + 1) : (i - stk.top());
+        if (stk.empty()) { 
+            output[i] = i + 1; 
+        } else { 
+            output[i] = i - stk.top(); 
+        } 
+        stk.push(i); 
+    } 
+    return output; 
+}
+
+int main() {
+    int size;
+    cin >> size;
+
+    int *input = new int[size];
+    for (int i = 0; i < size; i++) {
+        cin >> input[i];
+    }
+
+    int *output = stockSpan(input, size);
+    for (int i = 0; i < size; i++) {
+        cout << output[i] << " ";
+    }
+
+    cout << "\n";
+
+    delete[] input;
+    delete[] output;
+}
+```
 
 ### Minimum bracket Reversal
 
+```
+For a given expression in the form of a string, find the minimum number of brackets that can be reversed in order to make the expression balanced. The expression will only contain curly brackets.
+If the expression can't be balanced, return -1.
+Example:
+Expression: {{{{
+If we reverse the second and the fourth opening brackets, the whole expression will get balanced. Since we have to reverse two brackets to make the expression balanced, the expected output will be 2.
 
+Expression: {{{
+In this example, even if we reverse the last opening bracket, we would be left with the first opening bracket and hence will not be able to make the expression balanced and the output will be -1.
+Input Format :
+The first and the only line of input contains a string expression, without any spaces in between.
+Output Format :
+The only line of output will print the number of reversals required to balance the whole expression. Prints -1, otherwise.
+Note:
+You don't have to print anything. It has already been taken care of.
+Constraints:
+0 <= N <= 10^6
+Where N is the length of the expression.
 
-### Code: Midpoint of LL - QUESTION-1
+Time Limit: 1sec
+Sample Input 1:
+{{{
+Sample Output 1:
+-1
+Sample Input 2:
+{{{{}}
+Sample Output 2:
+1
+```
+
+```cpp
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+//Time complexity: O(N) Space complexity: O(N) where N is the number of brackets
+#include <stack> 
+int countBracketReversals(string input) { 
+    int len = input.length(); 
+    if (len == 0) { 
+        return 0; 
+    } 
+    
+    if (len % 2 != 0) {
+        return -1; // Only even number of brackets can be balanced 
+    } 
+    stack<char> stack; 
+    for (int i = 0; i < len; i++) { 
+        char currentChar = input[i]; 
+        if (currentChar == '{') { 
+            stack.push(currentChar); 
+        } else if (currentChar == '}'){ // Pop if there is a balanced pair 
+            if (!stack.empty() && stack.top() == '{') { 
+                stack.pop(); 
+            } else { 
+                stack.push(currentChar); 
+            } 
+        } 
+    } 
+    
+    int count = 0; // Only unbalanced brackets are there in stack now 
+    while (!stack.empty()) { 
+        char char1 = stack.top(); 
+        stack.pop(); 
+        char char2 = stack.top(); 
+        stack.pop(); /* When char1 = } and char2 = {, then we need to reverse both of them so count will increase by 2 */ 
+        if (char1 != char2) { 
+            count += 2; 
+        } else { 
+            count += 1; 
+        } 
+    } 
+    return count; 
+}
+
+int main() {
+    string input;
+    cin >> input;
+    cout << countBracketReversals(input);
+}
+```
