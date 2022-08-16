@@ -9,21 +9,10 @@ Lecture 2: Dynamic Allocation START HERE
 ---
 
 //============>>>>>>>>>> Lecture 2: Dynamic Allocation Notes
-PDF
-
+[Lecture 2: Dynamic Allocation Notes.pdf](https://github.com/karakib2k18/Data-Structures-and-Algorithms-in-Cpp/files/9350328/Lecture.2.Dynamic.Allocation.Notes.pdf)
 
 ---
 
-
-```
-
-```
-
-```cpp
-/*
-
-*/
-```
 ### Address Typecasting
 
 ```cpp
@@ -365,10 +354,11 @@ int main() {
 	int & k3 = j3;
 	k3++;
 }
-
 ```
 
 ### QUIZZZ
+![image](https://user-images.githubusercontent.com/57065763/184858902-702f3727-6762-4f2b-aa92-eed8e0c6e862.png)
+![image](https://user-images.githubusercontent.com/57065763/184859976-c3914ffa-7e14-4e4f-93f4-94206ba6216b.png)
 
 ```
 
