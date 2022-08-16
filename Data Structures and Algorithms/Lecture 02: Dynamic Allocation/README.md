@@ -9,6 +9,7 @@ Lecture 2: Dynamic Allocation START HERE
 ---
 
 //============>>>>>>>>>> Lecture 2: Dynamic Allocation Notes
+
 [Lecture 2: Dynamic Allocation Notes.pdf](https://github.com/karakib2k18/Data-Structures-and-Algorithms-in-Cpp/files/9350328/Lecture.2.Dynamic.Allocation.Notes.pdf)
 
 ---
