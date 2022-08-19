@@ -80,19 +80,22 @@ void print(Node *head) {
 }
 
 /////////////===============>>>>>>>>>>>>>> Code: Reverse LL (Iterative)
-Node* reverseLinkedList(Node* head) {
-    Node *currentNode = head;
-    Node *previousNode = NULL;
-    
-    while (currentNode != NULL) { 
-        Node *nextNode = currentNode->next; 
-        currentNode->next = previousNode; 
-        previousNode = currentNode; 
-        currentNode = nextNode; 
-    } 
-    
-    head = previousNode;
-    return head;
+/*
+Time complexity: O(N) Space complexity: O(1) where N is the length of the singly linked list 
+*/
+Node* reverseLinkedList(Node *head)
+{
+	Node *currentNode = head;
+	Node *previousNode = NULL;
+	while (currentNode != NULL)
+	{
+		Node *nextNode = currentNode->next;
+		currentNode->next = previousNode;
+		previousNode = currentNode;
+		currentNode = nextNode;
+	}
+	head = previousNode;
+	return head;
 }
 
 int main() {

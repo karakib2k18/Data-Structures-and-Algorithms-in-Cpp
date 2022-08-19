@@ -90,96 +90,85 @@ void print(Node *head)
 }
 
 //////////=============>>>>>>>>>>>>>>>>> Code: Merge Sort LInked List
-
-// finding the mid
-Node *findMid(Node *head){
-    Node *slow=head;
-    Node *fast=head;
-    
-    while(fast->next !=NULL && fast->next->next != NULL){
-        slow = slow->next;
-        fast = fast->next->next;
-    }
-    return slow;
-}
-
-////merging two sorted LL
-Node *mergeTwoSortedLinkedLists(Node *h1, Node *h2)
+/*
+Time Complexity : O(n* log(n)) Space Complexity : O(n) where n is the size of singly linked list
+*/
+Node* findMid(Node *head)
 {
-    Node *fh = NULL;
-    Node *ft = NULL;
-    
-    if(h1 == NULL && h2 == NULL){
-        return fh;
-    }
-    if(h1 == NULL){
-        return h2;
-    }
-    
-    if(h2 == NULL){
-        return h1;
-    }
-    
-    if((h1->data) <= (h2->data)){
-        fh=h1;
-        ft=h1;
-        h1=h1->next;
-    }else if((h2->data)<(h1->data)){
-        fh=h2;
-        ft=h2;
-        h2=h2->next;
-    }
-    
-    while(h1 !=NULL && h2 != NULL){
-        if((h1->data) <= (h2->data)){
-            ft->next = h1;
-            ft=h1;
-            h1=h1->next;
-        }else if((h2->data)<(h1->data)){
-            ft->next = h2;
-            ft=h2;
-            h2=h2->next;
-        }
-    }
-    
-    if(h2 ==NULL && h1 != NULL){
-        while(h1 != NULL){
-            ft->next = h1;
-            ft=h1;
-            h1=h1->next;
-        }
-    } else if(h1 ==NULL && h2 != NULL){
-        while(h2 != NULL){
-            ft->next = h2;
-            ft=h2;
-            h2=h2->next;
-        }
-    }
-
-    ft->next = NULL;
-    return fh;
+	if (head == NULL)
+	{
+		return head;
+	}
+	Node *slow = head, *fast = head;
+	while (fast->next != NULL && fast->next->next != NULL)
+	{
+		slow = slow->next;
+		fast = fast->next->next;
+	}
+	return slow;
 }
-
-//// everything is processing from here
-Node *mergeSort(Node *head)
+Node* merge(Node *head1, Node *head2)
 {
-	if(head == NULL || head->next==NULL){
-        return head;
-    }
-    
-    // finding the mid
-    Node *mid = findMid(head);
-    //then naming the mid+1 to the head1
-    Node *head1 = mid->next;
-    //then making mid next equal to NULL
-    mid->next=NULL;
-    
-    //doing recursion to divide
-    head = mergeSort(head);
-    head1 = mergeSort(head1);
-    
-    // then concor or merging to sorted LL
-    return mergeTwoSortedLinkedLists(head, head1);
+	if (head1 == NULL)
+	{
+		return head2;
+	}
+	if (head2 == NULL)
+	{
+		return head1;
+	}
+	Node *head = NULL, *tail = NULL;
+	if (head1->data < head2->data)
+	{
+		head = head1;
+		tail = head1;
+		head1 = head1->next;
+	}
+	else
+	{
+		head = head2;
+		tail = head2;
+		head2 = head2->next;
+	}
+	while (head1 != NULL && head2 != NULL)
+	{
+		if (head1->data < head2->data)
+		{
+			tail->next = head1;
+			tail = head1;
+			head1 = head1->next;
+		}
+		else
+		{
+			tail->next = head2;
+			tail = head2;
+			head2 = head2->next;
+		}
+	}
+	if (head1 != NULL)
+	{
+		tail->next = head1;
+	}
+	if (head2 != NULL)
+	{
+		tail->next = head2;
+	}
+	return head;
+}
+Node* mergeSort(Node *head)
+{
+	if (head == NULL || head->next == NULL)
+	{
+		return head;
+	}
+	Node *mid = findMid(head);
+	Node *half1 = head;
+	Node *half2 = mid->next;
+	mid->next = NULL;
+	half1 = mergeSort(half1);
+	half2 = mergeSort(half2);
+	Node *finalHead = merge(half1, half2);
+	return finalHead;
 }
 
 int main()

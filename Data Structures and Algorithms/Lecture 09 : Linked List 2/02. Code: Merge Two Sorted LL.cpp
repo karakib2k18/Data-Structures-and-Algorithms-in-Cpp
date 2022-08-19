@@ -96,61 +96,56 @@ void print(Node *head)
 }
 
 /////////////=============>>>>>>>>> Code: Merge Two Sorted LL
-
-Node *mergeTwoSortedLinkedLists(Node *h1, Node *h2)
+/*
+Time Complexity : O(n + m) Space Complexity : O(1) where n and m are the sizes of singly linked lists*/
+Node* mergeTwoSortedLinkedLists(Node *head1, Node *head2)
 {
-    Node *fh = NULL;
-    Node *ft = NULL;
+	if (head1 == NULL)
+	{
+		return head2;
+	}
+	if (head2 == NULL)
+	{
+		return head1;
+	}
+	Node *newHead = NULL, *newTail = NULL;
     
-    if(h1 == NULL && h2 == NULL){
-        return fh;
-    }
-    if(h1 == NULL){
-        return h2;
-    }
-    
-    if(h2 == NULL){
-        return h1;
-    }
-    
-    if((h1->data) <= (h2->data)){
-        fh=h1;
-        ft=h1;
-        h1=h1->next;
-    }else if((h2->data)<(h1->data)){
-        fh=h2;
-        ft=h2;
-        h2=h2->next;
-    }
-    
-    while(h1 !=NULL && h2 != NULL){
-        if((h1->data) <= (h2->data)){
-            ft->next = h1;
-            ft=h1;
-            h1=h1->next;
-        }else if((h2->data)<(h1->data)){
-            ft->next = h2;
-            ft=h2;
-            h2=h2->next;
-        }
-    }
-    
-    if(h2 ==NULL && h1 != NULL){
-        while(h1 != NULL){
-            ft->next = h1;
-            ft=h1;
-            h1=h1->next;
-        }
-    } else if(h1 ==NULL && h2 != NULL){
-        while(h2 != NULL){
-            ft->next = h2;
-            ft=h2;
-            h2=h2->next;
-        }
-    }
-    ft->next = NULL;
-    return fh;
-    
+	if (head1->data < head2->data)
+	{
+		newHead = head1;
+		newTail = head1;
+		head1 = head1->next;
+	}
+	else
+	{
+		newHead = head2;
+		newTail = head2;
+		head2 = head2->next;
+	}
+	while (head1 != NULL && head2 != NULL)
+	{
+		if (head1->data <= head2->data)
+		{
+			newTail->next = head1;
+			newTail = newTail->next;
+			head1 = head1->next;
+		}
+		else
+		{
+			newTail->next = head2;
+			newTail = newTail->next;
+			head2 = head2->next;
+		}
+	}
+	if (head1 != NULL)
+	{
+		newTail->next = head1;
+	}
+	if (head2 != NULL)
+	{
+		newTail->next = head2;
+	}
+	return newHead;
 }
 
 int main()

@@ -102,6 +102,12 @@ void print(Node *head)
 
 /////==============>>>>>>>>>.kReverse
 ///////////// https://www.youtube.com/watch?v=LCRGV8avvUY&t=227s
+
+/*
+Time Complexity : O(n) 
+Space Complexity : O(n/k) 
+For each Linked List of size n, n/k or (n/k)+1 calls will be made during the recursion.
+*/
 Node *kReverse(Node *head, int k) { 
     if (k == 0 || k == 1) { 
         return head; 

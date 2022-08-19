@@ -88,55 +88,59 @@ void print(Node *head)
 	cout << endl;
 }
 ////////////////================>>>>>>>>>>> Even after Odd LinkedList
-
-Node *evenAfterOdd(Node *head)
+/*
+Time Complexity : O(n) Space Complexity : O(1) where n is the size of singly linked list
+*/
+Node* evenAfterOdd(Node *head)
 {
-    if(head==NULL){
-        return head;
-    }
-    
-    Node *evenHead = NULL, *evenTail = NULL, *oddHead=NULL, *oddTail = NULL;
-
-    while(head != NULL){
-        
-      if((head->data % 2 )==0 ){
-          
-        if(evenHead==NULL){
-          evenHead = head;
-          evenTail = head;
-        }else{
-          evenTail->next = head;
-          evenTail = head;
-        }
-          
-      }else{
-          
-        if(oddHead==NULL){
-          oddHead = head;
-          oddTail = head;
-        }else{
-          oddTail->next = head;
-          oddTail = head;
-        }
-          
-      }
-    head = head->next;
-    }
-
-    if(oddTail != NULL){
-      oddTail->next = evenHead;
-    }
-
-    if(evenTail != NULL){
-      evenTail->next = NULL;
-    }
-
-    if(oddTail==NULL){
-      return evenHead;
-    }else{
-      return oddHead;
-    }
-
+	if (head == NULL)
+	{
+		return head;
+	}
+	Node *evenHead = NULL, *oddHead = NULL, *evenTail = NULL, *oddTail = NULL;
+	while (head != NULL)
+	{
+		if (head->data % 2 == 0)
+		{
+			if (evenHead == NULL)
+			{
+				evenHead = head;
+				evenTail = head;
+			}
+			else
+			{
+				evenTail->next = head;
+				evenTail = evenTail->next;
+			}
+		}
+		else
+		{
+			if (oddHead == NULL)
+			{
+				oddHead = head;
+				oddTail = head;
+			}
+			else
+			{
+				oddTail->next = head;
+				oddTail = oddTail->next;
+			}
+		}
+		head = head->next;
+	}
+	if (oddHead == NULL)
+	{
+		return evenHead;
+	}
+	else
+	{
+		oddTail->next = evenHead;
+	}
+	if (evenHead != NULL)
+	{
+		evenTail->next = NULL;
+	}
+	return oddHead;
 }
 
 int main()

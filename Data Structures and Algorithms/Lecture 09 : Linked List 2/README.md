@@ -1,3 +1,9 @@
+```
+
+Lecture 09 : Linked List 2 START HERE
+
+```
+
 # ##Lecture 9 : Linked List 2
 
 ---
@@ -8,10 +14,7 @@
 ---
 
 ### Midpoint of LL
-
-![image](https://user-images.githubusercontent.com/57065763/172657102-23fc6684-7219-436f-a7f2-12598c93f65b.png)
-![image](https://user-images.githubusercontent.com/57065763/172658080-7a198d73-437e-4f50-8a81-8034f1764fd2.png)
-
+![image](https://user-images.githubusercontent.com/57065763/185682935-e220e3bd-5c19-47fc-9b80-f4b9f5aba02d.png)
 
 ### Code: Midpoint of LL - QUESTION-1
 
@@ -92,20 +95,22 @@ Node *takeinput()
 }
 
 //////////////////===================>>>>>>>>>> Code: Midpoint of LL
-Node *midPoint(Node *head)
+/*
+Time Complexity : O(n) Space Complexity : O(1) where n is the size of singly linked list 
+*/
+Node* midPoint(Node *head)
 {
-    if(head==NULL || head->next==NULL){
-        return head;
-    }
-    Node *slow = head;
-    Node *fast=head;
-    
-    while(fast->next != NULL && fast->next->next != NULL){
-        slow = slow->next;
-        fast = fast->next->next;
-    }
-    
-    return slow;
+	if (head == NULL || head->next == NULL)
+	{
+		return head;
+	}
+	Node *slow = head, *fast = head->next;
+	while (fast != NULL && fast->next != NULL)
+	{
+		slow = slow->next;
+		fast = fast->next->next;
+	}
+	return slow;
 }
 
 int main()
@@ -233,61 +238,56 @@ void print(Node *head)
 }
 
 /////////////=============>>>>>>>>> Code: Merge Two Sorted LL
-
-Node *mergeTwoSortedLinkedLists(Node *h1, Node *h2)
+/*
+Time Complexity : O(n + m) Space Complexity : O(1) where n and m are the sizes of singly linked lists*/
+Node* mergeTwoSortedLinkedLists(Node *head1, Node *head2)
 {
-    Node *fh = NULL;
-    Node *ft = NULL;
+	if (head1 == NULL)
+	{
+		return head2;
+	}
+	if (head2 == NULL)
+	{
+		return head1;
+	}
+	Node *newHead = NULL, *newTail = NULL;
     
-    if(h1 == NULL && h2 == NULL){
-        return fh;
-    }
-    if(h1 == NULL){
-        return h2;
-    }
-    
-    if(h2 == NULL){
-        return h1;
-    }
-    
-    if((h1->data) <= (h2->data)){
-        fh=h1;
-        ft=h1;
-        h1=h1->next;
-    }else if((h2->data)<(h1->data)){
-        fh=h2;
-        ft=h2;
-        h2=h2->next;
-    }
-    
-    while(h1 !=NULL && h2 != NULL){
-        if((h1->data) <= (h2->data)){
-            ft->next = h1;
-            ft=h1;
-            h1=h1->next;
-        }else if((h2->data)<(h1->data)){
-            ft->next = h2;
-            ft=h2;
-            h2=h2->next;
-        }
-    }
-    
-    if(h2 ==NULL && h1 != NULL){
-        while(h1 != NULL){
-            ft->next = h1;
-            ft=h1;
-            h1=h1->next;
-        }
-    } else if(h1 ==NULL && h2 != NULL){
-        while(h2 != NULL){
-            ft->next = h2;
-            ft=h2;
-            h2=h2->next;
-        }
-    }
-    ft->next = NULL;
-    return fh;
-    
+	if (head1->data < head2->data)
+	{
+		newHead = head1;
+		newTail = head1;
+		head1 = head1->next;
+	}
+	else
+	{
+		newHead = head2;
+		newTail = head2;
+		head2 = head2->next;
+	}
+	while (head1 != NULL && head2 != NULL)
+	{
+		if (head1->data <= head2->data)
+		{
+			newTail->next = head1;
+			newTail = newTail->next;
+			head1 = head1->next;
+		}
+		else
+		{
+			newTail->next = head2;
+			newTail = newTail->next;
+			head2 = head2->next;
+		}
+	}
+	if (head1 != NULL)
+	{
+		newTail->next = head1;
+	}
+	if (head2 != NULL)
+	{
+		newTail->next = head2;
+	}
+	return newHead;
 }
 
 int main()
@@ -307,13 +307,9 @@ int main()
 
 
 ### Merge Sort in Linked List
-
-![image](https://user-images.githubusercontent.com/57065763/172781064-b91e990f-ef7f-49f2-b8d9-caa2796fb248.png)
-![image](https://user-images.githubusercontent.com/57065763/172781361-a484391e-0622-4bf1-b923-7887779e2c89.png)
-
+![image](https://user-images.githubusercontent.com/57065763/185683221-201e6b5d-778d-421a-85c7-c087e3adec03.png)
 
 ### Code: Merge Sort - QUESTION-3
-
 
 ```
 Code: Merge Sort
@@ -405,97 +401,86 @@ void print(Node *head)
 
 //////////=============>>>>>>>>>>>>>>>>> Code: Merge Sort LInked List
 
-// finding the mid
-Node *findMid(Node *head){
-    Node *slow=head;
-    Node *fast=head;
-    
-    while(fast->next !=NULL && fast->next->next != NULL){
-        slow = slow->next;
-        fast = fast->next->next;
-    }
-    return slow;
-}
-
-////merging two sorted LL
-Node *mergeTwoSortedLinkedLists(Node *h1, Node *h2)
+/*
+Time Complexity : O(n* log(n)) Space Complexity : O(n) where n is the size of singly linked list
+*/
+Node* findMid(Node *head)
 {
-    Node *fh = NULL;
-    Node *ft = NULL;
-    
-    if(h1 == NULL && h2 == NULL){
-        return fh;
-    }
-    if(h1 == NULL){
-        return h2;
-    }
-    
-    if(h2 == NULL){
-        return h1;
-    }
-    
-    if((h1->data) <= (h2->data)){
-        fh=h1;
-        ft=h1;
-        h1=h1->next;
-    }else if((h2->data)<(h1->data)){
-        fh=h2;
-        ft=h2;
-        h2=h2->next;
-    }
-    
-    while(h1 !=NULL && h2 != NULL){
-        if((h1->data) <= (h2->data)){
-            ft->next = h1;
-            ft=h1;
-            h1=h1->next;
-        }else if((h2->data)<(h1->data)){
-            ft->next = h2;
-            ft=h2;
-            h2=h2->next;
-        }
-    }
-    
-    if(h2 ==NULL && h1 != NULL){
-        while(h1 != NULL){
-            ft->next = h1;
-            ft=h1;
-            h1=h1->next;
-        }
-    } else if(h1 ==NULL && h2 != NULL){
-        while(h2 != NULL){
-            ft->next = h2;
-            ft=h2;
-            h2=h2->next;
-        }
-    }
-
-    ft->next = NULL;
-    return fh;
+	if (head == NULL)
+	{
+		return head;
+	}
+	Node *slow = head, *fast = head;
+	while (fast->next != NULL && fast->next->next != NULL)
+	{
+		slow = slow->next;
+		fast = fast->next->next;
+	}
+	return slow;
 }
-
-//// everything is processing from here
-Node *mergeSort(Node *head)
+Node* merge(Node *head1, Node *head2)
 {
-	if(head == NULL || head->next==NULL){
-        return head;
-    }
-    
-    // finding the mid
-    Node *mid = findMid(head);
-    //then naming the mid+1 to the head1
-    Node *head1 = mid->next;
-    //then making mid next equal to NULL
-    mid->next=NULL;
-    
-    //doing recursion to divide
-    head = mergeSort(head);
-    head1 = mergeSort(head1);
-    
-    // then concor or merging to sorted LL
-    return mergeTwoSortedLinkedLists(head, head1);
+	if (head1 == NULL)
+	{
+		return head2;
+	}
+	if (head2 == NULL)
+	{
+		return head1;
+	}
+	Node *head = NULL, *tail = NULL;
+	if (head1->data < head2->data)
+	{
+		head = head1;
+		tail = head1;
+		head1 = head1->next;
+	}
+	else
+	{
+		head = head2;
+		tail = head2;
+		head2 = head2->next;
+	}
+	while (head1 != NULL && head2 != NULL)
+	{
+		if (head1->data < head2->data)
+		{
+			tail->next = head1;
+			tail = head1;
+			head1 = head1->next;
+		}
+		else
+		{
+			tail->next = head2;
+			tail = head2;
+			head2 = head2->next;
+		}
+	}
+	if (head1 != NULL)
+	{
+		tail->next = head1;
+	}
+	if (head2 != NULL)
+	{
+		tail->next = head2;
+	}
+	return head;
 }
-
+Node* mergeSort(Node *head)
+{
+	if (head == NULL || head->next == NULL)
+	{
+		return head;
+	}
+	Node *mid = findMid(head);
+	Node *half1 = head;
+	Node *half2 = mid->next;
+	mid->next = NULL;
+	half1 = mergeSort(half1);
+	half2 = mergeSort(half2);
+	Node *finalHead = merge(half1, half2);
+	return finalHead;
+}
 int main()
 {
 	int t;
@@ -694,11 +679,7 @@ int main()
 ```
 
 ### Reverse LL (Recursive) => O(N^2)
-
-![image](https://user-images.githubusercontent.com/57065763/172867183-c0954a79-9820-4710-8f86-1e5c2bd44dfd.png)
-![image](https://user-images.githubusercontent.com/57065763/172875235-be477015-e732-4f09-9823-a94af18d0f5c.png)
-![image](https://user-images.githubusercontent.com/57065763/172875803-73a33bb8-d80e-4ca6-824e-7779f059ee90.png)
-
+![image](https://user-images.githubusercontent.com/57065763/185683775-90932e24-3b08-4869-8d77-a6e8307c2172.png)
 
 ```cpp
 /////////==============>>>>>>>>>> This is O(N^2) ==>>>>> It's bad, will see the O(N) bellow.
@@ -776,10 +757,7 @@ Node* reverseLL_3(Node *head) {
 }
 ```
 ### Reverse LL (Iterative)
-
-![image](https://user-images.githubusercontent.com/57065763/172886651-dd825038-eca5-43f1-ab86-30c768a427e2.png)
-![image](https://user-images.githubusercontent.com/57065763/172892462-31bfe4f1-90c2-47ec-87be-b9c2ac836392.png)
-
+![image](https://user-images.githubusercontent.com/57065763/185684042-76a60f9c-fc6a-42a6-b7be-0568e949f0e8.png)
 
 ### Code : Reverse LL (Iterative)- QUESTION-5
 
@@ -864,19 +842,22 @@ void print(Node *head) {
 }
 
 /////////////===============>>>>>>>>>>>>>> Code: Reverse LL (Iterative)
-Node* reverseLinkedList(Node* head) {
-    Node *currentNode = head;
-    Node *previousNode = NULL;
-    
-    while (currentNode != NULL) { 
-        Node *nextNode = currentNode->next; 
-        currentNode->next = previousNode; 
-        previousNode = currentNode; 
-        currentNode = nextNode; 
-    } 
-    
-    head = previousNode;
-    return head;
+/*
+Time complexity: O(N) Space complexity: O(1) where N is the length of the singly linked list 
+*/
+Node* reverseLinkedList(Node *head)
+{
+	Node *currentNode = head;
+	Node *previousNode = NULL;
+	while (currentNode != NULL)
+	{
+		Node *nextNode = currentNode->next;
+		currentNode->next = previousNode;
+		previousNode = currentNode;
+		currentNode = nextNode;
+	}
+	head = previousNode;
+	return head;
 }
 
 int main() {
@@ -895,22 +876,11 @@ int main() {
 ```
 
 ### Variations of LL
+![image](https://user-images.githubusercontent.com/57065763/185684417-ef325e37-20b4-4bc9-8256-12d0d02b6044.png)
 
-![image](https://user-images.githubusercontent.com/57065763/172900453-9823092a-219a-4670-b211-f9a2521828a2.png)
-![image](https://user-images.githubusercontent.com/57065763/172900852-2f377af0-a172-4de9-af61-418387cdd1bc.png)
-![image](https://user-images.githubusercontent.com/57065763/172901242-0e987754-30a5-4178-a39a-3e780b474884.png)
-![image](https://user-images.githubusercontent.com/57065763/172901558-bb0d9f59-f99c-417c-b077-2316b2a909d8.png)
-
-
-![image](https://user-images.githubusercontent.com/57065763/172903772-263c07ac-060c-42ba-9481-ec85eacef037.png)
-![image](https://user-images.githubusercontent.com/57065763/172903652-a3db23f7-e93a-4512-a239-6203290ee302.png)
-![image](https://user-images.githubusercontent.com/57065763/172903613-65111eda-d161-4aae-9ee6-1f5587be9e78.png)
-
-![image](https://user-images.githubusercontent.com/57065763/172903566-fda17154-94e6-48f7-9579-ac9bcf4151eb.png)
-
+![image](https://user-images.githubusercontent.com/57065763/185685529-9f9897c9-e8e6-4b27-9aff-817a6c014aad.png)
 
 ### Code : ### Code : Reverse LL (Iterative)- QUESTION-6
-
 
 ```
 Given a singly linked list of integers and an integer n, find and return the index for the first occurrence of 'n' in the linked list. -1 otherwise.
@@ -997,17 +967,25 @@ Node *takeinput()
 
 ////////////////================>>>>>>>>>>> Find a node in LL (recursive)
 
-int findNodeRec(Node *head, int n){
-    if(head == NULL)
-        return -1;
-    
-    if(head -> data == n)
-        return 0;
-    int smallAns = findNodeRec(head -> next, n);
-    if(smallAns == -1)
-        return smallAns;
-    else
-        return 1 + smallAns;
+/*
+Time Complexity : O(n) Space Complexity : O(n) where n is the size of singly linked list 
+*/
+int findNodeRec(Node *head, int n)
+{
+	if (head == NULL)
+	{
+		return -1;
+	}
+	else if (head->data == n)
+	{
+		return 0;
+	}
+	int smallAns = findNodeRec(head->next, n);
+	if (smallAns == -1)
+	{
+		return -1;
+	}
+	return smallAns + 1;
 }
 
 int main()
@@ -1113,55 +1091,59 @@ void print(Node *head)
 	cout << endl;
 }
 ////////////////================>>>>>>>>>>> Even after Odd LinkedList
-
-Node *evenAfterOdd(Node *head)
+/*
+Time Complexity : O(n) Space Complexity : O(1) where n is the size of singly linked list
+*/
+Node* evenAfterOdd(Node *head)
 {
-    if(head==NULL){
-        return head;
-    }
-    
-    Node *evenHead = NULL, *evenTail = NULL, *oddHead=NULL, *oddTail = NULL;
-
-    while(head != NULL){
-        
-      if((head->data % 2 )==0 ){
-          
-        if(evenHead==NULL){
-          evenHead = head;
-          evenTail = head;
-        }else{
-          evenTail->next = head;
-          evenTail = head;
-        }
-          
-      }else{
-          
-        if(oddHead==NULL){
-          oddHead = head;
-          oddTail = head;
-        }else{
-          oddTail->next = head;
-          oddTail = head;
-        }
-          
-      }
-    head = head->next;
-    }
-
-    if(oddTail != NULL){
-      oddTail->next = evenHead;
-    }
-
-    if(evenTail != NULL){
-      evenTail->next = NULL;
-    }
-
-    if(oddTail==NULL){
-      return evenHead;
-    }else{
-      return oddHead;
-    }
-
+	if (head == NULL)
+	{
+		return head;
+	}
+	Node *evenHead = NULL, *oddHead = NULL, *evenTail = NULL, *oddTail = NULL;
+	while (head != NULL)
+	{
+		if (head->data % 2 == 0)
+		{
+			if (evenHead == NULL)
+			{
+				evenHead = head;
+				evenTail = head;
+			}
+			else
+			{
+				evenTail->next = head;
+				evenTail = evenTail->next;
+			}
+		}
+		else
+		{
+			if (oddHead == NULL)
+			{
+				oddHead = head;
+				oddTail = head;
+			}
+			else
+			{
+				oddTail->next = head;
+				oddTail = oddTail->next;
+			}
+		}
+		head = head->next;
+	}
+	if (oddHead == NULL)
+	{
+		return evenHead;
+	}
+	else
+	{
+		oddTail->next = evenHead;
+	}
+	if (evenHead != NULL)
+	{
+		evenTail->next = NULL;
+	}
+	return oddHead;
 }
 
 int main()
@@ -1178,8 +1160,7 @@ int main()
 }
 ```
 ### Code : Delete every N nodes- QUESTION-8
-![image](https://user-images.githubusercontent.com/57065763/173051948-6c620194-efb1-4504-83ef-e06bca390633.png)
-
+![image](https://user-images.githubusercontent.com/57065763/185685924-970e2983-5801-48aa-83e6-2587c47fc44d.png)
 
 ```
 You have been given a singly linked list of integers along with two integers, 'M,' and 'N.' Traverse the linked list such that you retain the 'M' nodes, then delete the next 'N' nodes. Continue the same until the end of the linked list.
@@ -1279,46 +1260,52 @@ void print(Node *head)
 
 ////////////////================>>>>>>>>>>> Delete every N nodes
 
-Node *skipMdeleteN(Node *head, int M, int N)
+/*
+Time Complexity : O(n) Space Complexity : O(1) where n is size of singly linked list 
+*/
+Node* skipMdeleteN(Node *head, int M, int N)
 {
-	if(head==NULL || M==0){
-        return NULL;
-    }
-    if(N==0){
-        return head;
-    }
-    
-    Node *currentNode = head;
-    Node *newNode = NULL;
-    Node *temp = NULL; //temp will keep a copy of currentNode as we modify the list
-    
-    while(currentNode != NULL){
-        int skip = 0;
-        int needToDelete = 0;
-        
-        while(currentNode != NULL && skip<M){
-            if(temp == NULL){
-                temp = currentNode;
-            }else{
-                temp->next = currentNode;
-                temp = currentNode;
-            }
-            currentNode = currentNode->next;
-            skip++;
-        }
-        
-        while(currentNode != NULL && needToDelete<N){
-            newNode = currentNode->next;
-            delete currentNode;
-            currentNode = newNode;
-            needToDelete++;
-        }
-    }
-    if(temp != NULL){
-       temp->next = NULL;
-    }  
-    return head;
-    
+	if (M == 0 || head == NULL)
+	{
+		return NULL;
+	}
+	if (N == 0)
+	{
+		return head;
+	}
+	Node *currentNode = head;
+	Node *temp = NULL;	//temp will keep a copy of currentNode as we modify the list 
+	while (currentNode != NULL)
+	{
+		int skip = 0;
+		int needToDelete = 0;
+		while (currentNode != NULL && skip < M)
+		{
+			if (temp == NULL)
+			{
+				temp = currentNode;
+			}
+			else
+			{
+				temp->next = currentNode;
+				temp = currentNode;
+			}
+			currentNode = currentNode->next;
+			skip++;
+		}
+		while (currentNode != NULL && needToDelete < N)
+		{
+			Node *newNode = currentNode;
+			delete currentNode;
+			currentNode = newNode->next;
+			needToDelete++;
+		}
+	}
+	if (temp != NULL)
+	{
+		temp->next = NULL;
+	}
+	return head;
 }
 
 int main()
@@ -1436,42 +1423,54 @@ void print(Node *head)
 }
 
 ///////////////////-======================>>>>>>>>>> Swap two Nodes of LL
-Node *swapNodes(Node *head, int i, int j) { 
-    if(i == j) { 
-        return head; 
-    } 
-    
-    Node *currentNode = head, *prev = NULL; 
-    Node *firstNode = NULL, *secondNode = NULL, *firstNodePrev = NULL, *secondNodePrev = NULL; 
-    int pos = 0; 
-    while (currentNode != NULL) { 
-        if (pos == i) { 
-            firstNodePrev = prev; 
-            firstNode = currentNode; 
-        } else if (pos == j) { 
-            secondNodePrev = prev; 
-            secondNode = currentNode; 
-        } 
-        prev = currentNode; 
-        currentNode = currentNode->next; 
-        pos++; 
-    } 
-    if (firstNodePrev != NULL) { 
-        firstNodePrev->next = secondNode; 
-    } else { 
-        head = secondNode; 
-    } 
-    
-    if (secondNodePrev != NULL) { 
-        secondNodePrev->next = firstNode; 
-    } else { 
-        head = firstNode; 
-    } 
-    
-    Node *currentFirstNode = secondNode->next; 
-    secondNode->next = firstNode->next; 
-    firstNode->next = currentFirstNode; 
-    return head; 
+/*
+Time Complexity : O(n) Space Complexity : O(1) where n is the size of singly linked list 
+*/
+Node* swapNodes(Node *head, int i, int j)
+{
+	if (i == j)
+	{
+		return head;
+	}
+	Node *currentNode = head, *prev = NULL;
+	Node *firstNode = NULL, *secondNode = NULL, *firstNodePrev = NULL, *secondNodePrev = NULL;
+	int pos = 0;
+	while (currentNode != NULL)
+	{
+		if (pos == i)
+		{
+			firstNodePrev = prev;
+			firstNode = currentNode;
+		}
+		else if (pos == j)
+		{
+			secondNodePrev = prev;
+			secondNode = currentNode;
+		}
+		prev = currentNode;
+		currentNode = currentNode->next;
+		pos++;
+	}
+	if (firstNodePrev != NULL)
+	{
+		firstNodePrev->next = secondNode;
+	}
+	else
+	{
+		head = secondNode;
+	}
+	if (secondNodePrev != NULL)
+	{
+		secondNodePrev->next = firstNode;
+	}
+	else
+	{
+		head = firstNode;
+	}
+	Node *currentFirstNode = secondNode->next;
+	secondNode->next = firstNode->next;
+	firstNode->next = currentFirstNode;
+	return head;
 }
 
 int main()
@@ -1594,6 +1593,12 @@ void print(Node *head)
 
 /////==============>>>>>>>>>.kReverse
 ///////////// https://www.youtube.com/watch?v=LCRGV8avvUY&t=227s
+
+/*
+Time Complexity : O(n) 
+Space Complexity : O(n/k) 
+For each Linked List of size n, n/k or (n/k)+1 calls will be made during the recursion.
+*/
 Node *kReverse(Node *head, int k) { 
     if (k == 0 || k == 1) { 
         return head; 
@@ -1722,41 +1727,52 @@ void print(Node *head)
 }
 
 ////////////===================>>>>>>>>>> Bubble Sort (Iterative) LinkedList
-// find length
-int length(Node *head) { 
-    if (head == NULL) { 
-        return 0; 
-    } 
-    
-    Node *temp = head; 
-    int size = 1 + length(temp->next); 
-    return size; 
-} 
-// functionality
-Node *bubbleSort(Node *head) { 
-    for (int i = 0; length(head) > i; i++) { 
-        Node *prev = NULL, *curr = head; 
-        while (curr->next != NULL) { 
-            if (curr->data > curr->next->data) { 
-                if (prev != NULL) { 
-                    Node *temp = curr->next->next; 
-                    curr->next->next = curr; 
-                    prev->next = curr->next; 
-                    curr->next = temp; 
-                    prev = prev->next; 
-                } else { 
-                    head = curr->next; 
-                    curr->next = head->next; 
-                    head->next = curr; 
-                    prev = head; 
-                } 
-            } else {
-                prev = curr; 
-                curr = curr->next; 
-            } 
-        } 
-    } 
-    return head; 
+/*
+Time complexity: O(N) Space complexity: O(1) where N is the length if the input singly linked list 
+*/
+int length(Node *head)
+{
+	if (head == NULL)
+	{
+		return 0;
+	}
+	Node *temp = head;
+	int size = 1 + length(temp->next);
+	return size;
+}
+Node* bubbleSort(Node *head)
+{
+	for (int i = 0; length(head) > i; i++)
+	{
+		Node *prev = NULL, *curr = head;
+		while (curr->next != NULL)
+		{
+			if (curr->data > curr->next->data)
+			{
+				if (prev != NULL)
+				{
+					Node *temp = curr->next->next;
+					curr->next->next = curr;
+					prev->next = curr->next;
+					curr->next = temp;
+					prev = prev->next;
+				}
+				else
+				{
+					head = curr->next;
+					curr->next = head->next;
+					head->next = curr;
+					prev = head;
+				}
+			}
+			else
+			{
+				prev = curr;
+				curr = curr->next;
+			}
+		}
+	}
+	return head;
 }
 
 int main()
@@ -1767,10 +1783,8 @@ int main()
 }
 ```
 
-### Lecture 09 : Linked List 2
+```
 
-```cpp
-
-Lecture 09 : Linked List 2
+Lecture 09 : Linked List 2  END HERE
 
 ```

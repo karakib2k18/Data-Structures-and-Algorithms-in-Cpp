@@ -86,17 +86,25 @@ Node *takeinput()
 
 ////////////////================>>>>>>>>>>> Find a node in LL (recursive)
 
-int findNodeRec(Node *head, int n){
-    if(head == NULL)
-        return -1;
-    
-    if(head -> data == n)
-        return 0;
-    int smallAns = findNodeRec(head -> next, n);
-    if(smallAns == -1)
-        return smallAns;
-    else
-        return 1 + smallAns;
+/*
+Time Complexity : O(n) Space Complexity : O(n) where n is the size of singly linked list 
+*/
+int findNodeRec(Node *head, int n)
+{
+	if (head == NULL)
+	{
+		return -1;
+	}
+	else if (head->data == n)
+	{
+		return 0;
+	}
+	int smallAns = findNodeRec(head->next, n);
+	if (smallAns == -1)
+	{
+		return -1;
+	}
+	return smallAns + 1;
 }
 
 int main()

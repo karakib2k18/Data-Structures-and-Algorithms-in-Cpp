@@ -100,46 +100,52 @@ void print(Node *head)
 
 ////////////////================>>>>>>>>>>> Delete every N nodes
 
-Node *skipMdeleteN(Node *head, int M, int N)
+/*
+Time Complexity : O(n) Space Complexity : O(1) where n is size of singly linked list 
+*/
+Node* skipMdeleteN(Node *head, int M, int N)
 {
-	if(head==NULL || M==0){
-        return NULL;
-    }
-    if(N==0){
-        return head;
-    }
-    
-    Node *currentNode = head;
-    Node *newNode = NULL;
-    Node *temp = NULL; //temp will keep a copy of currentNode as we modify the list
-    
-    while(currentNode != NULL){
-        int skip = 0;
-        int needToDelete = 0;
-        
-        while(currentNode != NULL && skip<M){
-            if(temp == NULL){
-                temp = currentNode;
-            }else{
-                temp->next = currentNode;
-                temp = currentNode;
-            }
-            currentNode = currentNode->next;
-            skip++;
-        }
-        
-        while(currentNode != NULL && needToDelete<N){
-            newNode = currentNode->next;
-            delete currentNode;
-            currentNode = newNode;
-            needToDelete++;
-        }
-    }
-    if(temp != NULL){
-       temp->next = NULL;
-    }  
-    return head;
-    
+	if (M == 0 || head == NULL)
+	{
+		return NULL;
+	}
+	if (N == 0)
+	{
+		return head;
+	}
+	Node *currentNode = head;
+	Node *temp = NULL;	//temp will keep a copy of currentNode as we modify the list 
+	while (currentNode != NULL)
+	{
+		int skip = 0;
+		int needToDelete = 0;
+		while (currentNode != NULL && skip < M)
+		{
+			if (temp == NULL)
+			{
+				temp = currentNode;
+			}
+			else
+			{
+				temp->next = currentNode;
+				temp = currentNode;
+			}
+			currentNode = currentNode->next;
+			skip++;
+		}
+		while (currentNode != NULL && needToDelete < N)
+		{
+			Node *newNode = currentNode;
+			delete currentNode;
+			currentNode = newNode->next;
+			needToDelete++;
+		}
+	}
+	if (temp != NULL)
+	{
+		temp->next = NULL;
+	}
+	return head;
 }
 
 int main()
