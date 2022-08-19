@@ -1,3 +1,8 @@
+```
+
+Lecture 08 : Linked List 1 START HERE
+
+```
 # ##Lecture 8 : Linked List 1
 
 ---
@@ -7,10 +12,7 @@
 ---
 
 ### What is Linked List
-
-![image](https://user-images.githubusercontent.com/57065763/172052769-fe2a7281-33f2-4d06-b544-53075b897374.png)
-![image](https://user-images.githubusercontent.com/57065763/172053195-ea4508bf-811f-4b49-9f82-2bf8ad4f9b48.png)
-![image](https://user-images.githubusercontent.com/57065763/172053327-8fefb139-afb9-4d05-b994-cac6877f0525.png)
+![image](https://user-images.githubusercontent.com/57065763/185605624-8b5d9753-3b26-41b2-a89a-37ad0123de9b.png)
 
 ```
 ==> Each Linked List Node stores his own data and store next node address.
@@ -48,12 +50,7 @@ int main() {
 
 
 ### Print the Linked List
-
-![image](https://user-images.githubusercontent.com/57065763/172054923-dfc9f741-cce3-48f2-91fe-7d4ff74b2945.png)
-![image](https://user-images.githubusercontent.com/57065763/172055699-4b6aa8e9-6279-4f2c-9f94-89bb1294bf11.png)
-![image](https://user-images.githubusercontent.com/57065763/172056937-6d52acb0-1a15-49e7-b572-8883f1ab76d6.png)
-![image](https://user-images.githubusercontent.com/57065763/172057155-5cbff13e-6f77-43b8-9377-fa3025fc91ac.png)
-
+![image](https://user-images.githubusercontent.com/57065763/185606120-39fbc427-a0ef-4d9d-82a5-4a49ec32af02.png)
 
 ```cpp
 ==> Print using [Head] Pointer.
@@ -503,9 +500,7 @@ int main()
 ```
 
 ### Insert node at ith position
-![image](https://user-images.githubusercontent.com/57065763/172123040-2ade74ed-3e98-435f-9904-6e745dc2a451.png)
-![image](https://user-images.githubusercontent.com/57065763/172125534-5e2bd1fb-f4fb-449c-bd19-6b24babd21be.png)
-![image](https://user-images.githubusercontent.com/57065763/172131756-8fe477e4-412d-47b7-bf20-61cfd741424c.png)
+![image](https://user-images.githubusercontent.com/57065763/185606554-54e355e1-c1b2-4622-8ee8-92ede1b453b6.png)
 ```cpp
 //First way
 Node *a = temp -> next;
@@ -834,10 +829,7 @@ int main() {
 
 ```
 ### Insert node (recursive) - QUESTION-5
-
-![image](https://user-images.githubusercontent.com/57065763/172146763-4aee9cde-8e81-44e0-8169-30e0b8ff0979.png)
-![image](https://user-images.githubusercontent.com/57065763/172144909-82d61218-d11e-4ffe-b579-78936dd1d564.png)
-![image](https://user-images.githubusercontent.com/57065763/172146236-884bd0f6-846e-48ec-94fe-5c9a978830b7.png)
+![image](https://user-images.githubusercontent.com/57065763/185607030-6f9c6f1e-44b8-4c9a-8793-c94374531dad.png)
 
 ```
 Insert node (recursive)
@@ -1878,11 +1870,8 @@ int main()
 
 ```
 
+```
 
-### Lecture 08 : Linked List 1
-
-```cpp
-
-Lecture 08 : Linked List 1
+Lecture 08 : Linked List 1 END HERE
 
 ```
