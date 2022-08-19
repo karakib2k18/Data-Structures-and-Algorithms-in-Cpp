@@ -1691,6 +1691,8 @@ Sample Output 2 :
 50 40 30 20 10
 
 ```
+/*-------------//////// =====>>>>>>>>>> Iterative Process---------------------------*/
+![image](https://user-images.githubusercontent.com/57065763/185675184-b3b416c5-9844-4a1b-b5eb-1499268141d9.png)
 
 ```cpp
 #include <iostream>
@@ -1733,8 +1735,7 @@ Node *takeinput()
 }
 
 ////////////======>>>>>>>>>https://youtu.be/bjtMCwy_LMA
-//////// =====>>>>>>>>>> Iterative Process
-![image](https://user-images.githubusercontent.com/57065763/172532546-98eb465d-165f-48ea-acaf-f1ae9b453426.png)
+
 
 ///////////// ==========>>>>>>>>>> Recursive Process
 /*Time Complexity : O(n) Space Complexity : O(n) where n is the size of singly linked list */

@@ -80,16 +80,20 @@ Node *takeinput()
 }
 
 ////////////======>>>>>>>>>https://youtu.be/bjtMCwy_LMA
-/// ![image](https://user-images.githubusercontent.com/57065763/172532546-98eb465d-165f-48ea-acaf-f1ae9b453426.png)
 //////// =====>>>>>>>>>> Iterative Process
-
-// void printReverse(Node *head)
-// {
-
-// }
+/// ![image](https://user-images.githubusercontent.com/57065763/172532546-98eb465d-165f-48ea-acaf-f1ae9b453426.png)
 
 ///////////// ==========>>>>>>>>>> Recursive Process
+/*Time Complexity : O(n) Space Complexity : O(n) where n is the size of singly linked list */
+void printReverse(Node *head)
+{
+    if(head == NULL){
+        return;
+    }
+    printReverse(head->next);
+    cout<< head->data <<" ";
 
+}
 void printReverse(Node *head)
 {
     if(head == NULL){
