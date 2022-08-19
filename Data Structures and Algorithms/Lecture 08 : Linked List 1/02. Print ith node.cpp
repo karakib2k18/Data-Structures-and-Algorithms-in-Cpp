@@ -86,6 +86,9 @@ Node *takeinput()
 }
 
 ////////////====================================>>>> Printing Node Node
+
+/*
+//--------------- not good way-----------------
 void printIthNode(Node *head, int i)
 {
   Node *current = head;
@@ -98,6 +101,27 @@ void printIthNode(Node *head, int i)
       current = current->next;
       count +=1;
   }
+}
+*/
+
+/*
+Time Complexity : O(min(i, n)) 
+Space Complexity : O(1) 
+where i is the position of the element to be printed and n is the size of singly linked list 
+*/
+void printIthNode(Node *head, int i)
+{
+	int position = 0;
+	Node *temp = head;
+	while (temp != NULL && position < i)
+	{
+		position++;
+		temp = temp->next;
+	}
+	if (temp != NULL)
+	{
+		cout << temp->data;
+	}
 }
 
 int main()

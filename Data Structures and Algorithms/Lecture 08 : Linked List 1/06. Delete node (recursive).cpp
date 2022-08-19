@@ -97,7 +97,10 @@ void print(Node *head)
 
 ////////////// ========================================>> Recursive Process
 
-/* Time Complexity : O(n) Space Complexity : O(n) where n is the size of singly linked list */ 
+/* Time Complexity : O(n)
+Space Complexity : O(n)
+where n is the size of singly linked list
+*/ 
 
 Node *deleteNodeRec(Node *head, int pos)
 {

@@ -98,17 +98,25 @@ Node *takeinput()
 }
 
 ////////////////================================>>>>>>>Find a Node in Linked List
-int findNode(Node *head, int n){
-    int countINdex = 0;
-    while(head != NULL){
-        if(head->data==n){
-            return countINdex;
-        }else{
-            head = head->next;
-            countINdex++;
-        }
-    }
-    return -1;    
+/*
+Time Complexity : O(N) 
+Space Complexity : O(1) 
+Where 'N' is the size of singly linked list. */
+int findNode(Node *head, int n)
+{
+	// Variable to maintain the position in the list. 
+	int pos = 0;
+	while (head != NULL)
+	{
+		// If element found, return the position of the element. 
+		if (head->data == n)
+		{
+			return pos;
+		}
+		pos++;
+		head = head->next;
+	}
+	return -1;
 }
 
 int main()

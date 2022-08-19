@@ -344,15 +344,19 @@ Node* inputNode(){
 }
 
 ////////////================================================================================>> Length of LL
-int length(Node *head){
-  int count = 0;
-  Node *temp = NULL;
-  temp = head;
-  while(temp !=NULL){
-    count +=1;
-    temp = temp->next;
-  }
-  return count;
+/*
+Time Complexity : O(n) Space Complexity : O(1) where n is size of singly linked list
+*/
+int length(Node *head)
+{
+	int len = 0;
+	Node *temp = head;
+	while (temp != NULL)
+	{
+		len++;
+		temp = temp->next;
+	}
+	return len;
 }
 
 signed main()
@@ -466,6 +470,9 @@ Node *takeinput()
 }
 
 ////////////=============================================================>>>> Printing Node Node
+
+/*
+//--------------- not good way-----------------
 void printIthNode(Node *head, int i)
 {
   Node *current = head;
@@ -478,6 +485,27 @@ void printIthNode(Node *head, int i)
       current = current->next;
       count +=1;
   }
+}
+*/
+
+/*
+Time Complexity : O(min(i, n)) 
+Space Complexity : O(1) 
+where i is the position of the element to be printed and n is the size of singly linked list 
+*/
+void printIthNode(Node *head, int i)
+{
+	int position = 0;
+	Node *temp = head;
+	while (temp != NULL && position < i)
+	{
+		position++;
+		temp = temp->next;
+	}
+	if (temp != NULL)
+	{
+		cout << temp->data;
+	}
 }
 
 int main()
@@ -682,6 +710,12 @@ Node *takeinput()
 }
 
 ////////////=============================================================>>>> Delete Node
+/*
+Time Complexity : O(min(I, N))
+Space Complexity : O(1)
+where I is the position of the node to be deleted and 
+N is the size of singly linked list 
+*/
 Node *deleteNode(Node *head, int pos)
 {
     Node *current = head;
@@ -796,13 +830,19 @@ Node *takeinput() {
     return head;
 }
 ////=================================================================> Length of LL (recursive)
-int length(Node *head) {
-    if(head == NULL){
-        return 0;
-    }
-	return  1 + length(head->next);
+/*
+Time complexity: O(N) 
+Space complexity: O(N)
+where N is the length of the singly linked list
+*/
+int length(Node *head)
+{
+	if (head == NULL)
+	{
+		return 0;
+	}
+	return 1 + length(head->next);
 }
-
 void print(Node *head) {
     Node *temp = head;
 
@@ -913,34 +953,41 @@ void print(Node *head) {
 }
 
 ////////////////////////////================>> Recursive process
-Node *insertNode(Node *head, int i, int data)
+////////////////////////////================>> Recursive process
+/*
+Time complexity: O(N) 
+Space complexity: O(N) 
+where N is the length of the singly linked list
+*/
+Node* insertNode(Node *head, int pos, int data)
 {
-    if (head == NULL)
-    {
-        if (i == 0)
-        {
-            Node *newNode = new Node(data);
-            return newNode;
-        }
-        return head;
-    }
-    if (i == 0)
-    {
-        Node *newNode = new Node(data);
-        newNode->next = head;
-        return newNode;
-    }
-    
+	if (head == NULL)
+	{
+		if (pos == 0)
+		{
+			Node *newnode = new Node(data);
+			return newnode;
+		}
+		return head;
+	}
+	Node *newnode = new Node(data);
+	if (pos == 0)
+	{
+		newnode->next = head;
+		head = newnode;
+		return head;
+	}
+	
     // Amra next line a khane position komaite komaite 0 te gia then 0th element add kore disi.
     // Then add korar porer LInked LIst ta [Node *afterRecursionLL] a store korsi.
     // then sheta ke head->next er sathe add kore disi. bas kaj sesh
-    Node *afterRecursionLL = insertNode(head->next, i - 1, data); 
+    Node *afterRecursionLL = insertNode(head->next, pos - 1, data); 
     head->next = afterRecursionLL;
     return head;
 }
-/*
 
 ////////////////////////////================>> Iterative process
+/*
 Node* insertNode(Node *head, int i, int data) {
     int currentPos = 0;
     Node *temp = head;
@@ -1077,7 +1124,10 @@ void print(Node *head)
 
 ////////////// ========================================>> Recursive Process
 
-/* Time Complexity : O(n) Space Complexity : O(n) where n is the size of singly linked list */ 
+/* Time Complexity : O(n)
+Space Complexity : O(n)
+where n is the size of singly linked list
+*/ 
 
 Node *deleteNodeRec(Node *head, int pos)
 {
@@ -1248,17 +1298,25 @@ Node *takeinput()
 }
 
 ////////////////================================>>>>>>>Find a Node in Linked List
-int findNode(Node *head, int n){
-    int countINdex = 0;
-    while(head != NULL){
-        if(head->data==n){
-            return countINdex;
-        }else{
-            head = head->next;
-            countINdex++;
-        }
-    }
-    return -1;    
+/*
+Time Complexity : O(N) 
+Space Complexity : O(1) 
+Where 'N' is the size of singly linked list. */
+int findNode(Node *head, int n)
+{
+	// Variable to maintain the position in the list. 
+	int pos = 0;
+	while (head != NULL)
+	{
+		// If element found, return the position of the element. 
+		if (head->data == n)
+		{
+			return pos;
+		}
+		pos++;
+		head = head->next;
+	}
+	return -1;
 }
 
 int main()
@@ -1365,12 +1423,10 @@ void print(Node *head)
 	Node *temp = head;
 	while (temp != NULL)
 	{
-		cout << temp->data << " ";
-		temp = temp->next;
-	}
-	cout << endl;
-}
+	
+/*------------------------------------------CODE--------------------------------------*/
 
+//////// VIDEO explain===============>>>>>>>>>>>.https://youtu.be/v6g1g4lNowM
 
 // at first find the length then [length-ath] Node;
 // then jet pabo oitar hobe tail and head head e thakbe.
@@ -1378,7 +1434,7 @@ void print(Node *head)
 // NULL Khuje pele Null er jaygay head ke add kore dibo and tail porjontoo add kore dibo.
 // time=O(n) and space O(1)
 
-//////// VIDEO explain===============>>>>>>>>>>>.https://youtu.be/v6g1g4lNowM
+// Using length techniquer 1st Approach
 int nodeLength(Node *head){
     if(head==NULL){
         return 0;
@@ -1413,6 +1469,43 @@ Node *appendLastNToFirst(Node *head, int n)
     }
     return head;
 }
+
+// using skiping technique 2nd Approach
+/*
+Time Complexity : O(n) 
+Space Complexity : O(1) 
+where n is the size of singly linked list 
+*/
+Node* appendLastNToFirst(Node *head, int n)
+{
+	if (n == 0 || head == NULL)
+	{
+		return head;
+	}
+	Node *fast = head;
+	Node *slow = head;
+	Node *initialhead = head;
+	for (int i = 0; i < n; i++)
+	{
+		fast = fast->next;
+	}
+	while (fast->next != NULL)
+	{
+		slow = slow->next;
+		fast = fast->next;
+	}
+	Node *temp = slow->next;
+	slow->next = NULL;
+	fast->next = initialhead;
+	head = temp;
+	return head;
+}	cout << temp->data << " ";
+		temp = temp->next;
+	}
+	cout << endl;
+}
+
+
 
 int main()
 {
@@ -1522,7 +1615,8 @@ void print(Node *head)
 }
 
 ////////////////////////////================>> Eliminate duplicates from LL
-
+/*
+Time Complexity : O(n) Space Complexity : O(1) where n is the size of singly linked list */
 Node *removeDuplicates(Node *head)
 {
     if (head == NULL || head->next == NULL){
@@ -1639,16 +1733,11 @@ Node *takeinput()
 }
 
 ////////////======>>>>>>>>>https://youtu.be/bjtMCwy_LMA
-/// ![image](https://user-images.githubusercontent.com/57065763/172532546-98eb465d-165f-48ea-acaf-f1ae9b453426.png)
 //////// =====>>>>>>>>>> Iterative Process
-
-// void printReverse(Node *head)
-// {
-
-// }
+![image](https://user-images.githubusercontent.com/57065763/172532546-98eb465d-165f-48ea-acaf-f1ae9b453426.png)
 
 ///////////// ==========>>>>>>>>>> Recursive Process
-
+/*Time Complexity : O(n) Space Complexity : O(n) where n is the size of singly linked list */
 void printReverse(Node *head)
 {
     if(head == NULL){

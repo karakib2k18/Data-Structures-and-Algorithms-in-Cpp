@@ -72,15 +72,19 @@ Node* inputNode(){
 }
 
 ////////////====================>> Length of LL
-int length(Node *head){
-  int count = 0;
-  Node *temp = NULL;
-  temp = head;
-  while(temp !=NULL){
-    count +=1;
-    temp = temp->next;
-  }
-  return count;
+/*
+Time Complexity : O(n) Space Complexity : O(1) where n is size of singly linked list 
+*/
+int length(Node *head)
+{
+	int len = 0;
+	Node *temp = head;
+	while (temp != NULL)
+	{
+		len++;
+		temp = temp->next;
+	}
+	return len;
 }
 
 signed main()

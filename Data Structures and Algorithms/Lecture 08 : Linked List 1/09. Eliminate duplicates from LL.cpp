@@ -87,7 +87,8 @@ void print(Node *head)
 }
 
 ////////////////////////////================>> Eliminate duplicates from LL
-
+/*
+Time Complexity : O(n) Space Complexity : O(1) where n is the size of singly linked list */
 Node *removeDuplicates(Node *head)
 {
     if (head == NULL || head->next == NULL){

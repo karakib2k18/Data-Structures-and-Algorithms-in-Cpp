@@ -58,22 +58,18 @@ Node *takeinput() {
 }
 
 ////===============> Length of LL (recursive)
-int length(Node *head) {
-    if(head == NULL){
-        return 0;
-    }
-	return  1 + length(head->next);
-}
-
-void print(Node *head) {
-    Node *temp = head;
-
-    while (temp != NULL) {
-        cout << temp->data << " ";
-        temp = temp->next;
-    }
-
-    cout << endl;
+/*
+Time complexity: O(N) 
+Space complexity: O(N)
+where N is the length of the singly linked list
+*/
+int length(Node *head)
+{
+	if (head == NULL)
+	{
+		return 0;
+	}
+	return 1 + length(head->next);
 }
 
 int main() {

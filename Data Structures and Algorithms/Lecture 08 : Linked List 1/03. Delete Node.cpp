@@ -98,6 +98,12 @@ Node *takeinput()
 }
 
 ////////////====================================>>>> Delete Node
+/*
+Time Complexity : O(min(I, N))
+Space Complexity : O(1)
+where I is the position of the node to be deleted and 
+N is the size of singly linked list 
+*/
 Node *deleteNode(Node *head, int pos)
 {
     Node *current = head;

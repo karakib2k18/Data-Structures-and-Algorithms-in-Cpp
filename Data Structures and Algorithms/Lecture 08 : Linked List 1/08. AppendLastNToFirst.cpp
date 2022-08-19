@@ -95,13 +95,17 @@ void print(Node *head)
 }
 
 
+/*---------------------------CODE------------------------*/
+
+//////// VIDEO explain===============>>>>>>>>>>>.https://youtu.be/v6g1g4lNowM
+
 // at first find the length then [length-ath] Node;
 // then jet pabo oitar hobe tail and head head e thakbe.
 // newNode create korbo at [ath] elements and NULL porjontoto jabo. 
 // NULL Khuje pele Null er jaygay head ke add kore dibo and tail porjontoo add kore dibo.
 // time=O(n) and space O(1)
 
-//////// VIDEO explain===============>>>>>>>>>>>.https://youtu.be/v6g1g4lNowM
+// Using length techniquer 1st Approach
 int nodeLength(Node *head){
     if(head==NULL){
         return 0;
@@ -135,6 +139,37 @@ Node *appendLastNToFirst(Node *head, int n)
         head = newHead;
     }
     return head;
+}
+
+// using skiping technique 2nd Approach
+/*
+Time Complexity : O(n) 
+Space Complexity : O(1) 
+where n is the size of singly linked list 
+*/
+Node* appendLastNToFirst(Node *head, int n)
+{
+	if (n == 0 || head == NULL)
+	{
+		return head;
+	}
+	Node *fast = head;
+	Node *slow = head;
+	Node *initialhead = head;
+	for (int i = 0; i < n; i++)
+	{
+		fast = fast->next;
+	}
+	while (fast->next != NULL)
+	{
+		slow = slow->next;
+		fast = fast->next;
+	}
+	Node *temp = slow->next;
+	slow->next = NULL;
+	fast->next = initialhead;
+	head = temp;
+	return head;
 }
 
 int main()

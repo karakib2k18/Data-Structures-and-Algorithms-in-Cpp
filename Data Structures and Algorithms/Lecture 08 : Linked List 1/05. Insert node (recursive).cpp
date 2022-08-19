@@ -85,34 +85,41 @@ void print(Node *head) {
 }
 
 ////////////////////////////================>> Recursive process
-Node *insertNode(Node *head, int i, int data)
+////////////////////////////================>> Recursive process
+/*
+Time complexity: O(N) 
+Space complexity: O(N) 
+where N is the length of the singly linked list
+*/
+Node* insertNode(Node *head, int pos, int data)
 {
-    if (head == NULL)
-    {
-        if (i == 0)
-        {
-            Node *newNode = new Node(data);
-            return newNode;
-        }
-        return head;
-    }
-    if (i == 0)
-    {
-        Node *newNode = new Node(data);
-        newNode->next = head;
-        return newNode;
-    }
-    
+	if (head == NULL)
+	{
+		if (pos == 0)
+		{
+			Node *newnode = new Node(data);
+			return newnode;
+		}
+		return head;
+	}
+	Node *newnode = new Node(data);
+	if (pos == 0)
+	{
+		newnode->next = head;
+		head = newnode;
+		return head;
+	}
+	
     // Amra next line a khane position komaite komaite 0 te gia then 0th element add kore disi.
     // Then add korar porer LInked LIst ta [Node *afterRecursionLL] a store korsi.
     // then sheta ke head->next er sathe add kore disi. bas kaj sesh
-    Node *afterRecursionLL = insertNode(head->next, i - 1, data); 
+    Node *afterRecursionLL = insertNode(head->next, pos - 1, data); 
     head->next = afterRecursionLL;
     return head;
 }
-/*
 
 ////////////////////////////================>> Iterative process
+/*
 Node* insertNode(Node *head, int i, int data) {
     int currentPos = 0;
     Node *temp = head;
