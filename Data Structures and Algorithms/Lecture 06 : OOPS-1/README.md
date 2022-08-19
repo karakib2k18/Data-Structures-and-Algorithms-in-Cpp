@@ -1,3 +1,8 @@
+```
+
+Lecture 06 : OOPS-1  START HERE
+
+```
 # ##OOPS-1
 
 ---
@@ -30,8 +35,7 @@ class Student {
 
 ```
 ### Creating Objects
-
-![image](https://user-images.githubusercontent.com/57065763/171986499-4d830aff-98ab-4c82-ae36-af328576a9fb.png)
+![image](https://user-images.githubusercontent.com/57065763/185500141-9dd2f54f-aba2-418f-b20e-6bc3606f4819.png)
 
 ```cpp
 
@@ -75,14 +79,6 @@ int main() {
 }
 
 ```
-
-![image](https://user-images.githubusercontent.com/57065763/171987232-a4112ebf-038e-4649-99e3-d09a55f9a741.png)
-![image](https://user-images.githubusercontent.com/57065763/171987244-f8a043de-15bd-461e-9bb7-1f3ce2470311.png)
-![image](https://user-images.githubusercontent.com/57065763/171987253-1d6d2688-9c1b-43b2-a40e-0c3ecebc8d21.png)
-![image](https://user-images.githubusercontent.com/57065763/171987268-d25bce14-35ed-4b7b-b1d1-9c0ac788dfa3.png)
-![image](https://user-images.githubusercontent.com/57065763/171987275-df94757e-a03b-4bda-8b5f-d55d7bcc5298.png)
-![image](https://user-images.githubusercontent.com/57065763/171987328-d46ab789-0b5e-4f75-be6a-bdba65e3955a.png)
-
 
 #### Q-1. Which of these statements is used to allocate memory for an object dynamically ?
 
@@ -369,9 +365,6 @@ int main() {
 }
 
 ```
-![image](https://user-images.githubusercontent.com/57065763/171987362-d5bfc657-a1a3-4120-8ee2-c7eb17ff261b.png)
-![image](https://user-images.githubusercontent.com/57065763/171987434-e877ed8a-f916-40de-806b-491ae9a57042.png)
-![image](https://user-images.githubusercontent.com/57065763/171987448-cd39ce14-ec57-4a18-91b2-425a29f0d639.png)
 
 #### Q-7.  What is the output ?
 
@@ -488,9 +481,7 @@ number as argument, hence we should pass integer as argument while creating any 
 
 ### Inbuilt Constructors and Destructor
 
-![image](https://user-images.githubusercontent.com/57065763/171994489-64118cb9-4625-41b6-b636-cb050f890581.png)
-![image](https://user-images.githubusercontent.com/57065763/171994643-cb79a655-eb4f-4dd4-b15a-9f3deeb69c5b.png)
-
+![image](https://user-images.githubusercontent.com/57065763/185591283-2f659b49-2a33-4302-a45b-fe9d6c500fef.png)
 
 ```cpp
 #include <iostream>
@@ -683,11 +674,6 @@ int main() {
 
 
 ```
-
-![image](https://user-images.githubusercontent.com/57065763/171987472-a2674a0e-cba8-4f98-bdd5-285fda4d4753.png)
-![image](https://user-images.githubusercontent.com/57065763/171987484-171ae583-a65e-4c87-9971-903627ef49e4.png)
-![image](https://user-images.githubusercontent.com/57065763/171987492-f7787f0d-0a90-49ba-a23c-afc320bcfeea.png)
-![image](https://user-images.githubusercontent.com/57065763/171987498-3262b308-6cb9-4560-8e32-741702678239.png)
 
 #### Q-10.  Find Incorrect Statement ?
 
@@ -932,6 +918,9 @@ int main() {
 			15 / 4
 
 ```
+### QUIZ:
+![image](https://user-images.githubusercontent.com/57065763/185595733-3e18cd56-4f20-4ce9-b07b-856ac55e2f3a.png)
+
 ## Complex Number Class
 
 ```cpp
@@ -1056,11 +1045,8 @@ int main() {
 
 ```
 
-### OPPS-1 END HERE
-
-```cpp
-
-OPPS-1 END HERE
-
 ```
 
+Lecture 06 : OOPS-1  END HERE
+
+```
