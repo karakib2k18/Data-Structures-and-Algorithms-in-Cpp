@@ -1,7 +1,13 @@
+```
+
+Lecture 07 : OOPS-2 START HERE
+
+```
+
 # ##OOPS-2
 
 ---
-
+//============>>>>>>>>>> Lecture 07 : OOPS-2
 [Lecture 7: OOPS-2.pdf](https://github.com/karakib2k18/Data-Structures-and-Algorithms-in-Cpp-AND-Competitive-Programming/files/8837505/Lecture.7.OOPS-2.pdf)
 
 ---
@@ -709,10 +715,7 @@ int main() {
 ```
 
 ### Operator Overloading 3
-
-![image](https://user-images.githubusercontent.com/57065763/172013823-a8e247d5-e50a-4ec4-8aea-b685559e8aef.png)
-![image](https://user-images.githubusercontent.com/57065763/172013897-9431b405-8582-423e-8573-f88430fb0770.png)
-
+![image](https://user-images.githubusercontent.com/57065763/185598745-154942a5-2f85-4478-a9b9-07155892fe9c.png)
 
 ```cpp
 ------------------------------------------------------------------------------------------------
@@ -1564,26 +1567,14 @@ int main()
 ```
 ==>MCQ START
 ```
-![image](https://user-images.githubusercontent.com/57065763/171999156-cf0b7661-fd39-4881-b951-7e99b36f75fd.png)
-![image](https://user-images.githubusercontent.com/57065763/171999171-5d8d5cac-cc4f-45ae-8b39-b105e2b7aeb1.png)
-![image](https://user-images.githubusercontent.com/57065763/171999184-8587cb07-ed7a-432e-82e4-d1f399e5aa0c.png)
-![image](https://user-images.githubusercontent.com/57065763/171999199-5715254d-98f5-44eb-9961-127c282f5a10.png)
-![image](https://user-images.githubusercontent.com/57065763/171999204-644cbdf5-01ff-4bd0-acfa-9a85ad77a47b.png)
-![image](https://user-images.githubusercontent.com/57065763/171999223-d1e920a5-4823-4af2-baa8-980d42c0cac1.png)
-![image](https://user-images.githubusercontent.com/57065763/171999226-505c942b-54de-4c05-b9f8-591284d8799d.png)
-![image](https://user-images.githubusercontent.com/57065763/171999233-f3458e8c-03eb-4563-b3b6-6b63c27530d5.png)
-![image](https://user-images.githubusercontent.com/57065763/171999248-fa08f4b8-ea6b-40fb-8165-3233c1ce5504.png)
-![image](https://user-images.githubusercontent.com/57065763/171999253-809942c2-d7b8-4045-b8b3-4a25e13dbadc.png)
-![image](https://user-images.githubusercontent.com/57065763/171999259-a19ed9c5-ae5e-4816-84cb-895efde7f034.png)
+![image](https://user-images.githubusercontent.com/57065763/185601237-b643620e-80c9-4d2c-baea-4d563125bfc5.png)
 
 ```
 ==>MCQ END
 ```
 
-### OPPS-2 END HERE
+```
 
-```cpp
-
-OPPS-2 END HERE
+Lecture 07 : OOPS-2 END HERE
 
 ```
