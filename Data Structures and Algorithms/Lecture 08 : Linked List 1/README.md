@@ -182,10 +182,7 @@ int main() {
 }
 
 ```
-![image](https://user-images.githubusercontent.com/57065763/172212881-45e3fecd-2aa8-4e44-a888-99abc19df0ee.png)
-![image](https://user-images.githubusercontent.com/57065763/172216557-8c11e797-44d0-4b14-8297-5ef1776b0c6e.png)
-![image](https://user-images.githubusercontent.com/57065763/172217130-6651831b-eeae-4db8-b9b5-715f9948fc64.png)
-![image](https://user-images.githubusercontent.com/57065763/172217629-d1e25590-e812-406c-a9b1-1a662d9ff55f.png)
+![image](https://user-images.githubusercontent.com/57065763/185608843-c9ab9556-9970-4807-a856-41cf4c346f86.png)
 
 ### Take Input - 1 => O(n^2)
 
