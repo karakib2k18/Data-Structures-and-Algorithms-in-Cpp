@@ -1,3 +1,8 @@
+```
+
+Lecture 16 : Tries and Huffman Coding START HERE
+
+```
 # ##Lecture 16 : Tries and Huffman Coding
 
 ---
@@ -9,15 +14,10 @@
 ---
 
 ### Introduction to Tries
-![image](https://user-images.githubusercontent.com/57065763/179591552-2b9cc1e1-33e0-40c5-b432-caede0a5a51d.png)
-![image](https://user-images.githubusercontent.com/57065763/179600884-71a9f0d6-9ad6-48c0-b0ff-d21841d7b4f0.png)
-![image](https://user-images.githubusercontent.com/57065763/179601520-4981ad8b-c761-47b1-8400-23208027c6dc.png)
+![image](https://user-images.githubusercontent.com/57065763/186527412-f6d7a9f8-0de3-4439-aa71-47073e5139a0.png)
 
 ### TrieNode class
-
-![image](https://user-images.githubusercontent.com/57065763/179604172-78146091-28af-4256-bc94-112ccf4fae29.png)
-![image](https://user-images.githubusercontent.com/57065763/179604436-ab585296-8df9-44c7-9275-b9188fca6238.png)
-![image](https://user-images.githubusercontent.com/57065763/179606450-79331c70-9c67-4789-ab9b-97e58111854c.png)
+![image](https://user-images.githubusercontent.com/57065763/186527808-77115712-b7f3-4df3-9df3-20fa9d95cd37.png)
 
 ```cpp
 class TrieNode {
@@ -367,15 +367,10 @@ int main() {
 ```
 
 ### Types of Tries
-![image](https://user-images.githubusercontent.com/57065763/179717486-f51e5066-f936-4127-b47e-47bea37c3df5.png)
-![image](https://user-images.githubusercontent.com/57065763/179723765-759cf754-aa5e-46b4-b1de-4ef757ad7f9e.png)
-![image](https://user-images.githubusercontent.com/57065763/179723855-ddee4ca9-6a5f-41b6-aa30-e6b3a13dbf2b.png)
-
+![image](https://user-images.githubusercontent.com/57065763/186528156-c018f9cf-f0f3-4329-825f-cfbae43dbd6d.png)
 
 ### Huffman Coding
-![image](https://user-images.githubusercontent.com/57065763/179626342-0276d113-6d09-4394-81cb-bdd10d5c9de1.png)
-![image](https://user-images.githubusercontent.com/57065763/179628100-3f6ce0f0-73dc-4976-bb68-4cc5277d82dc.png)
-![image](https://user-images.githubusercontent.com/57065763/179703044-f59771d6-c846-46fa-b12f-511e592285af.png)
+![image](https://user-images.githubusercontent.com/57065763/186528488-ba7ba781-163c-4187-a25c-f3ea75d7f0c7.png)
 
 ### Pattern Matching
 ![image](https://user-images.githubusercontent.com/57065763/179860211-a3e0bdab-33fd-4b72-811c-1078e00b2487.png)
@@ -557,7 +552,7 @@ class Trie
 };
 ```
 
-### Palindrome Pair ========================>>>>>>>>>>> NOT SOLVED YET
+### Palindrome Pair => [HARD]
 
 ```
 Given 'n' number of words, you need to find if there exist any two words which can be joined to make a palindrome or any word, which itself is a palindrome.
@@ -606,97 +601,149 @@ int main() {
     cout << (t.isPalindromePair(words) ? "true" : "false");
 }
 */
-class TrieNode {
-   public:
-    char data;
-    TrieNode **children;
-    bool isTerminal;
-    int childCount;
+/*
+---- The Approach We Have Taken To Implement This Problem ---- 
 
-    TrieNode(char data) {
-        this->data = data;
-        children = new TrieNode *[26];
-        for (int i = 0; i < 26; i++) {
-            children[i] = NULL;
-        }
-        isTerminal = false;
-        childCount = 0;
-    }
+The approach we have taken to solve this problem is to store the reverse of each of the words in the Trie. 
+We then iterate over the words and search that does the Trie contains the same word or not. It may happen 
+that some parts of the word or a substring exist in the Trie. We check for the remaining part of the string 
+to be a palindrome or not. Vise versa of the above will also be true, that means, it may happen that the word 
+in the Trie may extend further over different number of branches, hence we check all the branches one by one 
+to see if any of the branches make a palindrome. 
+*/
+
+/*
+---- Another Possible Solution Could Be ---- 
+
+There's another way of solving this problem. It goes like this. First add the reverse of every word in the trie. 
+Then for every word, search it in the trie. If you find it, then that means the word was a palindrome itself and 
+you can return true. If you don't find it, you need the length of the part that you did find. For example, 
+you're searching for "abcdd" in the trie, you didn't find a match for "abcdd" but you found the word "abc" 
+in the trie. Finding "abc" in the trie means that the actual word was "cba" since we inserted the reverse 
+of every word in the list. Now, you have the word "abcdd", you found the word "abc" in the trie. If you can 
+find whether the part of "abcdd" that comes after "abc", i.e. "dd" is a palindrome, you can conclude that 
+concatenating "abcdd" and "cba" will also give a palindrome. So you can return true. If the part isn't a 
+palindrome, you move to check for the next word. If you traverse through all words without finding a pair of 
+words that combine to form a palindrome or a word that's a palindrome by itself, then you can return false. 
+*/
+
+/*Time complexity: O(N *M) 
+Space complexity: O(N *M) 
+where N is the number of words in the Trie and M is the average word length 
+*/
+#include <string>
+#include <vector>
+
+class TrieNode
+{
+	public: char data;
+	TrieNode **children;
+	bool isTerminal;
+	int childCount;
+	TrieNode(char data)
+	{
+		this->data = data;
+		children = new TrieNode *[26];
+		for (int i = 0; i < 26; i++)
+		{
+			children[i] = NULL;
+		}
+		isTerminal = false;
+		childCount = 0;
+	}
 };
 
-class Trie {
-    TrieNode *root;
+class Trie
+{
+	TrieNode * root;
+	public: int count;
+	Trie()
+	{
+		this->count = 0;
+		root = new TrieNode('\0');
+	}
 
-   public:
-    int count;
+	bool add(TrieNode *root, string word)
+	{
+		// Base case 
+		if (word.size() == 0)
+		{
+			if (!root->isTerminal)
+			{
+				root->isTerminal = true;
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+		}
+		// Small calculation 
+		int index = word[0] - 'a';
+		TrieNode *child;
+		if (root->children[index] != NULL)
+		{
+			child = root->children[index];
+		}
+		else
+		{
+			child = new TrieNode(word[0]);
+			root->children[index] = child;
+			root->childCount++;
+		}
+		// Recursive call 
+		return add(child, word.substr(1));
+	}
 
-    Trie() {
-        this->count = 0;
-        root = new TrieNode('\0');
-    }
+	// For user 
+	void add(string word)
+	{
+		if (add(root, word))
+		{
+			this->count++;
+		}
+	}
 
-    bool add(TrieNode *root, string word) {
-        // Base case
-        if (word.size() == 0) {
-            if (!root->isTerminal) {
-                root->isTerminal = true;
-                return true;
-            } else {
-                return false;
-            }
-        }
+	/*..................... Palindrome Pair................... */
+	bool searchPalindrome(TrieNode *root, string words)
+	{
+		if (root->isTerminal || words.size() == 0)
+		{
+			return true;
+		}
+		if (root->children[words[0] - 'a'] != NULL)
+		{
+			return searchPalindrome(root->children[words[0] - 'a'], words.substr(1));
+		}
+		else
+		{
+			return false;
+		}
+	}
 
-        // Small calculation
-        int index = word[0] - 'a';
-        TrieNode *child;
-        if (root->children[index] != NULL) {
-            child = root->children[index];
-        } else {
-            child = new TrieNode(word[0]);
-            root->children[index] = child;
-            root->childCount++;
-        }
+	bool searchPalindrome(vector<string> words)
+	{
+		for (int i = 0; i < words.size(); i++)
+		{
+			if (searchPalindrome(root, words[i]))
+			{
+				return true;
+			}
+		}
+		return false;
+	}
 
-        // Recursive call
-        return add(child, word.substr(1));
-    }
-
-    void add(string word) {
-        if (add(root, word)) {
-            this->count++;
-        }
-    }
-
-    /*..................... Palindrome Pair................... */
-    bool searchPalindrome(TrieNode *parent, string word)
-    {
-        if (parent->isTerminal || word.size() == 0)
-            return true;
-        if (parent->children[word[0] - 'a'] != NULL)
-            return searchPalindrome(parent->children[word[0] - 'a'], word.substr(1));
-        else
-            return false;
-    }
-
-    bool searchPalindrome(vector<string> v)
-    {
-        for (int i = 0; i < v.size(); i++)
-        {
-            string s1 = v[i], s2 = v[i];
-            reverse(s1.begin(), s1.end());
-            if (searchPalindrome(root, s1))
-                return true;
-        }
-        return false;
-    }
-
-    bool isPalindromePair(vector<string> words)
-    {
-        // Write your code here
-        for (int i = 0; i < words.size(); i++)
-            add(words[i]);
-        return searchPalindrome(words);
-    }
+	bool isPalindromePair(vector<string> words)
+	{
+		// Write your code here
+		for (int i = 0; i < words.size(); i++)
+		{
+			string ReverseWord = words[i];
+			reverse(ReverseWord.begin(), ReverseWord.end());
+			add(ReverseWord);
+		}
+		return searchPalindrome(words);
+	}
 };
 ```
 
