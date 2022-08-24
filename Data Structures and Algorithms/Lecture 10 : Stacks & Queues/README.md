@@ -1,3 +1,9 @@
+```
+
+Lecture 10 : Stacks & Queues START HERE
+
+```
+
 # ##Lecture 10 : Stacks & Queues
 
 ---
@@ -1820,4 +1826,10 @@ int main() {
     cin >> input;
     cout << countBracketReversals(input);
 }
+```
+
+```
+
+Lecture 10 : Stacks & Queues END HERE
+
 ```
