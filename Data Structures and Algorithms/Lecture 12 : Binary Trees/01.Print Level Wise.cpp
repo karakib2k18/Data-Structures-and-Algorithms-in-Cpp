@@ -80,7 +80,59 @@ Time complexity: O(N)
 Space complexity: O(N) 
 where N is the number of nodes in the input tree
 ***********************************************************/
+// ----------------------NULL Technique--------------------------------
+/*
+#include <queue>
 
+void printLevelWise(BinaryTreeNode<int> *root)
+{
+	if (root == NULL)
+	{
+		return;
+	}
+	queue<BinaryTreeNode<int> *> pendingNodes;
+	pendingNodes.push(root);
+	while (!pendingNodes.empty())
+	{
+		BinaryTreeNode<int> *frontNode = pendingNodes.front();
+		pendingNodes.pop();
+		if (frontNode == NULL)
+		{
+			cout << "\n";
+			if (!pendingNodes.empty())
+			{
+				pendingNodes.push(NULL);
+			}
+		}
+		else
+		{
+			cout << frontNode->data << ":";
+			cout << "L:";
+			if (frontNode->left)
+			{
+				pendingNodes.push(frontNode->left);
+				cout << frontNode->left->data << ",";
+			}
+			else
+			{
+				cout << -1 << ",";
+			}
+			cout << "R:";
+			if (frontNode->right)
+			{
+				pendingNodes.push(frontNode->right);
+				cout << frontNode->right->data << "\n";
+			}
+			else
+			{
+				cout << -1 << "\n";
+			}
+		}
+	}
+}
+*/
+
+// ----------------------Queue SIZE Technique--------------------------------
 void printLevelWise(BinaryTreeNode<int> *root)
 {
     // Write your code here
