@@ -137,6 +137,7 @@ int main() {
 
 
 ### Dequeue
+![image](https://user-images.githubusercontent.com/57065763/186504896-c350022c-8966-45ef-a7db-9ce4f25cb3be.png)
 
 ```
 You need to implement a class for Dequeue i.e. for double ended queue. In this queue, elements can be inserted and deleted from both the ends.
