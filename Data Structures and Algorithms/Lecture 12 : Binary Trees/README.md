@@ -1423,13 +1423,7 @@ int main() {
 
 
 ### Diameter of Binary Tree
-
-![image](https://user-images.githubusercontent.com/57065763/176274791-7c05a7e2-23ab-4e33-8309-3153de7523e7.png)
-
-![image](https://user-images.githubusercontent.com/57065763/176275812-42bc80e6-359a-4202-992b-87b7a343902a.png)
-
-![image](https://user-images.githubusercontent.com/57065763/176276289-c636d286-6423-4fe9-8dee-bec3cd7c3d3c.png)
-
+![image](https://user-images.githubusercontent.com/57065763/186526301-dc988751-c7cc-4a14-9335-50fe677754ed.png)
 
 ```cpp
 int height(BinaryTreeNode<int>* root) {
