@@ -122,7 +122,6 @@ class PriorityQueue {
 
 ```
 Code : Remove Min
-Send Feedback
 Implement the function RemoveMin for the min priority queue class.
 For a minimum priority queue, write the function for removing the minimum element present. Remove and return the minimum element.
 Note : main function is given for your reference which we are using internally to test the code.
@@ -375,7 +374,7 @@ int main() {
 
 ```
 Code : Max Priority Queue
-Send Feedback
+
 Implement the class for Max Priority Queue which includes following functions -
 1. getSize -
 Return the size of priority queue i.e. number of elements present in the priority queue.
@@ -526,7 +525,7 @@ class PriorityQueue {
 
 ```
 Code : In-place heap sort
-Send Feedback
+
 Given an integer array of size N. Sort this array (in decreasing order) using heap sort.
 Note: Space complexity should be O(1).
 Input Format:
@@ -797,7 +796,7 @@ int main() {
 
 ```
 Code : K smallest Elements
-Send Feedback
+
 You are given with an integer k and an array of integers that contain numbers in random order. Write a program to find k smallest numbers from given array. You need to save them in an array and return it.
 Time complexity should be O(n * logk) and space complexity should not be more than O(k).
 Note: Order of elements in the output is not important.
@@ -891,7 +890,7 @@ vector<int> kSmallest(int arr[], int n, int k) {
 
 ```
 Code : K largest elements
-Send Feedback
+
 You are given with an integer k and an array of integers that contain numbers in random order. Write a program to find k largest numbers from given array. You need to save them in an array and return it.
 Time complexity should be O(nlogk) and space complexity should be not more than O(k).
 Order of elements in the output is not important.
@@ -970,7 +969,7 @@ vector<int> kLargest(int input[], int n, int k){
 
 ```
 Check Max-Heap
-Send Feedback
+
 Given an array of integers, check whether it represents max-heap or not. Return true if the given array represents max-heap, else return false.
 Input Format:
 The first line of input contains an integer, that denotes the value of the size of the array. Let us denote it with the symbol N.
@@ -1041,7 +1040,7 @@ bool isMaxHeap(int arr[], int n) {
 
 ```
 Kth largest element
-Send Feedback
+
 Given an array A of random integers and an integer k, find and return the kth largest element in the array.
 Note: Try to do this question in less than O(N * logN) time.
 Input Format :
@@ -1123,7 +1122,7 @@ int kthLargest(int* arr, int n, int k) {
 
 ```
 Merge K sorted arrays
-Send Feedback
+
 Given k different arrays, which are sorted individually (in ascending order). You need to merge all the given arrays such that output array should be sorted (in ascending order).
 Hint : Use Heaps.
 Input Format:
@@ -1220,7 +1219,7 @@ vector<int> mergeKSortedArrays(vector<vector<int>*> input) {
 
 ```
 Running Median
-Send Feedback
+
 You are given a stream of 'N' integers. For every 'i-th' integer added to the running list of integers, print the resulting median.
 Print only the integer part of the median.
 Input Format :
@@ -1346,7 +1345,7 @@ void findMedian(int* arr, int n) {
 
 ```
 Buy the ticket
-Send Feedback
+
 You want to buy a ticket for a well-known concert which is happening in your city. But the number of tickets available is limited. Hence the sponsors of the concert decided to sell tickets to customers based on some priority.
 A queue is maintained for buying the tickets and every person is attached with a priority (an integer, 1 being the lowest priority).
 The tickets are sold in the following manner -
